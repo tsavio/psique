@@ -21,32 +21,34 @@ public class PacienteService implements TemplateService{
 	private PacienteDAO pacienteDAO;
 
 	@Override
-	public long save(Paciente paciente) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Paciente get(long id) {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public long savePaciente(Paciente paciente) {
+		return pacienteDAO.savePaciente(paciente);
 	}
 
 	@Override
 	@Transactional
-	public List<Paciente> list() {
-		return pacienteDAO.list();
+	public Paciente getPacienteById(long id) {
+		return pacienteDAO.getPacienteById(id);
 	}
 
 	@Override
-	public void update(Long id, Paciente paciente) {
-		// TODO Auto-generated method stub
+	@Transactional
+	public List<Paciente> listAll() {
+		return pacienteDAO.listAll();
+	}
+
+	@Override
+	@Transactional
+	public void updatePacienteById(Long id, Paciente paciente) {
+		pacienteDAO.updatePacienteById(id, paciente);
 		
 	}
 
 	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	@Transactional
+	public void deletePacienteById(Long id) {
+		pacienteDAO.deletePacienteById(id);
 		
 	}
 

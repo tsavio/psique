@@ -2,6 +2,7 @@ package com.psique.spring.dao;
 
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,32 +20,35 @@ public class PacienteDAO implements TemplateDAO{
 	private SessionFactory sessionFactory;
 	
 	@Override
-	public long save(Paciente paciente) {
-		// TODO Auto-generated method stub
-		return 0;
+	public long savePaciente(Paciente paciente) {
+		sessionFactory.getCurrentSession().save(paciente);
+		return paciente.getId();
 	}
 
 	@Override
-	public Paciente get(long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Paciente getPacienteById(long id) {
+		return sessionFactory.getCurrentSession().get(Paciente.class, id);
 	}
 
 	@Override
-	public List<Paciente> list() {
+	public List<Paciente> listAll() {
 		List<Paciente> list = sessionFactory.getCurrentSession().createQuery("from Paciente").list();
 		return list;
 	}
 
 	@Override
-	public void update(Long id, Paciente paciente) {
-		// TODO Auto-generated method stub
-		
+	public void updatePacienteById(Long id, Paciente paciente) {
+		Session session = sessionFactory.getCurrentSession();
+		Paciente pacienteAntigo = session.byId(Paciente.class).load(id);
+		pacienteAntigo.setName(paciente.getName());
+		session.flush();
 	}
 
 	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
+	public void deletePacienteById(Long id) {
+		Session session = sessionFactory.getCurrentSession();
+		Paciente paciente = session.byId(Paciente.class).load(id);
+		session.delete(paciente);
 		
 	}
 

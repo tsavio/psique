@@ -11,18 +11,18 @@ import com.psique.spring.model.Paciente;
 public interface TemplateService {
 
 		// Salvar
-		long save(Paciente paciente);
+		long savePaciente(Paciente paciente);
 		
 		// Pegar um pelo id
-		Paciente get (long id);
+		Paciente getPacienteById(long id);
 		
 		// Listar todos
-		List<Paciente> list();
+		List<Paciente> listAll();
 		
 		// Alterar algum 
-		void update (Long id, Paciente paciente);
+		void updatePacienteById(Long id, Paciente paciente);
 		
 		// Deletar 
-		void delete(Long id);
+		void deletePacienteById(Long id);
 	
 }
