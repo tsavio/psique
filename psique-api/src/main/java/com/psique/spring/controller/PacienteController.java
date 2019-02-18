@@ -42,7 +42,6 @@ public class PacienteController {
 	public ResponseEntity<Paciente> getPacienteByid(@PathVariable("id") long id){
 		Paciente paciente = pacienteService.getPacienteById(id);
 		return ResponseEntity.ok().body(paciente);
-		
 	}
 	
 	//Editar Paciente

@@ -49,7 +49,6 @@ public class PacienteDAO implements TemplateDAO{
 		Session session = sessionFactory.getCurrentSession();
 		Paciente paciente = session.byId(Paciente.class).load(id);
 		session.delete(paciente);
-		
 	}
 
 }
