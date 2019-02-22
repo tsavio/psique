@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 export class PatientService {
 	constructor(private _httpService: Http) {}
 	getAllPatients(): Observable<Patient[]> {
-		return this._httpService.get('').map((response: Response) => response.json()).catch(this.handleError);
+		return this._httpService.get("http://localhost:4200/psique/api/patients").map((response: Response) => response.json()).catch(this.handleError);
 	}
 	private handleError(error: Response) {
 		return Observable.throw(error);

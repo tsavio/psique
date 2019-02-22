@@ -9,8 +9,8 @@ import javax.persistence.Id;
  * @author <a href="mailto:thyago@usto.re">Thyago Sávio</a>
  */
 
-@Entity(name = "Paciente")
-public class Paciente {
+@Entity(name = "Patient")
+public class Patient {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,6 @@ public class Paciente {
 
 	@Override
 	public String toString() {
-		return "Paciente [id=" + id + ", name=" + name + "]";
+		return "Patient [id=" + id + ", name=" + name + "]";
 	}
 }

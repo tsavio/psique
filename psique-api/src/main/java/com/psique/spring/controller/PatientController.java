@@ -13,48 +13,52 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.psique.spring.model.Paciente;
-import com.psique.spring.service.PacienteService;
+import com.psique.spring.model.Patient;
+import com.psique.spring.service.PatientService;
+
+/**
+ * @author <a href="mailto:thyago@usto.re">Thyago Sávio</a>
+ */
 
 @CrossOrigin("*")
 @RestController
-public class PacienteController {
+public class PatientController {
 	
 	@Autowired
-	private PacienteService pacienteService;
+	private PatientService patientService;
 	
 	//Listar todos os paciente
-	@GetMapping("/api/pacientes")
-	public ResponseEntity<List<Paciente>>listAllPaciente(){ 
-		List<Paciente> list = pacienteService.listAll();
+	@GetMapping("/api/patients")
+	public ResponseEntity<List<Patient>>listAllPatient(){ 
+		List<Patient> list = patientService.listAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
 	//Salvar Paciente
-	@PostMapping("/api/pacienteCreate")
-	public ResponseEntity<?> savePaciente(@RequestBody Paciente paciente){
-		long id = pacienteService.savePaciente(paciente);
+	@PostMapping("/api/patientCreate")
+	public ResponseEntity<?> savePatient(@RequestBody Patient patient){
+		long id = patientService.savePatient(patient);
 		return ResponseEntity.ok().body("Paciente criado, id: "+ id);
 	}
 	
 	//Pegar um paciente
-	@GetMapping("/api/paciente/{id}")
-	public ResponseEntity<Paciente> getPacienteByid(@PathVariable("id") long id){
-		Paciente paciente = pacienteService.getPacienteById(id);
-		return ResponseEntity.ok().body(paciente);
+	@GetMapping("/api/patient/{id}")
+	public ResponseEntity<Patient> getPatientByid(@PathVariable("id") long id){
+		Patient patient = patientService.getPatientById(id);
+		return ResponseEntity.ok().body(patient);
 	}
 	
 	//Editar Paciente
-	@PutMapping("/api/paciente/{id}")
-	public ResponseEntity<?> updatePacienteById(@PathVariable("id")long id, @RequestBody Paciente paciente){
-		pacienteService.updatePacienteById(id, paciente);
+	@PutMapping("/api/patient/{id}")
+	public ResponseEntity<?> updatePatientById(@PathVariable("id")long id, @RequestBody Patient patient){
+		patientService.updatePatientById(id, patient);
 		return ResponseEntity.ok().body("Paciente Atualizado com sucesso");
 	}
 	
 	//Deletar Paciente
-	@DeleteMapping("/api/paciente/{id}")
-	public ResponseEntity<?> deletePacienteById (@PathVariable("id") long id){
-		pacienteService.deletePacienteById(id);
+	@DeleteMapping("/api/patient/{id}")
+	public ResponseEntity<?> deletePatientById (@PathVariable("id") long id){
+		patientService.deletePatientById(id);
 		return ResponseEntity.ok().body("Paciente deletado");
 	}
 }

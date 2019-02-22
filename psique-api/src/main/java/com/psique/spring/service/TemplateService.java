@@ -2,7 +2,7 @@ package com.psique.spring.service;
 
 import java.util.List;
 
-import com.psique.spring.model.Paciente;
+import com.psique.spring.model.Patient;
 
 /**
  * @author <a href="mailto:thyago@usto.re">Thyago Sávio</a>
@@ -11,18 +11,18 @@ import com.psique.spring.model.Paciente;
 public interface TemplateService {
 
 		// Salvar
-		long savePaciente(Paciente paciente);
+		long savePatient(Patient patient);
 		
 		// Pegar um pelo id
-		Paciente getPacienteById(long id);
+		Patient getPatientById(long id);
 		
 		// Listar todos
-		List<Paciente> listAll();
+		List<Patient> listAll();
 		
 		// Alterar algum 
-		void updatePacienteById(Long id, Paciente paciente);
+		void updatePatientById(Long id, Patient patient);
 		
 		// Deletar 
-		void deletePacienteById(Long id);
+		void deletePatientById(Long id);
 	
 }
