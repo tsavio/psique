@@ -45,6 +45,10 @@ public class PatientDAO implements TemplateDAO{
 		Session session = sessionFactory.getCurrentSession();
 		Patient pacienteAntigo = session.byId(Patient.class).load(id);
 		pacienteAntigo.setName(patient.getName());
+		pacienteAntigo.setdataNascimento(patient.getdataNascimento());
+		pacienteAntigo.setsexo(patient.getsexo());
+		pacienteAntigo.settipoSanguineo(patient.gettipoSanguineo());
+		pacienteAntigo.setcpf(patient.getcpf());
 		session.flush();
 	}
 
