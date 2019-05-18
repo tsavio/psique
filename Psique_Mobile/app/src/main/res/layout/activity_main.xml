@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivityVideoChamada"
+    android:centerColor="#85e2f7"
+    android:endColor="#a0e6f5"
+    android:startColor="#63d0e8"
+
+    >
+
 
     <Button
         android:id="@+id/button_camera"

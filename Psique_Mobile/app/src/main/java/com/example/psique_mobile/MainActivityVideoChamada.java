@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityVideoChamada extends AppCompatActivity {
     ImageView imageViewFoto;
 
     @Override
@@ -47,3 +47,4 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
+
