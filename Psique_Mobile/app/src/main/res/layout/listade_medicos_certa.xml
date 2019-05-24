@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imagem"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY"
+        android:src="@android:drawable/presence_online" />
+
+
+    <LinearLayout
+        android:layout_width="324dp"
+        android:layout_height="84dp"
+        android:layout_gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dr. Henrique Figueiredo" />
+
+        <TextView
+            android:id="@+id/Profissao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Psicólogo / Psiquiatra" />
+
+        <TextView
+            android:id="@+id/Endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recife - PE" />
+
+
+    </LinearLayout>
+</LinearLayout>
