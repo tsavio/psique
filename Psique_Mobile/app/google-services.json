@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "255503465964",
+    "firebase_url": "https://psique-241319.firebaseio.com",
+    "project_id": "psique-241319",
+    "storage_bucket": "psique-241319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255503465964:android:f03d209b9949c289",
+        "android_client_info": {
+          "package_name": "com.example.psique_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255503465964-1a02hd01alhhtm8ha5hspmu5eopjrqr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.psique_mobile",
+            "certificate_hash": "5c0901b20de20f46c2b6dc3b73283dea31eefffd"
+          }
+        },
+        {
+          "client_id": "255503465964-akcq1rgd12ikm1ju4bjkt0vknnfrhij6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB77WCivXJVjRgx_mHzV19DoJeso9OHwao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255503465964-akcq1rgd12ikm1ju4bjkt0vknnfrhij6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
