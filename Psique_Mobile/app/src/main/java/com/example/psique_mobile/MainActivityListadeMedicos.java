@@ -20,16 +20,20 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
         setContentView(R.layout.activity_main_listade_medicos);
 
         final ListView lista = (ListView) findViewById(R.id.Lista_medicos);
-        final ArrayAdapter adapter = new MedicosAdapter(this, adcionarMedicos());
+        final ArrayList<Medico> medicos = adcionarMedicos();
+        final ArrayAdapter adapter = new MedicosAdapter(this, medicos);
         lista.setAdapter(adapter);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Medico medico = (Medico) lista.getItemAtPosition(position);
+                //Medico medico = (Medico) lista.getItemAtPosition(position);
 
                 Intent intent =  new Intent(MainActivityListadeMedicos.this,MainActivityVideoChamada.class);
-                intent.putExtra("NomeMedico", medico.getNome().toString());
+                intent.putExtra("NomeMedico",medicos.get(position).getNome());
+                intent.putExtra("ProfissaoMedico",medicos.get(position).getProfissao());
+                intent.putExtra("EnderecoMedico",medicos.get(position).getEndereco());
+                intent.putExtra("imagem",medicos.get(position).getImagem());
 
                 startActivity(intent);
             }

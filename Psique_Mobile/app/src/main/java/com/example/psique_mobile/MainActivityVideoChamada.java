@@ -23,6 +23,25 @@ public class MainActivityVideoChamada extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+
+        String parametro =(String) intent.getSerializableExtra("NomeMedico");
+        TextView nome = (TextView) findViewById(R.id.txtNome);
+        nome.setText(parametro);
+
+        String parametro2 =(String) intent.getSerializableExtra("ProfissaoMedico");
+        TextView profissao = (TextView) findViewById(R.id.txtProfissao);
+        profissao.setText(parametro2);
+
+        String parametro3 =(String) intent.getSerializableExtra("EnderecoMedico");
+        TextView endereco = (TextView) findViewById(R.id.txtEndereco);
+        endereco.setText(parametro3);
+
+        Bitmap Imagem = (Bitmap) intent.getParcelableExtra("imagem");
+        ImageView image = (ImageView) findViewById(R.id.imageView2);
+        image.setImageBitmap(Imagem);
+
+
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);

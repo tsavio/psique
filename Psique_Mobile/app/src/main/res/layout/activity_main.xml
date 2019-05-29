@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityVideoChamada"
     android:centerColor="#85e2f7"
     android:endColor="#a0e6f5"
     android:startColor="#63d0e8"
+    tools:context=".MainActivityVideoChamada"
 
     >
 
@@ -18,23 +18,83 @@
         android:layout_height="39dp"
         android:layout_marginStart="118dp"
         android:layout_marginEnd="118dp"
-        android:layout_marginBottom="142dp"
+        android:layout_marginBottom="84dp"
         android:text="@string/button_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/button_name" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="366dp"
-        android:layout_height="449dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="217dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="217dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center"
+        android:text="TextView0"
+        app:layout_constraintBottom_toTopOf="@+id/txtProfissao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtProfissao"
+        android:layout_width="217dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="97dp"
+        android:gravity="center"
+        android:text="TextView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
+
+    <TextView
+        android:id="@+id/txtEndereco"
+        android:layout_width="217dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="72dp"
+        android:gravity="center"
+        android:text="TextView2"
+        app:layout_constraintBottom_toTopOf="@+id/button_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfissao" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
+        android:layout_marginEnd="142dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </android.support.constraint.ConstraintLayout>
