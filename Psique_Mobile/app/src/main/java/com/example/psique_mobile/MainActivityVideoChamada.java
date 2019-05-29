@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivityVideoChamada extends AppCompatActivity {
     ImageView imageViewFoto;
@@ -21,6 +22,7 @@ public class MainActivityVideoChamada extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);

@@ -1,7 +1,10 @@
 package com.example.psique_mobile;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -10,14 +13,27 @@ import java.util.List;
 
 public class MainActivityListadeMedicos extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_listade_medicos);
 
-        ListView lista = (ListView) findViewById(R.id.Lista_medicos);
-        ArrayAdapter adapter = new MedicosAdapter(this, adcionarMedicos());
+        final ListView lista = (ListView) findViewById(R.id.Lista_medicos);
+        final ArrayAdapter adapter = new MedicosAdapter(this, adcionarMedicos());
         lista.setAdapter(adapter);
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Medico medico = (Medico) lista.getItemAtPosition(position);
+
+                Intent intent =  new Intent(MainActivityListadeMedicos.this,MainActivityVideoChamada.class);
+                intent.putExtra("NomeMedico", medico.getNome().toString());
+
+                startActivity(intent);
+            }
+        });
 
     }
     private ArrayList<Medico> adcionarMedicos(){
