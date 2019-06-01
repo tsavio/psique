@@ -9,7 +9,9 @@
     android:startColor="#63d0e8"
     tools:context=".MainActivityVideoChamada"
 
+
     >
+
 
 
     <Button
@@ -40,61 +42,60 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
+
     <TextView
         android:id="@+id/txtNome"
-        android:layout_width="217dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="381dp"
+        android:layout_height="37dp"
         android:gravity="center"
         android:text="TextView0"
         app:layout_constraintBottom_toTopOf="@+id/txtProfissao"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/txtProfissao"
-        android:layout_width="217dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="97dp"
+        android:layout_width="366dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="45dp"
         android:gravity="center"
         android:text="TextView1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNome" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="22dp" />
 
     <TextView
         android:id="@+id/txtEndereco"
-        android:layout_width="217dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginBottom="72dp"
+        android:layout_width="378dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="98dp"
         android:gravity="center"
         android:text="TextView2"
-        app:layout_constraintBottom_toTopOf="@+id/button_camera"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtProfissao" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="16dp" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="141dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="142dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="398dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/button_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

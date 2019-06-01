@@ -1,6 +1,8 @@
 package com.example.psique_mobile;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,6 +28,11 @@ public class ActivityMenu extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -88,7 +95,7 @@ public class ActivityMenu extends AppCompatActivity
             int id = item.getItemId();
 
             if (id == R.id.nav_home) {
-                Intent intent = new Intent(ActivityMenu.this, MainActivityVideoChamada.class);
+                Intent intent = new Intent(ActivityMenu.this, MainActivityListadeMedicos.class);
                 startActivity(intent);
             } else if (id == R.id.nav_gallery) {
 

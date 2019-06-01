@@ -4,6 +4,9 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
@@ -15,6 +18,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static com.example.psique_mobile.R.drawable.foto_medico;
+
 public class MainActivityVideoChamada extends AppCompatActivity {
     ImageView imageViewFoto;
 
@@ -22,6 +27,9 @@ public class MainActivityVideoChamada extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
         Intent intent = getIntent();
 
@@ -36,10 +44,6 @@ public class MainActivityVideoChamada extends AppCompatActivity {
         String parametro3 =(String) intent.getSerializableExtra("EnderecoMedico");
         TextView endereco = (TextView) findViewById(R.id.txtEndereco);
         endereco.setText(parametro3);
-
-        Bitmap Imagem = (Bitmap) intent.getParcelableExtra("imagem");
-        ImageView image = (ImageView) findViewById(R.id.imageView2);
-        image.setImageBitmap(Imagem);
 
 
 

@@ -1,6 +1,8 @@
 package com.example.psique_mobile;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,9 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_listade_medicos);
 
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
+
         final ListView lista = (ListView) findViewById(R.id.Lista_medicos);
         final ArrayList<Medico> medicos = adcionarMedicos();
         final ArrayAdapter adapter = new MedicosAdapter(this, medicos);
@@ -34,7 +39,6 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
                 intent.putExtra("ProfissaoMedico",medicos.get(position).getProfissao());
                 intent.putExtra("EnderecoMedico",medicos.get(position).getEndereco());
                 intent.putExtra("imagem",medicos.get(position).getImagem());
-
                 startActivity(intent);
             }
         });
@@ -42,13 +46,13 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
     }
     private ArrayList<Medico> adcionarMedicos(){
         ArrayList<Medico> medicos = new ArrayList<Medico>();
-        Medico m = new Medico("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.ic_menu_camera);
+        Medico m = new Medico("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.medico3);
 
         medicos.add(m);
-        m = new Medico("Dr. Edney Soares","Psiquiatra","Olinda - PE",R.drawable.ic_menu_camera);
+        m = new Medico("Dr. Edney Soares","Psiquiatra","Olinda - PE",R.drawable.medico2);
 
         medicos.add(m);
-        m = new Medico("Dra. Nilziane Ferreira","Psicóloga / Psiquiatra","Jaboatão dos Guararapes - PE",R.drawable.ic_menu_camera);
+        m = new Medico("Dra. Nilziane Ferreira","Psicóloga / Psiquiatra","Jaboatão dos Guararapes - PE",R.drawable.medico1);
 
         medicos.add(m);
         m = new Medico("Dr. Arthur Sales","Psiquiatra","Paulista - PE",R.drawable.ic_menu_camera);
