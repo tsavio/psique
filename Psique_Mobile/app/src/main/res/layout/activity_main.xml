@@ -7,12 +7,7 @@
     android:centerColor="#85e2f7"
     android:endColor="#a0e6f5"
     android:startColor="#63d0e8"
-    tools:context=".MainActivityVideoChamada"
-
-
-    >
-
-
+    tools:context=".MainActivityVideoChamada">
 
     <Button
         android:id="@+id/button_camera"

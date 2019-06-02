@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_settings" type="id" />
+    <item name="Blog" type="id" />
+    <item name="perfil" type="id" />
+    <item name="sobre" type="id" />
+    <item name="Sobre" type="id" />
+</resources>

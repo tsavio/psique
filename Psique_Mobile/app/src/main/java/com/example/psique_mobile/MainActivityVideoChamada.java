@@ -18,7 +18,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static com.example.psique_mobile.R.drawable.foto_medico;
+
 
 public class MainActivityVideoChamada extends AppCompatActivity {
     ImageView imageViewFoto;

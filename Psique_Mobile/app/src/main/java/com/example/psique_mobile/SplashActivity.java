@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), MainActivityListadeMedicos.class));
                 finish();
             }
-        },5000);
+        },2000);
 
     }
 }
