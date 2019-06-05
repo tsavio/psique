@@ -3,6 +3,7 @@ package com.example.psique_mobile;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -34,7 +35,7 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Medico medico = (Medico) lista.getItemAtPosition(position);
+               // Medico medico = (Medico) lista.getItemAtPosition(position);
 
                 Intent intent =  new Intent(MainActivityListadeMedicos.this,MainActivityVideoChamada.class);
                 intent.putExtra("NomeMedico",medicos.get(position).getNome());
@@ -62,7 +63,11 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.Blog:
-                //blog
+                String url = "https://www.psicologiaviva.com.br/blog/superar-a-depressao/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+
                 break;
             case R.id.Sobre:
                 //Sobre

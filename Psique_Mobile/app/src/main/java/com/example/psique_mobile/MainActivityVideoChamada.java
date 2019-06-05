@@ -18,7 +18,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import static com.example.psique_mobile.R.drawable.ic_menu_camera;
 
 public class MainActivityVideoChamada extends AppCompatActivity {
     ImageView imageViewFoto;
@@ -61,7 +61,7 @@ public class MainActivityVideoChamada extends AppCompatActivity {
     }
     public void tirarFoto(){
 
-        String url = "https://hangouts.google.com/hangouts/_/raaystieqjdojcqw26iapnwjvye";
+        String url = "https://hangouts.google.com/hangouts/_/raaystieqjdojcqw 26iapnwjvye";
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
