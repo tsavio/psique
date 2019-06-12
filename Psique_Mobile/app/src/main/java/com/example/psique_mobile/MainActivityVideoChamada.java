@@ -18,13 +18,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.psique_mobile.com.google.Connection;
 
-import static com.example.psique_mobile.R.drawable.ic_menu_camera;
 
 public class MainActivityVideoChamada extends AppCompatActivity {
     ImageView imageViewFoto;
-    Connection connection;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +54,19 @@ public class MainActivityVideoChamada extends AppCompatActivity {
         findViewById(R.id.button_camera).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                videoChamada();
+                tirarFoto();
             }
         });
 
     }
-    public void videoChamada() {
-        String url = connection.getChatRoom();
+    public void tirarFoto(){
+
+        String url = "https://hangouts.google.com/hangouts/_/raaystieqjdojcqw26iapnwjvye";
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
+        // Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+        // startActivityForResult(intent, 1);
     }
 
     @Override
@@ -78,4 +79,3 @@ public class MainActivityVideoChamada extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
-
