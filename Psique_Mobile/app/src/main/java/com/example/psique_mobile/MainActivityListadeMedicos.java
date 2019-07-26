@@ -27,7 +27,7 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
         android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
-        final ListView lista = (ListView) findViewById(R.id.Lista_medicos);
+        final ListView lista = findViewById(R.id.Lista_medicos);
         final ArrayList<Medico> medicos = adcionarMedicos();
         final ArrayAdapter adapter = new MedicosAdapter(this, medicos);
         lista.setAdapter(adapter);
@@ -72,6 +72,11 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
             case R.id.Sobre:
                 //Sobre
                 break;
+            case R.id.Paciente:
+                Intent intent2 = new Intent(MainActivityListadeMedicos.this, CadastroPaciente.class);
+                startActivity(intent2);
+                break;
+
                 default:
         }
 

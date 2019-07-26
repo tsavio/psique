@@ -13,4 +13,9 @@
         android:id="@id/Sobre"
         android:title="Sobre Psique">
     </item>
+
+    <item
+        android:id="@id/Paciente"
+        android:title="Paciente">
+    </item>
 </menu>

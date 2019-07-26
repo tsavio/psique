@@ -5,4 +5,5 @@
     <item name="perfil" type="id" />
     <item name="sobre" type="id" />
     <item name="Sobre" type="id" />
+    <item name="Paciente" type="id" />
 </resources>

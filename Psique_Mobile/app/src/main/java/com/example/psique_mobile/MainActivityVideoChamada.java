@@ -34,15 +34,15 @@ public class MainActivityVideoChamada extends AppCompatActivity {
         Intent intent = getIntent();
 
         String parametro =(String) intent.getSerializableExtra("NomeMedico");
-        TextView nome = (TextView) findViewById(R.id.txtNome);
+        TextView nome = findViewById(R.id.txtNome);
         nome.setText(parametro);
 
         String parametro2 =(String) intent.getSerializableExtra("ProfissaoMedico");
-        TextView profissao = (TextView) findViewById(R.id.txtProfissao);
+        TextView profissao = findViewById(R.id.txtProfissao);
         profissao.setText(parametro2);
 
         String parametro3 =(String) intent.getSerializableExtra("EnderecoMedico");
-        TextView endereco = (TextView) findViewById(R.id.txtEndereco);
+        TextView endereco = findViewById(R.id.txtEndereco);
         endereco.setText(parametro3);
 
 
@@ -50,7 +50,7 @@ public class MainActivityVideoChamada extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
         }
-        imageViewFoto = (ImageView) findViewById(R.id.imageView);
+        imageViewFoto = findViewById(R.id.imageView);
         findViewById(R.id.button_camera).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

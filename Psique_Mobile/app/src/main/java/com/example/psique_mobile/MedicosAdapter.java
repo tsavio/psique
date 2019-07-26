@@ -27,10 +27,10 @@ public class MedicosAdapter extends ArrayAdapter<Medico> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.listade_medicos_certa,parent, false);
 
-        TextView nome = (TextView) rowView.findViewById(R.id.Nome);
-        TextView endereco = (TextView) rowView.findViewById(R.id.Endereco);
-        TextView profissao = (TextView) rowView.findViewById(R.id.Profissao);
-        ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
+        TextView nome = rowView.findViewById(R.id.Nome);
+        TextView endereco = rowView.findViewById(R.id.Endereco);
+        TextView profissao = rowView.findViewById(R.id.Profissao);
+        ImageView imagem = rowView.findViewById(R.id.imagem);
 
         nome.setText(elementos.get(position).getNome());
         endereco.setText(elementos.get(position).getEndereco());

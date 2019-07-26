@@ -3,6 +3,7 @@
     package="com.example.psique_mobile">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivityPerfilPaciente"></activity>
+        <activity android:name=".CadastroPaciente"/>
+        <activity android:name=".MainActivityPerfilPaciente" />
         <activity android:name=".MainActivityListadeMedicos" />
         <activity
             android:name=".SplashActivity"
