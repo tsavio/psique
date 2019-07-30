@@ -1,4 +1,3 @@
-import { PacienteModule } from './pages/paciente/paciente.module';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -25,7 +24,6 @@ import {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    PacienteModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

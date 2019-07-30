@@ -1,3 +1,4 @@
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NgModule } from '@angular/core';
 import { NbMenuModule } from '@nebular/theme';
 
@@ -9,6 +10,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { PacienteComponent } from './paciente/paciente.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
+import { PacienteModule } from './paciente/paciente.module';
 
 @NgModule({
   imports: [
@@ -18,10 +20,11 @@ import { ConfiguracaoComponent } from './configuracao/configuracao.component';
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
+    Ng2SmartTableModule,
+    PacienteModule
   ],
   declarations: [
     PagesComponent,
-    PacienteComponent,
     ConfiguracaoComponent,
   ],
 })
