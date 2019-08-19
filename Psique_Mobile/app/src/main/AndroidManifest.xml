@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CadastroPaciente"/>
+        <activity android:name=".ResetSenha"></activity>
+        <activity android:name=".PerfilLogin" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".Login" />
+        <activity android:name=".CadastroPaciente" />
         <activity android:name=".MainActivityPerfilPaciente" />
         <activity android:name=".MainActivityListadeMedicos" />
         <activity

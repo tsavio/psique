@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PerfilLogin">
+
+    <TextView
+        android:id="@+id/txtIdPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID:"
+        android:text="Id:"
+        android:textSize="27dp" />
+
+    <TextView
+        android:id="@+id/txtEmailPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Emai:"
+        android:text="Email:"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/btLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
+</LinearLayout>

@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,7 +24,7 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_listade_medicos);
 
-        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
         final ListView lista = findViewById(R.id.Lista_medicos);
