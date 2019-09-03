@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             alert("Usuario Cadastrdo com Sucesso!");
-                            Intent intent = new Intent(RegisterActivity.this, PerfilLogin.class);
+                            Intent intent = new Intent(RegisterActivity.this, Login.class);
                             startActivity(intent);
                             finish();
                         } else {

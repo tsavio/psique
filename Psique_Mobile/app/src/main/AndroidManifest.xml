@@ -16,7 +16,6 @@
         <activity android:name=".PerfilLogin" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Login" />
-        <activity android:name=".CadastroPaciente" />
         <activity android:name=".MainActivityPerfilPaciente" />
         <activity android:name=".MainActivityListadeMedicos" />
         <activity
@@ -30,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivityVideoChamada" />
+        <activity android:name=".CadastroPaciente" />
     </application>
 
 </manifest>

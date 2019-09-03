@@ -113,7 +113,7 @@ public class Login extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            startActivity(new Intent(Login.this, MainActivityPerfilPaciente.class));
+            startActivity(new Intent(Login.this, MainActivityListadeMedicos.class));
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -123,7 +123,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    private void login(String email, String password) {
+    private void login(final String email, String password) {
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override

@@ -22,6 +22,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivityPerfilPaciente extends AppCompatActivity {
 
@@ -31,6 +33,9 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
     TextView emailTV;
     TextView idTV;
     ImageView photoIV;
+
+    private FirebaseAuth auth;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,8 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
 
         androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
+
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -74,9 +81,26 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
         });
 
     }
+    @Override
+    protected void onStart () {
+        super.onStart();
+        auth = Conexao.getFirebaseAuth();
+        user = Conexao.getFirebaseUser();
+        verificaUser();
+    }
+
+    private void verificaUser() {
+        if (user == null) {
+            finish();
+        } else {
+            emailTV.setText("Email: " + user.getEmail());
+            idTV.setText("Id: " + user.getUid());
+        }
+    }
+
 
     private void signOut() {
-        mGoogleSignInClient.signOut()
+      mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

@@ -80,11 +80,6 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
                 default:
         }
 
-
-
-
-
-
         return super.onOptionsItemSelected(item);
     }
 
