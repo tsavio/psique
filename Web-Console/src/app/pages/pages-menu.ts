@@ -3,8 +3,13 @@ import { NbMenuItem } from '@nebular/theme';
 export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Paciente',
-    icon: 'lock-outline',
+    icon: 'person-outline',
     link: '/pages/paciente'
+  },
+  {
+    title: 'Consultas',
+    icon: 'clock-outline',
+    link: '/pages/consultas'
   },
   {
     title: 'Configuração',

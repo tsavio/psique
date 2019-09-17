@@ -8,9 +8,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
-import { PacienteComponent } from './paciente/paciente.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { PacienteModule } from './paciente/paciente.module';
+import { ConsultasComponent } from './consultas/consultas.component';
 
 @NgModule({
   imports: [
@@ -21,11 +21,12 @@ import { PacienteModule } from './paciente/paciente.module';
     ECommerceModule,
     MiscellaneousModule,
     Ng2SmartTableModule,
-    PacienteModule
+    PacienteModule,
   ],
   declarations: [
     PagesComponent,
     ConfiguracaoComponent,
+    ConsultasComponent,
   ],
 })
 export class PagesModule {
