@@ -11,6 +11,7 @@ import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -32,6 +33,7 @@ import {
     AppRoutingModule,
     NbCardModule,
     NbButtonModule,
+    NgxMaterialTimepickerModule,
 
     ThemeModule.forRoot(),
 
