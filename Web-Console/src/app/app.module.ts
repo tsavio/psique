@@ -19,6 +19,8 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbCardModule,
+  NbButtonModule,
 } from '@nebular/theme';
 
 @NgModule({
@@ -28,6 +30,8 @@ import {
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    NbCardModule,
+    NbButtonModule,
 
     ThemeModule.forRoot(),
 

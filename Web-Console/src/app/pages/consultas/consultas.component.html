@@ -1,3 +1,25 @@
-<p>
-  consultas works!
-</p>
+<div class="row">
+  <div class="col-md-12 col-lg-4 col-xxxl-4">
+    <nb-card>
+      <nb-card-header>Escolha a data da Consulta</nb-card-header>
+      <nb-card-body style="display: flex; justify-content: flex-start;">
+       <!-- ta com erro nesse input 
+       ConsultasComponent.html:6 ERROR Error: Can't format native date. 
+       To use custom formatting you have to install"-->
+        <input nbInput
+               placeholder="Form Picker"
+               [nbDatepicker]="formpicker"
+               style="width: 100%; 
+               padding: .4375rem 1rem;
+               border-radius: .25rem;
+               font-weight: 600;">
+        <nb-datepicker #formpicker format="dd.MM.yyyy"></nb-datepicker>
+      </nb-card-body>
+      <button *ngFor="let status of statuses" nbButton 
+              [status]="status" 
+              style="text-align: center">
+        Salvar Data
+      </button>
+    </nb-card>
+  </div>
+</div>
