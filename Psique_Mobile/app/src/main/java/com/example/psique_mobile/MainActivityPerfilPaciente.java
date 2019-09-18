@@ -105,7 +105,7 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(MainActivityPerfilPaciente.this,"Successfully signed out",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MainActivityPerfilPaciente.this, Login.class));
+                        startActivity(new Intent(MainActivityPerfilPaciente.this, LoginPrincipal.class));
                         finish();
                     }
                 });

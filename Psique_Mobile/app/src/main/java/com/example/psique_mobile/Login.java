@@ -34,21 +34,21 @@ public class Login extends AppCompatActivity {
     private TextView txtResetSenha;
     private FirebaseAuth auth;
 
-    int RC_SIGN_IN = 0;
-    SignInButton signInButton;
-    GoogleSignInClient mGoogleSignInClient;
+//    int RC_SIGN_IN = 0;
+//    SignInButton signInButton;
+//    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        signInButton = findViewById(R.id.sign_in_button);
-
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+//        signInButton = findViewById(R.id.sign_in_button);
+//
+//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestEmail()
+//                .build();
+//        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
@@ -58,14 +58,14 @@ public class Login extends AppCompatActivity {
     }
 
     private void eventoClick() {
-        btncadastrar.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+       // btncadastrar.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+       //     public void onClick(View v) {
+       //         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+       //         startActivity(intent);
+       //         finish();
+       //     }
+      //  });
         btnentrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,45 +83,45 @@ public class Login extends AppCompatActivity {
 
             }
         });
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
-        });
+//        signInButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                signIn();
+//            }
+//        });
     }
 
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
+//    private void signIn() {
+//        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+//        startActivityForResult(signInIntent, RC_SIGN_IN);
+//    }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
-        }
-    }
-
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            // Signed in successfully, show authenticated UI.
-            startActivity(new Intent(Login.this, MainActivityListadeMedicos.class));
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w("Google Sign In Error", "signInResult:failed code=" + e.getStatusCode());
-            Toast.makeText(Login.this, "Failed", Toast.LENGTH_LONG).show();
-            finish();
-        }
-    }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+//        if (requestCode == RC_SIGN_IN) {
+//            // The Task returned from this call is always completed, no need to attach
+//            // a listener.
+//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            handleSignInResult(task);
+//        }
+//    }
+//
+//    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+//        try {
+//            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+//            // Signed in successfully, show authenticated UI.
+//            startActivity(new Intent(Login.this, MainActivityListadeMedicos.class));
+//        } catch (ApiException e) {
+//            // The ApiException status code indicates the detailed failure reason.
+//            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+//            Log.w("Google Sign In Error", "signInResult:failed code=" + e.getStatusCode());
+//            Toast.makeText(Login.this, "Failed", Toast.LENGTH_LONG).show();
+//            finish();
+//        }
+//    }
 
     private void login(final String email, String password) {
         auth.signInWithEmailAndPassword(email, password)
@@ -148,7 +148,7 @@ public class Login extends AppCompatActivity {
         edtemail = (EditText) findViewById(R.id.edtemail);
         edtpassword = (EditText) findViewById(R.id.edtpassword);
         btnentrar = (Button) findViewById(R.id.btnentrar);
-        btncadastrar = (Button) findViewById(R.id.btncadastrar);
+       // btncadastrar = (Button) findViewById(R.id.btncadastrar);
         txtResetSenha = (TextView) findViewById(R.id.txtResetSenha);
 
 
@@ -156,10 +156,10 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if (account != null) {
-            startActivity(new Intent(Login.this, MainActivityPerfilPaciente.class));
-        }
+//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+//        if (account != null) {
+//            startActivity(new Intent(Login.this, MainActivityPerfilPaciente.class));
+//        }
         super.onStart();
         auth = Conexao.getFirebaseAuth();
         }

@@ -23,7 +23,7 @@
         tools:layout_editor_absoluteY="92dp" />
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/btn_google_signin"
+        android:id="@+id/sign_in_button"
         android:layout_width="349dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -34,10 +34,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"></com.google.android.gms.common.SignInButton>
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+    </com.google.android.gms.common.SignInButton>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btEntrar"
         android:layout_width="349dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -48,10 +50,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_google_signin" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btncriarConta"
         android:layout_width="349dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -64,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btEntrar" />
 
     <CheckBox
         android:id="@+id/checkBox"

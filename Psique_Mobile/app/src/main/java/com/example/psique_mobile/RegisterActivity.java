@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnvoltarlogin.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent intent = new Intent(getApplicationContext(),Login.class);
+                Intent intent = new Intent(getApplicationContext(),LoginPrincipal.class);
                 startActivity(intent);
                 finish();
             }
