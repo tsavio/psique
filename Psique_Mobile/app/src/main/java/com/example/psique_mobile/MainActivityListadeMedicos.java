@@ -49,6 +49,11 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
@@ -61,13 +66,14 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
             case R.id.perfil:
                 Intent intent = new Intent(MainActivityListadeMedicos.this, MainActivityPerfilPaciente.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.Blog:
                 String url = "https://www.psicologiaviva.com.br/blog/superar-a-depressao/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
-
+                finish();
                 break;
             case R.id.Sobre:
                 //Sobre
@@ -75,8 +81,8 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
             case R.id.Paciente:
                 Intent intent2 = new Intent(MainActivityListadeMedicos.this, CadastroPaciente.class);
                 startActivity(intent2);
+                finish();
                 break;
-
                 default:
         }
 
