@@ -8,7 +8,7 @@ firebase.initializeApp({
 
 class PacientController {
     /**
-     * Liste of Articles
+     * List of Pacients
      * @param {*} req
      * @param {*} res
      */
@@ -16,7 +16,7 @@ class PacientController {
         let resp = null;
 
         var db = firebase.database();
-        var ref = db.ref("/Pessoas");  //Set the current directory you are working in
+        var ref = db.ref("/Pessoas");
 
 
         await ref.once("value")
