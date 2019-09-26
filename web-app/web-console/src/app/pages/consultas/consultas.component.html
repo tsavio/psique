@@ -8,12 +8,19 @@
                border-radius: .25rem;
                font-weight: 600;">
         <nb-datepicker #formpicker format="dd.MM.yyyy"></nb-datepicker>
-        <input placeholder="Hora" [ngxTimepicker]="picker">
+        <input nbInput placeholder="Hora" [ngxTimepicker]="picker" style="width:100%;
+                padding: .4375rem 1rem;
+                border-radius: .25rem;
+                font-weight: 600;">
         <ngx-material-timepicker #picker></ngx-material-timepicker>
       </nb-card-body>
-      <button *ngFor="let status of statuses" nbButton [status]="status" style="text-align: center">
-        Salvar Data
-      </button>
+
+      <nb-card-footer style="text-align: left;">
+  
+        <button *ngFor="let status of statuses" nbButton [status]="status"  class="col-3">
+            Salvar Data
+          </button>
+      </nb-card-footer>  
     </nb-card>
   </div>
 </div>

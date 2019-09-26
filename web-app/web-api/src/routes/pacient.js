@@ -7,6 +7,7 @@ const router = express.Router();
 const PacientController = require("../controllers/PacientController");
 const controller = new PacientController();
 
-router.get("/", (req, res) => controller.index(req, res));
+router.get("/", (req, res) => controller.getAllPatient(req, res));
+router.get("/:patientID", (req, res) => controller.getPatient(req, res));
 
 module.exports = router;
