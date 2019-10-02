@@ -2,6 +2,12 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
+    title: 'Dashboard',
+    icon: 'home-outline',
+    link: '/pages/dashboard',
+    home: true,
+  },
+  {
     title: 'Paciente',
     icon: 'person-outline',
     link: '/pages/paciente'
@@ -15,13 +21,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Configuração',
     icon: 'settings-2-outline',
     link: '/pages/configuracao'
+  },
+  {
+    title: 'Login',
+    icon:'person-add-outline',
+    link: '/auth/login',
   }
-  // {
-  //   title: 'E-commerce',
-  //   icon: 'shopping-cart-outline',
-  //   link: '/pages/dashboard',
-  //   home: true,
-  // },
+
   // {
   //   title: 'IoT Dashboard',
   //   icon: 'home-outline',
@@ -237,27 +243,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //     },
   //   ],
   // },
-  // {
-  //   title: 'Auth',
-  //   icon: 'lock-outline',
-  //   children: [
-  //     {
-  //       title: 'Login',
-  //       link: '/auth/login',
-  //     },
-  //     {
-  //       title: 'Register',
-  //       link: '/auth/register',
-  //     },
-  //     {
-  //       title: 'Request Password',
-  //       link: '/auth/request-password',
-  //     },
-  //     {
-  //       title: 'Reset Password',
-  //       link: '/auth/reset-password',
-  //     },
-  //   ],
-  // }
   
+
 ];
