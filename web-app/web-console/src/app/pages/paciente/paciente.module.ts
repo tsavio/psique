@@ -7,7 +7,7 @@ import { ModalPatientComponent } from './modal-patient/modal-patient.component';
 import { ShowcaseDialogComponent } from '../modal-overlays/dialog/showcase-dialog/showcase-dialog.component'
 
 /* MODULES IMPORT */
-import { NbCardModule, NbDialogModule } from '@nebular/theme';
+import { NbCardModule, NbDialogModule, NbAlertModule } from '@nebular/theme';
 import { PacienteNameComponent } from './paciente-name/paciente-name.component';
 
 
@@ -17,6 +17,7 @@ const MODULES = [
   Ng2SmartTableModule,
   ThemeModule,
   NbDialogModule.forRoot(),
+  NbAlertModule
 ]
 
 const COMPONENTS = [ 
