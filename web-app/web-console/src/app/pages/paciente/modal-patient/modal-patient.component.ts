@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NbDialogRef, NbThemeService } from '@nebular/theme';
-
+import { hangoutKey }  from '../../../config/hangoutKey';
 @Component({
   selector: 'b-modal-patient',
   templateUrl: './modal-patient.component.html',
@@ -12,22 +12,28 @@ export class ModalPatientComponent implements OnInit {
 
   @Input() title: string;
 
-  prefixCall = "https://hangouts.google.com/call/";
-  generateRamdon = "gerar 9 letras aleatorias";
-  sufixCall = "raaystieqjdojcqw26"+ this.generateRamdon +"?no_rd";
-
-  urlCall = this.prefixCall + this.generateRamdon + this.sufixCall;
-
   data = null;
- 
+  
   ngOnInit() {
-    console.log(this.title);
     this.data = JSON.parse(this.title);
   }
 
   close() {
     this.ref.close();
   }
+  
+  generateCallKey() {
+    var letras = 'abcdefghiklmnopqrstuvwxyz';
+    var key = '';
+    for (var i = 0; i < 9; i++) {
+      var rnum = Math.floor(Math.random() * letras.length);
+      key += letras.substring(rnum, rnum + 1);
+    }
+    return key;
+  }
 
-
+  openCall(){
+    var key = this.generateCallKey();
+    return window.open("https://hangouts.google.com/hangouts/_/raaystieqjdojcqw26iapnwjvye");
+  }
 }
