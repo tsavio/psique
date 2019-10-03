@@ -1,38 +1,39 @@
 <nb-card>
-  <nb-card-header>Perfil paciente</nb-card-header>  
+  <nb-card-header>Perfil paciente</nb-card-header>
   <nb-card-body>
     <table class="table table-striped" width="100%">
-    <tr>
+      <tr>
         <td>
-        Nome:
-          </td>
-          <td>
-            {{data.nome}}
-          </td>
-    </tr>
-    <tr>
-      <td>
-        Endereço:
-      </td>
-      <td>
+          Nome:
+        </td>
+        <td>
+          {{data.nome}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          E-mail:
+        </td>
+        <td>
           {{data.email}}
-      </td>
-    </tr>
-    <tr>
+        </td>
+      </tr>
+      <tr>
         <td>
           Telefone:
         </td>
         <td>
-            {{data.telefone}}
+          {{data.telefone}}
         </td>
       </tr>
     </table>
   </nb-card-body>
-  <nb-card-footer>    
-   <div id="outer">
-     <button type="button" class="btn btn-secondary inner" id="outerLeft"(click)="close()">Close</button>
-     <button type="button" class="btn btn-secondary inner" id="outerRight"(click)="close()">Ligar</button>
+  <nb-card-footer>
+    <div id="outer">
+      <button type="button" class="btn btn-secondary inner" id="outerLeft" (click)="close()">Close</button>
+      <button type="button" class="btn btn-secondary inner" id="outerRight"> <a
+          href="https://hangouts.google.com/hangouts/_/raaystieqjdojcqw26iapnwjvye"
+          style="text-decoration: none; color: inherit">Ligar</a> </button>
     </div>
   </nb-card-footer>
 </nb-card>
-

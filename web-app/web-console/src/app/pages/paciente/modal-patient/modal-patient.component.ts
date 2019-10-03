@@ -12,13 +12,20 @@ export class ModalPatientComponent implements OnInit {
 
   @Input() title: string;
 
- data = null;
+  prefixCall = "https://hangouts.google.com/call/";
+  generateRamdon = "gerar 9 letras aleatorias";
+  sufixCall = "raaystieqjdojcqw26"+ this.generateRamdon +"?no_rd";
+
+  urlCall = this.prefixCall + this.generateRamdon + this.sufixCall;
+
+  data = null;
+ 
   ngOnInit() {
     console.log(this.title);
     this.data = JSON.parse(this.title);
   }
 
-  close(){
+  close() {
     this.ref.close();
   }
 
