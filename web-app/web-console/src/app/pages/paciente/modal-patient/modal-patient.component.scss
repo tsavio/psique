@@ -6,25 +6,11 @@
 //     }
 //   }
 
-.porraLeft{
-
-    margin-left: 50px;
-}
-.porraRight{
-    margin-right: 50px;
-}
   
-#outerLeft
+.btn-row
 {
-    width:40%;
-    float: left
-}
-#outerRight
-{
-    width:40%;
-    float: right;
-}
-.inner
-{
-    display: inline-block;
+    flex-direction: row;
+    justify-content: space-between;
+	display: flex;
+    // float: left
 }
