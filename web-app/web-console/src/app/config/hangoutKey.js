@@ -1,10 +1,10 @@
 
 const hangoutKey =
 {
-    prefixCall: "https://hangouts.google.com/call/",
-    sufixCall: "raaystieqjdojcqw26",  
+    fixCall: "https://hangouts.google.com/call/",
+    prefixCall: "raaystieqjdojcqw26",  
     generateKey: "gera 9 letras aleatorias",
-    endUrl :"?no_rd"
+    sufixUrl :"?no_rd"
 };
-
+// URL Example https://hangouts.google.com/call/raaystieqjdojcqw26iapnwjvye?no_rd
 export {hangoutKey};

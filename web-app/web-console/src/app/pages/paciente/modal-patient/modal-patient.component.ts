@@ -4,6 +4,7 @@ import { hangoutKey }  from '../../../config/hangoutKey';
 import Swal from 'sweetalert2';
 
 
+
 @Component({
   selector: 'b-modal-patient',
   templateUrl: './modal-patient.component.html',
@@ -17,9 +18,9 @@ export class ModalPatientComponent implements OnInit {
     private toastService: NbToastrService) { }
 
   @Input() title: string;
-
-  data = null;
   
+  data = null;
+
   ngOnInit() {
     this.data = JSON.parse(this.title);
   }
@@ -27,18 +28,18 @@ export class ModalPatientComponent implements OnInit {
   close() {
     this.ref.close();
   }
-  
+
   generateCallKey() {
-    var letras = 'abcdefghiklmnopqrstuvwxyz';
+    var letters = 'abcdefghiklmnopqrstuvwxyz';
     var key = '';
     for (var i = 0; i < 9; i++) {
-      var rnum = Math.floor(Math.random() * letras.length);
-      key += letras.substring(rnum, rnum + 1);
+      var rnum = Math.floor(Math.random() * letters.length);
+      key += letters.substring(rnum, rnum + 1);
     }
     return key;
   }
 
-  openCall(){
+  openCall() {
     var key = this.generateCallKey();
     Swal.fire(
       'Video Chamada',
@@ -46,7 +47,7 @@ export class ModalPatientComponent implements OnInit {
       'success'
     )
 
-    return window.open("https://hangouts.google.com/hangouts/_/raaystieqjdojcqw26iapnwjvye");
+    return window.open(hangoutKey.fixCall + hangoutKey.prefixCall + "iapnwjvye");
     
   }
 }
