@@ -1,0 +1,38 @@
+<nb-card>
+  <nb-card-header>Perfil paciente</nb-card-header>  
+  <nb-card-body>
+    <table class="table table-striped" width="100%">
+    <tr>
+        <td>
+        Nome:
+          </td>
+          <td>
+            {{data.nome}}
+          </td>
+    </tr>
+    <tr>
+      <td>
+        Endereço:
+      </td>
+      <td>
+          {{data.email}}
+      </td>
+    </tr>
+    <tr>
+        <td>
+          Telefone:
+        </td>
+        <td>
+            {{data.telefone}}
+        </td>
+      </tr>
+    </table>
+  </nb-card-body>
+  <nb-card-footer>    
+   <div id="outer">
+     <button type="button" class="btn btn-secondary inner" id="outerLeft"(click)="close()">Close</button>
+     <button type="button" class="btn btn-secondary inner" id="outerRight"(click)="close()">Ligar</button>
+    </div>
+  </nb-card-footer>
+</nb-card>
+

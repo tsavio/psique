@@ -1,5 +1,8 @@
+import { PacienteNameComponent } from './paciente-name/paciente-name.component';
+import { ModalPatientComponent } from './modal-patient/modal-patient.component';
 import { PacientService } from './../../services/pacient.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { NbDialogRef, NbDialogService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-paciente',
@@ -9,7 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PacienteComponent implements OnInit {
   
-  constructor(private pacientService: PacientService) {
+  constructor(private pacientService: PacientService, private dialogService: NbDialogService) {
   }
 
   pacientes : any = null;
@@ -17,7 +20,9 @@ export class PacienteComponent implements OnInit {
   settings = {
     columns: {
       nome: {
-        title: 'Nome',     
+        title: 'Nome',
+        type: 'custom',
+        renderComponent: PacienteNameComponent,                
       },
       telefone: {
         title: 'Telefone',
@@ -26,17 +31,29 @@ export class PacienteComponent implements OnInit {
         title: 'E-mail',
       }
     }, 
-    actions: false,
-  }
+    actions: false
+  };
+/*
+  [{
+asdd:dasd
+  },
+  [{
 
+  },
+  [{
+
+  }];
+  */
   getAllPacients(){
     this.pacientService.getAll().subscribe((response:any) => this.pacientes = response.data);
   }
+
 
   ngOnInit(){
     this.getAllPacients();
   }
 
+ 
   
 
 }
