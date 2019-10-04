@@ -40,12 +40,15 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
                 Intent intent =  new Intent(MainActivityListadeMedicos.this,MainActivityVideoChamada.class);
                 intent.putExtra("NomeMedico",medicos.get(position).getNome());
                 intent.putExtra("ProfissaoMedico",medicos.get(position).getProfissao());
-                intent.putExtra("EnderecoMedico",medicos.get(position).getEndereco());
-                intent.putExtra("imagem",medicos.get(position).getImagem());
+                //intent.putExtra("EnderecoMedico",medicos.get(position).getEndereco());
+                //intent.putExtra("imagem",medicos.get(position).getImagem());
                 startActivity(intent);
             }
         });
 
+    }
+
+    private boolean adcionarMedicos() {
     }
 
     @Override
@@ -83,27 +86,27 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private ArrayList<Medico> adcionarMedicos(){
-        ArrayList<Medico> medicos = new ArrayList<Medico>();
-        Medico m = new Medico("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.ic_menu_camera);
+    //private ArrayList<Medico> adcionarMedicos(){
+      //  ArrayList<Medico> medicos = new ArrayList<Medico>();
+        //Medico m = new Medico("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.ic_menu_camera);
 
-        medicos.add(m);
-        m = new Medico("Dr. Edney Soares","Psiquiatra","Olinda - PE",R.drawable.ic_menu_camera);
+//        medicos.add(m);
+//        m = new Medico("Dr. Edney Soares","Psiquiatra","Olinda - PE",R.drawable.ic_menu_camera);
 
-        medicos.add(m);
-        m = new Medico("Dra. Nilziane Ferreira","Psicóloga / Psiquiatra","Jaboatão dos Guararapes - PE",R.drawable.ic_menu_camera);
+//        medicos.add(m);
+//        m = new Medico("Dra. Nilziane Ferreira","Psicóloga / Psiquiatra","Jaboatão dos Guararapes - PE",R.drawable.ic_menu_camera);
 
-        medicos.add(m);
-        m = new Medico("Dr. Arthur Sales","Psiquiatra","Paulista - PE",R.drawable.ic_menu_camera);
+//        medicos.add(m);
+//        m = new Medico("Dr. Arthur Sales","Psiquiatra","Paulista - PE",R.drawable.ic_menu_camera);
 
-        medicos.add(m);
-        m = new Medico("Dra. Andrea Marques","Psicóloga","Caruaru - PE",R.drawable.ic_menu_camera);
+//        medicos.add(m);
+//        m = new Medico("Dra. Andrea Marques","Psicóloga","Caruaru - PE",R.drawable.ic_menu_camera);
 
-        medicos.add(m);
+//        medicos.add(m);
 
-        return medicos;
+//        return medicos;
 
 
-    }
+    //}
 
 }
