@@ -28,7 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivityPerfilPaciente extends AppCompatActivity {
 
     GoogleSignInClient mGoogleSignInClient;
-    Button sign_out;
+    Button sign_out, btnVoltar;
     TextView nameTV;
     TextView emailTV;
     TextView idTV;
@@ -47,10 +47,10 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
         emailTV = findViewById(R.id.email);
         idTV = findViewById(R.id.id);
         photoIV = findViewById(R.id.photo);
+        btnVoltar = findViewById(R.id.btnVoltar);
 
         androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
-
 
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -67,9 +67,9 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
 
-            nameTV.setText("Name: "+personName);
-            emailTV.setText("Email: "+personEmail);
-            idTV.setText("ID: "+personId);
+            nameTV.setText("Name: " + personName);
+            emailTV.setText("Email: " + personEmail);
+            idTV.setText("ID: " + personId);
             Glide.with(this).load(personPhoto).into(photoIV);
         }
 
@@ -80,14 +80,27 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
             }
         });
 
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivityListadeMedicos.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
     @Override
-    protected void onStart () {
+    protected void onStart() {
         super.onStart();
         auth = Conexao.getFirebaseAuth();
         user = Conexao.getFirebaseUser();
         verificaUser();
     }
+
+
+
 
     private void verificaUser() {
         if (user == null) {
@@ -100,15 +113,19 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
 
 
     private void signOut() {
-      mGoogleSignInClient.signOut()
+        mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(MainActivityPerfilPaciente.this,"Successfully signed out",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivityPerfilPaciente.this, "Successfully signed out", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MainActivityPerfilPaciente.this, LoginPrincipal.class));
+
                         finish();
                     }
                 });
     }
 }
+
+
+
 
