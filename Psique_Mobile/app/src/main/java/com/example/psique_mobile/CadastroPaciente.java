@@ -1,5 +1,6 @@
 package com.example.psique_mobile;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import androidx.annotation.NonNull;
@@ -115,6 +116,7 @@ public class CadastroPaciente extends AppCompatActivity {
             databasePessoa.child("Pessoas").child(pessoa.getId()).setValue(pessoa);
             Toast.makeText(this, "Paciente Adcionado", Toast.LENGTH_LONG).show();
             ClearTxt();
+
         }else if (id == R.id.update){
             Pessoa pessoa = new Pessoa();
             pessoa.setId(pessoaSelecionada.getId());
@@ -125,12 +127,18 @@ public class CadastroPaciente extends AppCompatActivity {
             databasePessoa.child("Pessoas").child(pessoa.getId()).setValue(pessoa);
             Toast.makeText(this, "Cadastro Editado com Sucesso", Toast.LENGTH_LONG).show();
             ClearTxt();
+
         }else if (id == R.id.delete){
             Pessoa pessoa = new Pessoa();
             pessoa.setId(pessoaSelecionada.getId());
             databasePessoa.child("Pessoas").child(pessoa.getId()).removeValue();
             Toast.makeText(this, "Paciente Deletado", Toast.LENGTH_LONG).show();
             ClearTxt();
+
+        }else if (id == R.id.voltar){
+            Intent intent = new Intent(getApplicationContext(),MainActivityListadeMedicos.class);
+            startActivity(intent);
+            finish();
         }
         return true;
 }
@@ -140,5 +148,10 @@ public class CadastroPaciente extends AppCompatActivity {
         edEmail.setText("");
         edCpf.setText("");
         edTelefone.setText("");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

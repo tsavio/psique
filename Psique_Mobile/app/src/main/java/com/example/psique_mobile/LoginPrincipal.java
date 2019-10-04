@@ -80,6 +80,7 @@ public class LoginPrincipal extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -111,6 +112,7 @@ public class LoginPrincipal extends AppCompatActivity {
     private void inicializarComponentes() {
         btEntrar = (Button) findViewById(R.id.btEntrar);
         btncriarConta = (Button) findViewById(R.id.btncriarConta);
+      //  signInButton = findViewById(R.id.sign_in_button);
 
     }
 
@@ -119,6 +121,8 @@ public class LoginPrincipal extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
             startActivity(new Intent(LoginPrincipal.this, MainActivityPerfilPaciente.class));
+            finish();
+
         }
         super.onStart();
         auth = Conexao.getFirebaseAuth();
