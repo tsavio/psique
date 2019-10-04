@@ -33,9 +33,9 @@ public class MedicosAdapter extends ArrayAdapter<Medico> {
         ImageView imagem = rowView.findViewById(R.id.imagem);
 
         nome.setText(elementos.get(position).getNome());
-        endereco.setText(elementos.get(position).getEndereco());
+       // endereco.setText(elementos.get(position).getEndereco());
         profissao.setText(elementos.get(position).getProfissao());
-        imagem.setImageResource(elementos.get(position).getImagem());
+        //imagem.setImageResource(elementos.get(position).getImagem());
         return rowView;
     }
 

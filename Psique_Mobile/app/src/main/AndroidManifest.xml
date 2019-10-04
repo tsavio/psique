@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CadastroMedico"></activity>
         <activity
             android:name=".TelaPrincipal"
             android:label="@string/title_activity_tela_principal"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginPrincipal" />
         <activity android:name=".ResetSenha" />
         <activity android:name=".PerfilLogin" />
@@ -33,8 +34,8 @@
         <activity android:name=".MainActivityVideoChamada" />
         <activity android:name=".CadastroPaciente" />
     </application>
-    <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>

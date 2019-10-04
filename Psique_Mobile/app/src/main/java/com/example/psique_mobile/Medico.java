@@ -2,33 +2,57 @@ package com.example.psique_mobile;
 
 public class Medico {
 
-        private String nome;
-        private int imagem;
-        private String profissao;
-        private String endereco;
+    private String id;
+    private String nome;
+    private String profissao;
+    private String email;
+    private String crm;
+    private String telefone;
+    private String cpf;
 
-       public Medico(String nome, String profissao, String endereco, int imagem){
-               this.endereco = endereco;
+    //@androidx.annotation.NonNull
+        @Override
+    public String toString() {
+        return nome;
+    }
+
+    public Medico(){
+
+    }
+
+       public Medico(String nome, String profissao, String email, String crm, String id, String telefone, String cpf){
+               this.email = email;
                this.nome = nome;
-               this.imagem = imagem;
                this.profissao = profissao;
+               this.crm = crm;
+               this.id = id;
+               this.telefone = telefone;
+               this.cpf = cpf;
        }
 
         public String getNome() {
                 return nome;
         }
 
-        public void setNome(String nome) {
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setNome(String nome) {
                 this.nome = nome;
         }
 
-        public int getImagem() {
-                return imagem;
-        }
+        public String getCrm() {
+        return crm;
+    }
 
-        public void setImagem(int imagem) {
-                this.imagem = imagem;
-        }
+        public void setCrm(String nome) {
+        this.crm = crm;
+    }
 
         public String getProfissao() {
                 return profissao;
@@ -38,11 +62,25 @@ public class Medico {
                 this.profissao = profissao;
         }
 
-        public String getEndereco() {
-                return endereco;
+        public String getEmail() {
+                return email;
         }
 
-        public void setEndereco(String endereco) {
-                this.endereco = endereco;
+        public void setEmail(String endereco) {
+                this.email = email;
         }
+
+        public String getId() {
+        return id;
+    }
+
+        public void setId(String id) { this.id = id; }
+
+        public String getTelefone() {
+        return telefone;
+    }
+
+        public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }
