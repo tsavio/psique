@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getBaseContext(), CadastroMedico.class));
+                startActivity(new Intent(getBaseContext(), PsychotherapistRegister.class));
                 finish();
             }
         },2000);

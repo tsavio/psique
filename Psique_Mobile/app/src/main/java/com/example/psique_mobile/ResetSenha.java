@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reset_senha);
+        setContentView(R.layout.activity_reset_password);
         inicializarComponentes();
         eventoClick();
 
@@ -67,7 +67,7 @@ import com.google.firebase.auth.FirebaseAuth;
         @Override
         protected void onStart() {
             super.onStart();
-            auth = Conexao.getFirebaseAuth();
+            auth = Connection.getFirebaseAuth();
         }
     }
 

@@ -10,12 +10,12 @@ import com.google.firebase.database.core.view.View;
 
 import java.util.List;
 
-public class PessoaListAdapter extends ArrayAdapter<Pessoa> {
+public class PersonListAdapter extends ArrayAdapter<Pessoa> {
 
     private Activity context;
     private List<Pessoa> pessoaList;
 
-    public PessoaListAdapter(Activity context, List<Pessoa> pessoaList) {
+    public PersonListAdapter(Activity context, List<Pessoa> pessoaList) {
 
         super(context, R.layout.pessoa_item, pessoaList);
         this.context = context;

@@ -3,7 +3,6 @@ package com.example.psique_mobile;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -28,10 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static android.widget.AdapterView.*;
-
-public class CadastroMedico extends AppCompatActivity {
-    EditText edNome, edEmail, edCpf, edTelefone, edCrm, edProfissao;
+public class PsychotherapistRegister extends AppCompatActivity {
+    EditText edNome, edEmail, edCpf, edTelefone, edCrp, edProfissao;
     ListView list_dados_medico;
 
     FirebaseDatabase firebaseDatabase;
@@ -46,7 +43,7 @@ public class CadastroMedico extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_medico);
+        setContentView(R.layout.activity_psychotherapist_register);
         androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
@@ -54,7 +51,7 @@ public class CadastroMedico extends AppCompatActivity {
         edEmail = findViewById(R.id.edEmail);
         edCpf = findViewById(R.id.edCpf);
         edTelefone = findViewById(R.id.edTelefone);
-        edCrm = findViewById(R.id.edCrm);
+        edCrp = findViewById(R.id.edCrp);
         edProfissao = findViewById(R.id.edProfissao);
         list_dados_medico = findViewById(R.id.list_dados_medico);
 
@@ -66,7 +63,7 @@ public class CadastroMedico extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 medicoSelecionado = (Medico) parent.getItemAtPosition(position);
                 edProfissao.setText(medicoSelecionado.getProfissao());
-                edCrm.setText(medicoSelecionado.getCrm());
+                edCrp.setText(medicoSelecionado.getCrp());
                 edCpf.setText(medicoSelecionado.getCpf());
                 edEmail.setText(medicoSelecionado.getEmail());
                 edNome.setText(medicoSelecionado.getNome());
@@ -87,7 +84,7 @@ public class CadastroMedico extends AppCompatActivity {
                     Medico medico = objSnapshot.getValue(Medico.class);
                     listMedico.add(medico);
                 }
-                arrayAdapterMedico = new ArrayAdapter<Medico>(CadastroMedico.this,
+                arrayAdapterMedico = new ArrayAdapter<Medico>(PsychotherapistRegister.this,
                         android.R.layout.simple_list_item_1,listMedico);
                 list_dados_medico.setAdapter(arrayAdapterMedico);
 
@@ -101,7 +98,7 @@ public class CadastroMedico extends AppCompatActivity {
     }
 
     private void inicializarFirebase() {
-        FirebaseApp.initializeApp(CadastroMedico.this);
+        FirebaseApp.initializeApp(PsychotherapistRegister.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseDatabase.setPersistenceEnabled(true);
         databaseMedico = firebaseDatabase.getReference();
@@ -109,7 +106,7 @@ public class CadastroMedico extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_cadastro_medico,menu);
+        getMenuInflater().inflate(R.menu.menu_psychotherapist_register,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -125,10 +122,10 @@ public class CadastroMedico extends AppCompatActivity {
             medico.putString("email",edEmail.getText().toString());
             medico.putString("cpf",edCpf.getText().toString());
             medico.putString("telefone",edTelefone.getText().toString());
-            medico.putString("crm",edCrm.getText().toString());
+            medico.putString("crp",edCrp.getText().toString());
             medico.putString("profissao",edProfissao.getText().toString());
             databaseMedico.child("Medico").child(medico1.getId()).setValue(medico);
-            Intent intent = new Intent(this, MainActivityListadeMedicos.class);
+            Intent intent = new Intent(this, MainActivityPsychotherapistList.class);
 intent.putExtras(medico);
 startActivityForResult(intent, CONSTANTE_CADASTRO_MEDICO);
 
@@ -142,7 +139,7 @@ startActivityForResult(intent, CONSTANTE_CADASTRO_MEDICO);
             medico.setEmail(edEmail.getText().toString().trim());
             medico.setCpf(edCpf.getText().toString().trim());
             medico.setTelefone(edTelefone.getText().toString().trim());
-            medico.setCrm(edCrm.getText().toString().trim());
+            medico.setCrp(edCrp.getText().toString().trim());
             medico.setProfissao(edProfissao.getText().toString().trim());
             databaseMedico.child("Medico").child(medico.getId()).setValue(medico);
             Toast.makeText(this, "Cadastro Editado com Sucesso", Toast.LENGTH_LONG).show();
@@ -162,7 +159,7 @@ startActivityForResult(intent, CONSTANTE_CADASTRO_MEDICO);
         edEmail.setText("");
         edCpf.setText("");
         edTelefone.setText("");
-        edCrm.setText("");
+        edCrp.setText("");
         edProfissao.setText("");
     }
 }

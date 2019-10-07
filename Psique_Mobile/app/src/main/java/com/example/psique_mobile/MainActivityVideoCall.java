@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 
 
-public class MainActivityVideoChamada extends AppCompatActivity {
+public class MainActivityVideoCall extends AppCompatActivity {
     ImageView imageViewFoto;
 
     @Override

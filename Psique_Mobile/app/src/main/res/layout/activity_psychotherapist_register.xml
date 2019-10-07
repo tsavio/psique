@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroMedico">
+    tools:context=".PsychotherapistRegister">
 
     <EditText
         android:id="@+id/edNome"
@@ -58,11 +58,11 @@
         app:layout_constraintTop_toBottomOf="@+id/edCpf" />
 
     <EditText
-        android:id="@+id/edCrm"
+        android:id="@+id/edCrp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:hint="Digite seu CRM"
+        android:hint="Digite seu CRP"
         android:inputType="number"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +79,7 @@
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edCrm" />
+        app:layout_constraintTop_toBottomOf="@+id/edCrp" />
     <ListView
         android:id="@+id/list_dados_medico"
         android:layout_width="402dp"

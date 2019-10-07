@@ -2,14 +2,12 @@ package com.example.psique_mobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.core.view.View;
 
 public class PerfilLogin extends AppCompatActivity {
 
@@ -22,7 +20,7 @@ public class PerfilLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil_login);
+        setContentView(R.layout.activity_profile_login);
 
         inicializarComponentes();
         eventoClick();
@@ -40,7 +38,7 @@ public class PerfilLogin extends AppCompatActivity {
         btLogout.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Conexao.logOut();
+                Connection.logOut();
                 finish();
             }
         });
@@ -50,8 +48,8 @@ public class PerfilLogin extends AppCompatActivity {
         @Override
         protected void onStart () {
             super.onStart();
-            auth = Conexao.getFirebaseAuth();
-            user = Conexao.getFirebaseUser();
+            auth = Connection.getFirebaseAuth();
+            user = Connection.getFirebaseUser();
             verificaUser();
         }
 

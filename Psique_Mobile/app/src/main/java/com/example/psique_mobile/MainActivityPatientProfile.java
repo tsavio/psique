@@ -25,7 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivityPerfilPaciente extends AppCompatActivity {
+public class MainActivityPatientProfile extends AppCompatActivity {
 
     GoogleSignInClient mGoogleSignInClient;
     Button sign_out, btnVoltar;
@@ -40,7 +40,7 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_perfil_paciente);
+        setContentView(R.layout.activity_main_patient_profile);
 
         sign_out = findViewById(R.id.log_out);
         nameTV = findViewById(R.id.name);
@@ -58,7 +58,7 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(MainActivityPerfilPaciente.this);
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(MainActivityPatientProfile.this);
         if (acct != null) {
             String personName = acct.getDisplayName();
             String personGivenName = acct.getGivenName();
@@ -83,7 +83,7 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivityListadeMedicos.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivityPsychotherapistList.class);
                 startActivity(intent);
                 finish();
             }
@@ -94,8 +94,8 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        auth = Conexao.getFirebaseAuth();
-        user = Conexao.getFirebaseUser();
+        auth = Connection.getFirebaseAuth();
+        user = Connection.getFirebaseUser();
         verificaUser();
     }
 
@@ -117,8 +117,8 @@ public class MainActivityPerfilPaciente extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(MainActivityPerfilPaciente.this, "Successfully signed out", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MainActivityPerfilPaciente.this, LoginPrincipal.class));
+                        Toast.makeText(MainActivityPatientProfile.this, "Successfully signed out", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivityPatientProfile.this, MainLogin.class));
 
                         finish();
                     }

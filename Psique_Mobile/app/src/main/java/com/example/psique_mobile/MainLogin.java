@@ -20,7 +20,7 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginPrincipal extends AppCompatActivity {
+public class MainLogin extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private Button btEntrar,btncriarConta;
@@ -32,7 +32,7 @@ public class LoginPrincipal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_principal);
+        setContentView(R.layout.activity_main_login);
 
         signInButton = findViewById(R.id.sign_in_button);
 
@@ -99,19 +99,19 @@ public class LoginPrincipal extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            startActivity(new Intent(LoginPrincipal.this, MainActivityListadeMedicos.class));
+            startActivity(new Intent(MainLogin.this, MainActivityPsychotherapistList.class));
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("Google Sign In Error", "signInResult:failed code=" + e.getStatusCode());
-            Toast.makeText(LoginPrincipal.this, "Failed", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainLogin.this, "Failed", Toast.LENGTH_LONG).show();
             finish();
         }
     }
 
     private void inicializarComponentes() {
-        btEntrar = (Button) findViewById(R.id.btEntrar);
-        btncriarConta = (Button) findViewById(R.id.btncriarConta);
+        btEntrar = (Button) findViewById(R.id.btnEntrar);
+        //btncriarConta = (Button) findViewById(R.id.btncriarConta);
       //  signInButton = findViewById(R.id.sign_in_button);
 
     }
@@ -120,11 +120,11 @@ public class LoginPrincipal extends AppCompatActivity {
     protected void onStart() {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
-            startActivity(new Intent(LoginPrincipal.this, MainActivityPerfilPaciente.class));
+            startActivity(new Intent(MainLogin.this, MainActivityPatientProfile.class));
             finish();
 
         }
         super.onStart();
-        auth = Conexao.getFirebaseAuth();
+        auth = Connection.getFirebaseAuth();
     }
 }

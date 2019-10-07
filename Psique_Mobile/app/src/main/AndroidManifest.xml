@@ -9,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CadastroMedico"></activity>
+        <activity android:name=".PsychotherapistRegister"></activity>
         <activity
-            android:name=".TelaPrincipal"
+            android:name=".MainScreen"
             android:label="@string/title_activity_tela_principal"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoginPrincipal" />
+        <activity android:name=".MainLogin" />
         <activity android:name=".ResetSenha" />
         <activity android:name=".PerfilLogin" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivityPerfilPaciente" />
-        <activity android:name=".MainActivityListadeMedicos" />
+        <activity android:name=".MainActivityPatientProfile" />
+        <activity android:name=".MainActivityPsychotherapistList" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
@@ -31,8 +31,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivityVideoChamada" />
-        <activity android:name=".CadastroPaciente" />
+        <activity android:name=".MainActivityVideoCall" />
+        <activity android:name=".PatientRegister" />
+        <activity
+            android:name=".Desktop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 

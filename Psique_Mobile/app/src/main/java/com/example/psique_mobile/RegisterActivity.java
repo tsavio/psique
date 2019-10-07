@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnvoltarlogin.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent intent = new Intent(getApplicationContext(),LoginPrincipal.class);
+                Intent intent = new Intent(getApplicationContext(), MainLogin.class);
                 startActivity(intent);
                 finish();
             }
@@ -87,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        auth = Conexao.getFirebaseAuth();
+        auth = Connection.getFirebaseAuth();
 
     }
 }

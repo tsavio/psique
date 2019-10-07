@@ -6,7 +6,7 @@ public class Medico {
     private String nome;
     private String profissao;
     private String email;
-    private String crm;
+    private String crp;
     private String telefone;
     private String cpf;
 
@@ -20,19 +20,19 @@ public class Medico {
 
     }
 
-       public Medico(String nome, String profissao, String email, String crm, String id, String telefone, String cpf){
-               this.email = email;
-               this.nome = nome;
-               this.profissao = profissao;
-               this.crm = crm;
-               this.id = id;
-               this.telefone = telefone;
-               this.cpf = cpf;
-       }
+   public Medico(String nome, String profissao, String email, String crp, String id, String telefone, String cpf){
+           this.email = email;
+           this.nome = nome;
+           this.profissao = profissao;
+           this.crp = crp;
+           this.id = id;
+           this.telefone = telefone;
+           this.cpf = cpf;
+   }
 
-        public String getNome() {
-                return nome;
-        }
+    public String getNome() {
+            return nome;
+    }
 
     public String getCpf() {
         return cpf;
@@ -46,41 +46,41 @@ public class Medico {
                 this.nome = nome;
         }
 
-        public String getCrm() {
-        return crm;
+    public String getCrp() {
+        return crp;
     }
 
-        public void setCrm(String nome) {
-        this.crm = crm;
+    public void setCrp(String nome) {
+        this.crp = crp;
     }
 
-        public String getProfissao() {
+    public String getProfissao() {
                 return profissao;
         }
 
-        public void setProfissao(String profissao) {
+    public void setProfissao(String profissao) {
                 this.profissao = profissao;
         }
 
-        public String getEmail() {
+    public String getEmail() {
                 return email;
         }
 
-        public void setEmail(String endereco) {
+    public void setEmail(String endereco) {
                 this.email = email;
         }
 
-        public String getId() {
+    public String getId() {
         return id;
     }
 
-        public void setId(String id) { this.id = id; }
+    public void setId(String id) { this.id = id; }
 
-        public String getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-        public void setTelefone(String telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

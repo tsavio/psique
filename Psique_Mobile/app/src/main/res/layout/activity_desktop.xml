@@ -32,6 +32,7 @@
         android:layout_height="445dp">
 
         <WebView
+            android:id="@+id/webview"
             android:layout_width="380dp"
             android:layout_height="420dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -49,7 +50,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnFaleAgora"
             android:layout_width="180dp"
             android:layout_height="70dp"
             android:layout_marginBottom="20dp"
@@ -64,27 +65,27 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnConsultas"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginBottom="10dp"
             android:background="#d67601"
             android:text="Consultas"
             android:textColor="#fff"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/btnFaleAgora"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnAgende"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginBottom="10dp"
             android:background="#d67601"
             android:text="Agende"
             android:textColor="#fff"
-            app:layout_constraintBottom_toTopOf="@+id/button4"
+            app:layout_constraintBottom_toTopOf="@+id/btnConsultas"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MedicosAdapter extends ArrayAdapter<Medico> {
+public class PsychotherapistsAdapter extends ArrayAdapter<Medico> {
     private final Context context;
     private final ArrayList<Medico> elementos;
 
-    public MedicosAdapter(Context context, ArrayList<Medico> elementos) {
-        super(context, R.layout.listade_medicos_certa, elementos);
+    public PsychotherapistsAdapter(Context context, ArrayList<Medico> elementos) {
+        super(context, R.layout.activity_psychotherapist_list_ok, elementos);
         this.context = context;
         this.elementos = elementos;
     }
@@ -25,7 +25,7 @@ public class MedicosAdapter extends ArrayAdapter<Medico> {
 
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.listade_medicos_certa,parent, false);
+        View rowView = inflater.inflate(R.layout.activity_psychotherapist_list_ok,parent, false);
 
         TextView nome = rowView.findViewById(R.id.Nome);
         TextView endereco = rowView.findViewById(R.id.Endereco);

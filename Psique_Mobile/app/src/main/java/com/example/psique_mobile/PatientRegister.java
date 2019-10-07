@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class CadastroPaciente extends AppCompatActivity {
+public class PatientRegister extends AppCompatActivity {
     EditText edNome, edEmail, edCpf, edTelefone;
     ListView list_dados;
 
@@ -41,7 +41,7 @@ public class CadastroPaciente extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_paciente);
+        setContentView(R.layout.activity_patient_registration);
         androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
@@ -76,7 +76,7 @@ public class CadastroPaciente extends AppCompatActivity {
                     Pessoa pessoa = objSnapshot.getValue(Pessoa.class);
                     listPessoa.add(pessoa);
                 }
-                arrayAdapterPessoa = new ArrayAdapter<Pessoa>(CadastroPaciente.this,
+                arrayAdapterPessoa = new ArrayAdapter<Pessoa>(PatientRegister.this,
                         android.R.layout.simple_list_item_1,listPessoa);
                         list_dados.setAdapter(arrayAdapterPessoa);
 
@@ -90,7 +90,7 @@ public class CadastroPaciente extends AppCompatActivity {
     }
 
     private void inicializarFirebase() {
-        FirebaseApp.initializeApp(CadastroPaciente.this);
+        FirebaseApp.initializeApp(PatientRegister.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseDatabase.setPersistenceEnabled(true);
         databasePessoa = firebaseDatabase.getReference();
@@ -98,7 +98,7 @@ public class CadastroPaciente extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_cadastro_paciente,menu);
+        getMenuInflater().inflate(R.menu.menu_patient_register,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -136,7 +136,7 @@ public class CadastroPaciente extends AppCompatActivity {
             ClearTxt();
 
         }else if (id == R.id.voltar){
-            Intent intent = new Intent(getApplicationContext(),MainActivityListadeMedicos.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivityPsychotherapistList.class);
             startActivity(intent);
             finish();
         }

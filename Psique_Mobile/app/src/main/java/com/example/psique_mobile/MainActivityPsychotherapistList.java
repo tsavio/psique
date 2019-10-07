@@ -16,20 +16,20 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MainActivityListadeMedicos extends AppCompatActivity {
+public class MainActivityPsychotherapistList extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_listade_medicos);
+        setContentView(R.layout.activity_main_psychotherapist_list);
 
         androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
         final ListView lista = findViewById(R.id.Lista_medicos);
         final ArrayList<Medico> medicos = adcionarMedicos();
-        final ArrayAdapter adapter = new MedicosAdapter(this, medicos);
+        final ArrayAdapter adapter = new PsychotherapistsAdapter(this, medicos);
         lista.setAdapter(adapter);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -37,7 +37,7 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                // Medico medico = (Medico) lista.getItemAtPosition(position);
 
-                Intent intent =  new Intent(MainActivityListadeMedicos.this,MainActivityVideoChamada.class);
+                Intent intent =  new Intent(MainActivityPsychotherapistList.this, MainActivityVideoCall.class);
                 intent.putExtra("NomeMedico",medicos.get(position).getNome());
                 intent.putExtra("ProfissaoMedico",medicos.get(position).getProfissao());
                 //intent.putExtra("EnderecoMedico",medicos.get(position).getEndereco());
@@ -49,6 +49,7 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
     }
 
     private boolean adcionarMedicos() {
+        return false;
     }
 
     @Override
@@ -62,7 +63,7 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.perfil:
-                Intent intent = new Intent(MainActivityListadeMedicos.this, MainActivityPerfilPaciente.class);
+                Intent intent = new Intent(MainActivityPsychotherapistList.this, MainActivityPatientProfile.class);
                 startActivity(intent);
                 break;
             case R.id.Blog:
@@ -76,7 +77,7 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
                 //Sobre
                 break;
             case R.id.Paciente:
-                Intent intent2 = new Intent(MainActivityListadeMedicos.this, CadastroPaciente.class);
+                Intent intent2 = new Intent(MainActivityPsychotherapistList.this, PatientRegister.class);
                 startActivity(intent2);
                 break;
 
