@@ -34,11 +34,11 @@ public class PsychotherapistRegister extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseMedico;
 
-    private List<Medico> listMedico = new ArrayList<Medico>();
-    private ArrayAdapter<Medico> arrayAdapterMedico;
+    private List<Psychotherapist> listPsychotherapist = new ArrayList<Psychotherapist>();
+    private ArrayAdapter<Psychotherapist> arrayAdapterMedico;
     public static final int CONSTANTE_CADASTRO_MEDICO = 1;
 
-    Medico medicoSelecionado;
+    Psychotherapist psychotherapistSelecionado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,13 +61,13 @@ public class PsychotherapistRegister extends AppCompatActivity {
         list_dados_medico.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                medicoSelecionado = (Medico) parent.getItemAtPosition(position);
-                edProfissao.setText(medicoSelecionado.getProfissao());
-                edCrp.setText(medicoSelecionado.getCrp());
-                edCpf.setText(medicoSelecionado.getCpf());
-                edEmail.setText(medicoSelecionado.getEmail());
-                edNome.setText(medicoSelecionado.getNome());
-                edTelefone.setText(medicoSelecionado.getTelefone());
+                psychotherapistSelecionado = (Psychotherapist) parent.getItemAtPosition(position);
+                edProfissao.setText(psychotherapistSelecionado.getProfissao());
+                edCrp.setText(psychotherapistSelecionado.getCrp());
+                edCpf.setText(psychotherapistSelecionado.getCpf());
+                edEmail.setText(psychotherapistSelecionado.getEmail());
+                edNome.setText(psychotherapistSelecionado.getNome());
+                edTelefone.setText(psychotherapistSelecionado.getTelefone());
             }
 
         });
@@ -76,16 +76,16 @@ public class PsychotherapistRegister extends AppCompatActivity {
 
 
     private void eventoDatabase() {
-        databaseMedico.child("Medico").addValueEventListener(new ValueEventListener() {
+        databaseMedico.child("Psychotherapist").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listMedico.clear();
+                listPsychotherapist.clear();
                 for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
-                    Medico medico = objSnapshot.getValue(Medico.class);
-                    listMedico.add(medico);
+                    Psychotherapist psychotherapist = objSnapshot.getValue(Psychotherapist.class);
+                    listPsychotherapist.add(psychotherapist);
                 }
-                arrayAdapterMedico = new ArrayAdapter<Medico>(PsychotherapistRegister.this,
-                        android.R.layout.simple_list_item_1,listMedico);
+                arrayAdapterMedico = new ArrayAdapter<Psychotherapist>(PsychotherapistRegister.this,
+                        android.R.layout.simple_list_item_1, listPsychotherapist);
                 list_dados_medico.setAdapter(arrayAdapterMedico);
 
             }
@@ -115,40 +115,40 @@ public class PsychotherapistRegister extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.novomedico) {
-            Medico medico1 = new Medico();
+            Psychotherapist psychotherapist1 = new Psychotherapist();
            Bundle medico = new Bundle();
-            medico1.setId(UUID.randomUUID().toString());
+            psychotherapist1.setId(UUID.randomUUID().toString());
             medico.putString("nome",edNome.getText().toString());
             medico.putString("email",edEmail.getText().toString());
             medico.putString("cpf",edCpf.getText().toString());
             medico.putString("telefone",edTelefone.getText().toString());
             medico.putString("crp",edCrp.getText().toString());
             medico.putString("profissao",edProfissao.getText().toString());
-            databaseMedico.child("Medico").child(medico1.getId()).setValue(medico);
+            databaseMedico.child("Psychotherapist").child(psychotherapist1.getId()).setValue(medico);
             Intent intent = new Intent(this, MainActivityPsychotherapistList.class);
 intent.putExtras(medico);
 startActivityForResult(intent, CONSTANTE_CADASTRO_MEDICO);
 
 
-            Toast.makeText(this, "Medico Adcionado", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Psychotherapist Adcionado", Toast.LENGTH_LONG).show();
             ClearTxt();
         }else if (id == R.id.update){
-            Medico medico = new Medico();
-            medico.setId(medicoSelecionado.getId());
-            medico.setNome(edNome.getText().toString().trim());
-            medico.setEmail(edEmail.getText().toString().trim());
-            medico.setCpf(edCpf.getText().toString().trim());
-            medico.setTelefone(edTelefone.getText().toString().trim());
-            medico.setCrp(edCrp.getText().toString().trim());
-            medico.setProfissao(edProfissao.getText().toString().trim());
-            databaseMedico.child("Medico").child(medico.getId()).setValue(medico);
+            Psychotherapist psychotherapist = new Psychotherapist();
+            psychotherapist.setId(psychotherapistSelecionado.getId());
+            psychotherapist.setNome(edNome.getText().toString().trim());
+            psychotherapist.setEmail(edEmail.getText().toString().trim());
+            psychotherapist.setCpf(edCpf.getText().toString().trim());
+            psychotherapist.setTelefone(edTelefone.getText().toString().trim());
+            psychotherapist.setCrp(edCrp.getText().toString().trim());
+            psychotherapist.setProfissao(edProfissao.getText().toString().trim());
+            databaseMedico.child("Psychotherapist").child(psychotherapist.getId()).setValue(psychotherapist);
             Toast.makeText(this, "Cadastro Editado com Sucesso", Toast.LENGTH_LONG).show();
             ClearTxt();
         }else if (id == R.id.delete){
-            Medico medico = new Medico();
-            medico.setId(medicoSelecionado.getId());
-            databaseMedico.child("Medico").child(medico.getId()).removeValue();
-            Toast.makeText(this, "Medico Deletado", Toast.LENGTH_LONG).show();
+            Psychotherapist psychotherapist = new Psychotherapist();
+            psychotherapist.setId(psychotherapistSelecionado.getId());
+            databaseMedico.child("Psychotherapist").child(psychotherapist.getId()).removeValue();
+            Toast.makeText(this, "Psychotherapist Deletado", Toast.LENGTH_LONG).show();
             ClearTxt();
         }
         return true;

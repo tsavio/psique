@@ -10,16 +10,16 @@ import com.google.firebase.database.core.view.View;
 
 import java.util.List;
 
-public class PersonListAdapter extends ArrayAdapter<Pessoa> {
+public class PersonListAdapter extends ArrayAdapter<Person> {
 
     private Activity context;
-    private List<Pessoa> pessoaList;
+    private List<Person> personList;
 
-    public PersonListAdapter(Activity context, List<Pessoa> pessoaList) {
+    public PersonListAdapter(Activity context, List<Person> personList) {
 
-        super(context, R.layout.pessoa_item, pessoaList);
+        super(context, R.layout.pessoa_item, personList);
         this.context = context;
-        this.pessoaList = pessoaList;
+        this.personList = personList;
     }
 
 
@@ -37,16 +37,16 @@ public class PersonListAdapter extends ArrayAdapter<Pessoa> {
         TextView textViewTelefone = listViewItem.findViewById(R.id.textViewTelefone);
 
         // a posição do medico na lista (armazenamento) é a mesma na lista (listview)
-        // então usamos esse valor (position) para acessar o objeto "Pessoa" correto
-        // dentro da lista pessoaList
-        Pessoa pessoa = pessoaList.get(position);
+        // então usamos esse valor (position) para acessar o objeto "Person" correto
+        // dentro da lista personList
+        Person person = personList.get(position);
 
-        // finalmente, colocamos os valores do objeto pessoa recuperado
+        // finalmente, colocamos os valores do objeto person recuperado
         // nas views que formam nosso item da lista
-        textViewNome.setText(pessoa.getNome());
-        textViewEmail.setText(pessoa.getEmail());
-        textViewCpf.setText(pessoa.getCpf());
-        textViewTelefone.setText(pessoa.getTelefone());
+        textViewNome.setText(person.getNome());
+        textViewEmail.setText(person.getEmail());
+        textViewCpf.setText(person.getCpf());
+        textViewTelefone.setText(person.getTelefone());
 
         // a view está pronta! É só devolver para quem pediu
         return listViewItem;

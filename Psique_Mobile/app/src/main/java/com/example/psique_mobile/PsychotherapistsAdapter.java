@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PsychotherapistsAdapter extends ArrayAdapter<Medico> {
+public class PsychotherapistsAdapter extends ArrayAdapter<Psychotherapist> {
     private final Context context;
-    private final ArrayList<Medico> elementos;
+    private final ArrayList<Psychotherapist> elementos;
 
-    public PsychotherapistsAdapter(Context context, ArrayList<Medico> elementos) {
+    public PsychotherapistsAdapter(Context context, ArrayList<Psychotherapist> elementos) {
         super(context, R.layout.activity_psychotherapist_list_ok, elementos);
         this.context = context;
         this.elementos = elementos;

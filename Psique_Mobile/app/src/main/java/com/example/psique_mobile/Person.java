@@ -1,6 +1,6 @@
 package com.example.psique_mobile;
 
-public class Pessoa {
+public class Person {
     private String id;
     private String nome;
     private String email;
@@ -13,11 +13,11 @@ public class Pessoa {
         return nome;
     }
 
-    public Pessoa(){
+    public Person(){
 
     }
 
-    public Pessoa(String id,String nome, String email, String cpf, String telefone) {
+    public Person(String id, String nome, String email, String cpf, String telefone) {
         this.id = id;
         this.nome = nome;
         this.email = email;

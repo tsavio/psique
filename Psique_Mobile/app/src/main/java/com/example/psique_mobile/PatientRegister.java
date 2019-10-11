@@ -33,10 +33,10 @@ public class PatientRegister extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databasePessoa;
 
-    private List<Pessoa> listPessoa = new ArrayList<Pessoa>();
-    private ArrayAdapter<Pessoa> arrayAdapterPessoa;
+    private List<Person> listPerson = new ArrayList<Person>();
+    private ArrayAdapter<Person> arrayAdapterPessoa;
 
-    Pessoa pessoaSelecionada;
+    Person personSelecionada;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +57,11 @@ public class PatientRegister extends AppCompatActivity {
         list_dados.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                pessoaSelecionada = (Pessoa)parent.getItemAtPosition(position);
-                edNome.setText(pessoaSelecionada.getNome());
-                edEmail.setText(pessoaSelecionada.getEmail());
-                edCpf.setText(pessoaSelecionada.getCpf());
-                edTelefone.setText(pessoaSelecionada.getTelefone());
+                personSelecionada = (Person)parent.getItemAtPosition(position);
+                edNome.setText(personSelecionada.getNome());
+                edEmail.setText(personSelecionada.getEmail());
+                edCpf.setText(personSelecionada.getCpf());
+                edTelefone.setText(personSelecionada.getTelefone());
             }
         });
 
@@ -71,13 +71,13 @@ public class PatientRegister extends AppCompatActivity {
         databasePessoa.child("Pessoas").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listPessoa.clear();
+                listPerson.clear();
                 for (DataSnapshot objSnapshot:dataSnapshot.getChildren()){
-                    Pessoa pessoa = objSnapshot.getValue(Pessoa.class);
-                    listPessoa.add(pessoa);
+                    Person person = objSnapshot.getValue(Person.class);
+                    listPerson.add(person);
                 }
-                arrayAdapterPessoa = new ArrayAdapter<Pessoa>(PatientRegister.this,
-                        android.R.layout.simple_list_item_1,listPessoa);
+                arrayAdapterPessoa = new ArrayAdapter<Person>(PatientRegister.this,
+                        android.R.layout.simple_list_item_1, listPerson);
                         list_dados.setAdapter(arrayAdapterPessoa);
 
             }
@@ -107,31 +107,31 @@ public class PatientRegister extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.novopaciente) {
-            Pessoa pessoa = new Pessoa();
-            pessoa.setId(UUID.randomUUID().toString());
-            pessoa.setNome(edNome.getText().toString());
-            pessoa.setEmail(edEmail.getText().toString());
-            pessoa.setCpf(edCpf.getText().toString());
-            pessoa.setTelefone(edTelefone.getText().toString());
-            databasePessoa.child("Pessoas").child(pessoa.getId()).setValue(pessoa);
+            Person person = new Person();
+            person.setId(UUID.randomUUID().toString());
+            person.setNome(edNome.getText().toString());
+            person.setEmail(edEmail.getText().toString());
+            person.setCpf(edCpf.getText().toString());
+            person.setTelefone(edTelefone.getText().toString());
+            databasePessoa.child("Pessoas").child(person.getId()).setValue(person);
             Toast.makeText(this, "Paciente Adcionado", Toast.LENGTH_LONG).show();
             ClearTxt();
 
         }else if (id == R.id.update){
-            Pessoa pessoa = new Pessoa();
-            pessoa.setId(pessoaSelecionada.getId());
-            pessoa.setNome(edNome.getText().toString().trim());
-            pessoa.setEmail(edEmail.getText().toString().trim());
-            pessoa.setCpf(edCpf.getText().toString().trim());
-            pessoa.setTelefone(edTelefone.getText().toString().trim());
-            databasePessoa.child("Pessoas").child(pessoa.getId()).setValue(pessoa);
+            Person person = new Person();
+            person.setId(personSelecionada.getId());
+            person.setNome(edNome.getText().toString().trim());
+            person.setEmail(edEmail.getText().toString().trim());
+            person.setCpf(edCpf.getText().toString().trim());
+            person.setTelefone(edTelefone.getText().toString().trim());
+            databasePessoa.child("Pessoas").child(person.getId()).setValue(person);
             Toast.makeText(this, "Cadastro Editado com Sucesso", Toast.LENGTH_LONG).show();
             ClearTxt();
 
         }else if (id == R.id.delete){
-            Pessoa pessoa = new Pessoa();
-            pessoa.setId(pessoaSelecionada.getId());
-            databasePessoa.child("Pessoas").child(pessoa.getId()).removeValue();
+            Person person = new Person();
+            person.setId(personSelecionada.getId());
+            databasePessoa.child("Pessoas").child(person.getId()).removeValue();
             Toast.makeText(this, "Paciente Deletado", Toast.LENGTH_LONG).show();
             ClearTxt();
 

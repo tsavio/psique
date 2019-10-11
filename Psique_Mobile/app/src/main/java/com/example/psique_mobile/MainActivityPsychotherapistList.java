@@ -28,20 +28,20 @@ public class MainActivityPsychotherapistList extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
         final ListView lista = findViewById(R.id.Lista_medicos);
-        final ArrayList<Medico> medicos = adcionarMedicos();
-        final ArrayAdapter adapter = new PsychotherapistsAdapter(this, medicos);
+        final ArrayList<Psychotherapist> psychotherapists = new ArrayList<>();
+        final ArrayAdapter adapter = new PsychotherapistsAdapter(this, psychotherapists);
         lista.setAdapter(adapter);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // Medico medico = (Medico) lista.getItemAtPosition(position);
+               // Psychotherapist medico = (Psychotherapist) lista.getItemAtPosition(position);
 
                 Intent intent =  new Intent(MainActivityPsychotherapistList.this, MainActivityVideoCall.class);
-                intent.putExtra("NomeMedico",medicos.get(position).getNome());
-                intent.putExtra("ProfissaoMedico",medicos.get(position).getProfissao());
-                //intent.putExtra("EnderecoMedico",medicos.get(position).getEndereco());
-                //intent.putExtra("imagem",medicos.get(position).getImagem());
+                intent.putExtra("NomeMedico", psychotherapists.get(position).getNome());
+                intent.putExtra("ProfissaoMedico", psychotherapists.get(position).getProfissao());
+                //intent.putExtra("EnderecoMedico",psychotherapists.get(position).getEndereco());
+                //intent.putExtra("imagem",psychotherapists.get(position).getImagem());
                 startActivity(intent);
             }
         });
@@ -87,21 +87,21 @@ public class MainActivityPsychotherapistList extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //private ArrayList<Medico> adcionarMedicos(){
-      //  ArrayList<Medico> medicos = new ArrayList<Medico>();
-        //Medico m = new Medico("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.ic_menu_camera);
+    //private ArrayList<Psychotherapist> adcionarMedicos(){
+      //  ArrayList<Psychotherapist> medicos = new ArrayList<Psychotherapist>();
+        //Psychotherapist m = new Psychotherapist("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.ic_menu_camera);
 
 //        medicos.add(m);
-//        m = new Medico("Dr. Edney Soares","Psiquiatra","Olinda - PE",R.drawable.ic_menu_camera);
+//        m = new Psychotherapist("Dr. Edney Soares","Psiquiatra","Olinda - PE",R.drawable.ic_menu_camera);
 
 //        medicos.add(m);
-//        m = new Medico("Dra. Nilziane Ferreira","Psicóloga / Psiquiatra","Jaboatão dos Guararapes - PE",R.drawable.ic_menu_camera);
+//        m = new Psychotherapist("Dra. Nilziane Ferreira","Psicóloga / Psiquiatra","Jaboatão dos Guararapes - PE",R.drawable.ic_menu_camera);
 
 //        medicos.add(m);
-//        m = new Medico("Dr. Arthur Sales","Psiquiatra","Paulista - PE",R.drawable.ic_menu_camera);
+//        m = new Psychotherapist("Dr. Arthur Sales","Psiquiatra","Paulista - PE",R.drawable.ic_menu_camera);
 
 //        medicos.add(m);
-//        m = new Medico("Dra. Andrea Marques","Psicóloga","Caruaru - PE",R.drawable.ic_menu_camera);
+//        m = new Psychotherapist("Dra. Andrea Marques","Psicóloga","Caruaru - PE",R.drawable.ic_menu_camera);
 
 //        medicos.add(m);
 

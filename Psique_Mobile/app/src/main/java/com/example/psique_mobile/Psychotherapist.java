@@ -1,6 +1,6 @@
 package com.example.psique_mobile;
 
-public class Medico {
+public class Psychotherapist {
 
     private String id;
     private String nome;
@@ -16,11 +16,11 @@ public class Medico {
         return nome;
     }
 
-    public Medico(){
+    public Psychotherapist(){
 
     }
 
-   public Medico(String nome, String profissao, String email, String crp, String id, String telefone, String cpf){
+   public Psychotherapist(String nome, String profissao, String email, String crp, String id, String telefone, String cpf){
            this.email = email;
            this.nome = nome;
            this.profissao = profissao;
