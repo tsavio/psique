@@ -1,6 +1,6 @@
-package com.example.psique_mobile;
+package com.example.psique_mobile.model;
 
-public class Psychotherapist {
+public class Doctor {
 
     private String id;
     private String nome;
@@ -16,11 +16,11 @@ public class Psychotherapist {
         return nome;
     }
 
-    public Psychotherapist(){
+    public Doctor(){
 
     }
 
-   public Psychotherapist(String nome, String profissao, String email, String crp, String id, String telefone, String cpf){
+   public Doctor(String nome, String profissao, String email, String crp, String id, String telefone, String cpf){
            this.email = email;
            this.nome = nome;
            this.profissao = profissao;

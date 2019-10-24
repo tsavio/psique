@@ -1,4 +1,4 @@
-package com.example.psique_mobile;
+package com.example.psique_mobile.model;
 
 public class Person {
     private String id;

@@ -3,13 +3,15 @@
     package="com.example.psique_mobile">
 
     <application
+        android:name=".app.FirebaseInit"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_psique"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PsychotherapistRegister"></activity>
+
+        <activity android:name=".activity.DoctorRegisterActivity"></activity>
         <activity
             android:name=".MainScreen"
             android:label="@string/title_activity_tela_principal"
@@ -17,12 +19,12 @@
         <activity android:name=".MainLogin" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".PerfilLogin" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivityPatientProfile" />
-        <activity android:name=".MainActivityPsychotherapistList" />
+        <activity android:name=".activity.MainPatientProfileActivity" />
+        <activity android:name=".activity.MainDoctorListActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -31,7 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivityVideoCall" />
+        <activity android:name=".activity.MainVideoCallActivity" />
         <activity android:name=".PatientRegister" />
 <!--        <activity-->
 <!--            android:name=".Desktop">-->
@@ -42,8 +44,8 @@
 <!--            </intent-filter>-->
 <!--        </activity>-->
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.psique_mobile;
+package com.example.psique_mobile.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.psique_mobile.model.Person;
+import com.example.psique_mobile.R;
 import com.google.firebase.database.core.view.View;
 
 import java.util.List;

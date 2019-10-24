@@ -8,7 +8,7 @@
     <item name="Paciente" type="id" />
     <item name="novomedico" type="id" />
     <item name="patient" type="id" />
-    <item name="psychotherapist" type="id" />
+    <item name="doctor" type="id" />
     <item name="btnEntrar" type="id" />
     <item name="btnVoltar" type="id" />
     <item name="btnCancelar" type="id" />

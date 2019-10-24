@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.psique_mobile.activity.MainDoctorListActivity;
+import com.example.psique_mobile.model.Person;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -136,7 +138,7 @@ public class PatientRegister extends AppCompatActivity {
             ClearTxt();
 
         }else if (id == R.id.voltar){
-            Intent intent = new Intent(getApplicationContext(), MainActivityPsychotherapistList.class);
+            Intent intent = new Intent(getApplicationContext(), MainDoctorListActivity.class);
             startActivity(intent);
             finish();
         }

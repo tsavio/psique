@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.psique_mobile.activity.MainDoctorListActivity;
+import com.example.psique_mobile.activity.MainPatientProfileActivity;
+import com.example.psique_mobile.activity.RegisterActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -50,14 +53,14 @@ public class MainLogin extends AppCompatActivity {
 
     private void eventoClick() {
 
-        btncriarConta.setOnClickListener(new android.view.View.OnClickListener() {
-            @Override
-            public void onClick(android.view.View v) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        btncriarConta.setOnClickListener(new android.view.View.OnClickListener() {
+//            @Override
+//            public void onClick(android.view.View v) {
+//                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
         btEntrar.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
@@ -99,7 +102,7 @@ public class MainLogin extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            startActivity(new Intent(MainLogin.this, MainActivityPsychotherapistList.class));
+            startActivity(new Intent(MainLogin.this, MainDoctorListActivity.class));
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
@@ -112,7 +115,7 @@ public class MainLogin extends AppCompatActivity {
     private void inicializarComponentes() {
         btEntrar = (Button) findViewById(R.id.btnEntrar);
         //btncriarConta = (Button) findViewById(R.id.btncriarConta);
-      //  signInButton = findViewById(R.id.sign_in_button);
+        signInButton = findViewById(R.id.sign_in_button);
 
     }
 
@@ -120,7 +123,7 @@ public class MainLogin extends AppCompatActivity {
     protected void onStart() {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if (account != null) {
-            startActivity(new Intent(MainLogin.this, MainActivityPatientProfile.class));
+            startActivity(new Intent(MainLogin.this, MainPatientProfileActivity.class));
             finish();
 
         }

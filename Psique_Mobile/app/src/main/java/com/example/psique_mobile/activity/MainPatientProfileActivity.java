@@ -1,4 +1,4 @@
-package com.example.psique_mobile;
+package com.example.psique_mobile.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,6 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.psique_mobile.Connection;
+import com.example.psique_mobile.MainLogin;
+import com.example.psique_mobile.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -25,7 +28,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivityPatientProfile extends AppCompatActivity {
+public class MainPatientProfileActivity extends AppCompatActivity {
 
     GoogleSignInClient mGoogleSignInClient;
     Button sign_out, btnVoltar;
@@ -58,7 +61,7 @@ public class MainActivityPatientProfile extends AppCompatActivity {
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(MainActivityPatientProfile.this);
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(MainPatientProfileActivity.this);
         if (acct != null) {
             String personName = acct.getDisplayName();
             String personGivenName = acct.getGivenName();
@@ -83,7 +86,7 @@ public class MainActivityPatientProfile extends AppCompatActivity {
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivityPsychotherapistList.class);
+                Intent intent = new Intent(getApplicationContext(), MainDoctorListActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -117,15 +120,11 @@ public class MainActivityPatientProfile extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(MainActivityPatientProfile.this, "Successfully signed out", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MainActivityPatientProfile.this, MainLogin.class));
+                        Toast.makeText(MainPatientProfileActivity.this, "Successfully signed out", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainPatientProfileActivity.this, MainLogin.class));
 
                         finish();
                     }
                 });
     }
 }
-
-
-
-

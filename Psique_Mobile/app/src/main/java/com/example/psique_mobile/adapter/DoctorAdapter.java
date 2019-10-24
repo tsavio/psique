@@ -1,4 +1,4 @@
-package com.example.psique_mobile;
+package com.example.psique_mobile.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,14 +8,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.psique_mobile.model.Doctor;
+import com.example.psique_mobile.R;
+
 import java.util.ArrayList;
 
-public class PsychotherapistsAdapter extends ArrayAdapter<Psychotherapist> {
+public class DoctorAdapter extends ArrayAdapter<Doctor> {
     private final Context context;
-    private final ArrayList<Psychotherapist> elementos;
+    private final ArrayList<Doctor> elementos;
 
-    public PsychotherapistsAdapter(Context context, ArrayList<Psychotherapist> elementos) {
-        super(context, R.layout.activity_psychotherapist_list_ok, elementos);
+    public DoctorAdapter(Context context, ArrayList<Doctor> elementos) {
+        super(context, R.layout.activity_doctor_list_ok, elementos);
         this.context = context;
         this.elementos = elementos;
     }
@@ -25,7 +28,7 @@ public class PsychotherapistsAdapter extends ArrayAdapter<Psychotherapist> {
 
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.activity_psychotherapist_list_ok,parent, false);
+        View rowView = inflater.inflate(R.layout.activity_doctor_list_ok,parent, false);
 
         TextView nome = rowView.findViewById(R.id.Nome);
         TextView endereco = rowView.findViewById(R.id.Endereco);

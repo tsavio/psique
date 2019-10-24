@@ -1,4 +1,4 @@
-package com.example.psique_mobile;
+package com.example.psique_mobile.activity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -17,9 +17,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.psique_mobile.R;
 
 
-public class MainActivityVideoCall extends AppCompatActivity {
+public class MainVideoCallActivity extends AppCompatActivity {
     ImageView imageViewFoto;
 
     @Override

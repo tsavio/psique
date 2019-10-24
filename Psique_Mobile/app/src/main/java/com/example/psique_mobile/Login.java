@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.psique_mobile.activity.MainDoctorListActivity;
+import com.example.psique_mobile.app.FirebaseInit;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -66,7 +68,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent(Login.this, MainActivityPsychotherapistList.class);
+                            Intent intent = new Intent(Login.this, MainDoctorListActivity.class);
                             startActivity(intent);
                             finish();
                         } else {
@@ -93,7 +95,8 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        auth = Connection.getFirebaseAuth();
+        //auth = FirebaseInit.getProcessName().;
+         auth = Connection.getFirebaseAuth();
         }
     }
 
