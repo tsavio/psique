@@ -16,7 +16,6 @@ import android.widget.ListView;
 
 import com.example.psique_mobile.model.Doctor;
 import com.example.psique_mobile.adapter.DoctorAdapter;
-import com.example.psique_mobile.PatientRegister;
 import com.example.psique_mobile.R;
 
 import java.util.ArrayList;
@@ -82,7 +81,7 @@ public class MainDoctorListActivity extends AppCompatActivity {
                 //Sobre
                 break;
             case R.id.Paciente:
-                Intent intent2 = new Intent(MainDoctorListActivity.this, PatientRegister.class);
+                Intent intent2 = new Intent(MainDoctorListActivity.this, PatientRegisterActivity.class);
                 startActivity(intent2);
                 break;
 

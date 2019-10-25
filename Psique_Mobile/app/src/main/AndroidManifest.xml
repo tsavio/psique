@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainVideoCallActivity" />
-        <activity android:name=".PatientRegister" />
+        <activity android:name=".activity.PatientRegisterActivity" />
 <!--        <activity-->
 <!--            android:name=".Desktop">-->
 <!--            <intent-filter>-->

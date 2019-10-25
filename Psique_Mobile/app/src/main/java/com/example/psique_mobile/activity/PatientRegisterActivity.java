@@ -1,4 +1,4 @@
-package com.example.psique_mobile;
+package com.example.psique_mobile.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.psique_mobile.activity.MainDoctorListActivity;
+import com.example.psique_mobile.R;
 import com.example.psique_mobile.model.Person;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class PatientRegister extends AppCompatActivity {
+public class PatientRegisterActivity extends AppCompatActivity {
     EditText edNome, edEmail, edCpf, edTelefone;
     ListView list_dados;
 
@@ -70,7 +70,7 @@ public class PatientRegister extends AppCompatActivity {
     }
 
     private void eventoDatabase() {
-        databasePessoa.child("Pessoas").addValueEventListener(new ValueEventListener() {
+        databasePessoa.child("Patient").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listPerson.clear();
@@ -78,7 +78,7 @@ public class PatientRegister extends AppCompatActivity {
                     Person person = objSnapshot.getValue(Person.class);
                     listPerson.add(person);
                 }
-                arrayAdapterPessoa = new ArrayAdapter<Person>(PatientRegister.this,
+                arrayAdapterPessoa = new ArrayAdapter<Person>(PatientRegisterActivity.this,
                         android.R.layout.simple_list_item_1, listPerson);
                         list_dados.setAdapter(arrayAdapterPessoa);
 
@@ -92,7 +92,7 @@ public class PatientRegister extends AppCompatActivity {
     }
 
     private void inicializarFirebase() {
-        FirebaseApp.initializeApp(PatientRegister.this);
+        FirebaseApp.initializeApp(PatientRegisterActivity.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseDatabase.setPersistenceEnabled(true);
         databasePessoa = firebaseDatabase.getReference();
@@ -115,7 +115,7 @@ public class PatientRegister extends AppCompatActivity {
             person.setEmail(edEmail.getText().toString());
             person.setCpf(edCpf.getText().toString());
             person.setTelefone(edTelefone.getText().toString());
-            databasePessoa.child("Pessoas").child(person.getId()).setValue(person);
+            databasePessoa.child("Patient").child(person.getId()).setValue(person);
             Toast.makeText(this, "Paciente Adcionado", Toast.LENGTH_LONG).show();
             ClearTxt();
 
@@ -126,14 +126,14 @@ public class PatientRegister extends AppCompatActivity {
             person.setEmail(edEmail.getText().toString().trim());
             person.setCpf(edCpf.getText().toString().trim());
             person.setTelefone(edTelefone.getText().toString().trim());
-            databasePessoa.child("Pessoas").child(person.getId()).setValue(person);
+            databasePessoa.child("Patient").child(person.getId()).setValue(person);
             Toast.makeText(this, "Cadastro Editado com Sucesso", Toast.LENGTH_LONG).show();
             ClearTxt();
 
         }else if (id == R.id.delete){
             Person person = new Person();
             person.setId(personSelecionada.getId());
-            databasePessoa.child("Pessoas").child(person.getId()).removeValue();
+            databasePessoa.child("Patient").child(person.getId()).removeValue();
             Toast.makeText(this, "Paciente Deletado", Toast.LENGTH_LONG).show();
             ClearTxt();
 
