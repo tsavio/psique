@@ -39,6 +39,7 @@ public class MainDoctorListActivity extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+<<<<<<< Updated upstream:Psique_Mobile/app/src/main/java/com/example/psique_mobile/activity/MainDoctorListActivity.java
                // Doctor medico = (Doctor) lista.getItemAtPosition(position);
 
                 Intent intent =  new Intent(MainDoctorListActivity.this, MainVideoCallActivity.class);
@@ -46,16 +47,28 @@ public class MainDoctorListActivity extends AppCompatActivity {
                 intent.putExtra("ProfissaoMedico", doctors.get(position).getProfissao());
                 //intent.putExtra("EnderecoMedico",doctors.get(position).getEndereco());
                 //intent.putExtra("imagem",doctors.get(position).getImagem());
+=======
+                // Medico medico = (Medico) lista.getItemAtPosition(position);
+
+                Intent intent =  new Intent(MainActivityListadeMedicos.this,MainActivityVideoChamada.class);
+                intent.putExtra("NomeMedico",medicos.get(position).getNome());
+                intent.putExtra("ProfissaoMedico",medicos.get(position).getProfissao());
+                intent.putExtra("EnderecoMedico",medicos.get(position).getEndereco());
+              //  intent.putExtra("imagem",medicos.get(position).getImagem());
+>>>>>>> Stashed changes:Psique_Mobile/app/src/main/java/com/example/psique_mobile/MainActivityListadeMedicos.java
                 startActivity(intent);
             }
         });
 
     }
 
+<<<<<<< Updated upstream:Psique_Mobile/app/src/main/java/com/example/psique_mobile/activity/MainDoctorListActivity.java
     private boolean adcionarMedicos() {
         return false;
     }
 
+=======
+>>>>>>> Stashed changes:Psique_Mobile/app/src/main/java/com/example/psique_mobile/MainActivityListadeMedicos.java
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -85,12 +98,18 @@ public class MainDoctorListActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
 
-                default:
+            default:
         }
+
+
+
+
+
 
         return super.onOptionsItemSelected(item);
     }
 
+<<<<<<< Updated upstream:Psique_Mobile/app/src/main/java/com/example/psique_mobile/activity/MainDoctorListActivity.java
 //    private ArrayList<Doctor> adcionarMedicos(){
 //        ArrayList<Doctor> medicos = new ArrayList<Doctor>();
 //        Doctor m = new Doctor("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.ic_menu_camera);
@@ -111,5 +130,29 @@ public class MainDoctorListActivity extends AppCompatActivity {
 //
 //        return medicos;
  //   }
+=======
+    private ArrayList<Medico> adcionarMedicos(){
+        ArrayList<Medico> medicos = new ArrayList<Medico>();
+        Medico m = new Medico("Dr. Henrique Figueiredo","Psicólogo / Psiquiatra","Recife - PE",R.drawable.ic_menu_camera);
+
+        medicos.add(m);
+        m = new Medico("Dr. Edney Soares","Psiquiatra","Olinda - PE",R.drawable.ic_menu_camera);
+
+        medicos.add(m);
+        m = new Medico("Dra. Nilziane Ferreira","Psicóloga / Psiquiatra","Jaboatão dos Guararapes - PE",R.drawable.ic_menu_camera);
+
+        medicos.add(m);
+        m = new Medico("Dr. Arthur Sales","Psiquiatra","Paulista - PE",R.drawable.ic_menu_camera);
+
+        medicos.add(m);
+        m = new Medico("Dra. Andrea Marques","Psicóloga","Caruaru - PE",R.drawable.ic_menu_camera);
+
+        medicos.add(m);
+
+        return medicos;
+
+
+    }
+>>>>>>> Stashed changes:Psique_Mobile/app/src/main/java/com/example/psique_mobile/MainActivityListadeMedicos.java
 
 }

@@ -21,7 +21,11 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+<<<<<<< Updated upstream:Psique_Mobile/app/src/main/java/com/example/psique_mobile/activity/SplashActivity.java
                 startActivity(new Intent(getBaseContext(), MainLogin.class));
+=======
+                startActivity(new Intent(getBaseContext(), LoginPrincipal.class));
+>>>>>>> Stashed changes:Psique_Mobile/app/src/main/java/com/example/psique_mobile/SplashActivity.java
                 finish();
             }
         },2000);
