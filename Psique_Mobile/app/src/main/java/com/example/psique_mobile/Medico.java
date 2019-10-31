@@ -2,86 +2,47 @@ package com.example.psique_mobile;
 
 public class Medico {
 
-    private String id;
     private String nome;
+    private int imagem;
     private String profissao;
-    private String email;
-    private String crm;
-    private String telefone;
-    private String cpf;
+    private String endereco;
 
-    //@androidx.annotation.NonNull
-        @Override
-    public String toString() {
+    public Medico(String nome, String profissao, String endereco, int imagem){
+        this.endereco = endereco;
+        this.nome = nome;
+        this.imagem = imagem;
+        this.profissao = profissao;
+    }
+
+    public String getNome() {
         return nome;
     }
 
-    public Medico(){
-
-    }
-
-       public Medico(String nome, String profissao, String email, String crm, String id, String telefone, String cpf){
-               this.email = email;
-               this.nome = nome;
-               this.profissao = profissao;
-               this.crm = crm;
-               this.id = id;
-               this.telefone = telefone;
-               this.cpf = cpf;
-       }
-
-        public String getNome() {
-                return nome;
-        }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public void setNome(String nome) {
-                this.nome = nome;
-        }
-
-        public String getCrm() {
-        return crm;
+        this.nome = nome;
     }
 
-        public void setCrm(String nome) {
-        this.crm = crm;
+    public int getImagem() {
+        return imagem;
     }
 
-        public String getProfissao() {
-                return profissao;
-        }
-
-        public void setProfissao(String profissao) {
-                this.profissao = profissao;
-        }
-
-        public String getEmail() {
-                return email;
-        }
-
-        public void setEmail(String endereco) {
-                this.email = email;
-        }
-
-        public String getId() {
-        return id;
+    public void setImagem(int imagem) {
+        this.imagem = imagem;
     }
 
-        public void setId(String id) { this.id = id; }
-
-        public String getTelefone() {
-        return telefone;
+    public String getProfissao() {
+        return profissao;
     }
 
-        public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 }
