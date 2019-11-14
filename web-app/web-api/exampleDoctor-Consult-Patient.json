@@ -1,0 +1,33 @@
+
+{
+    "Consulta" : {
+      "0726ee71-42aa-47fe-b87c-a8016510q96t" : {
+        "URL" : "https://hangouts.google.com/hangouts/_/raaystieqjdojcqw26iapnwjvye",
+        "date" : "22/11/2019",
+        "doctorID" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
+        "hour" : "18:00:00",
+        "patientID" : "0726ee71-42aa-47fe-b87c-a8016510d25a"
+      }
+    },
+    "Doctor" : {
+      "0726ee71-42aa-47fe-b87c-a8016510d27w" : {
+        "avaliation" : 4,
+        "cpf" : "112.456.074.21",
+        /* 0000/SP minímo 4 dígitos ou 0000000000/SP máximo 10 dígitos */
+        "crp" : "98632/PE",
+        "email" : "thyago@usto.re",
+        "id" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
+        "name" : "thyago savio cavalcanti",
+        "phone" : 98756423
+      }
+    },
+    "Patient" : {
+      "0726ee71-42aa-47fe-b87c-a8016510d25a" : {
+        "cpf" : "050.716.754-63",
+        "email" : "gulloris@hotmail.com",
+        "id" : "0726ee71-42aa-47fe-b87c-a8016510d25a",
+        "nome" : "clayton almeida",
+        "phone" : 9854755213
+      }
+    }
+  }
