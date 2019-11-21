@@ -24,7 +24,7 @@ export class PacienteComponent implements OnInit {
         type: 'custom',
         renderComponent: PacienteNameComponent,                
       },
-      telefone: {
+      phone: {
         title: 'Telefone',
       },
       email: {
@@ -33,27 +33,12 @@ export class PacienteComponent implements OnInit {
     }, 
     actions: false
   };
-/*
-  [{
-asdd:dasd
-  },
-  [{
 
-  },
-  [{
-
-  }];
-  */
   getAllPacients(){
     this.pacientService.getAll().subscribe((response:any) => this.pacientes = response.data);
   }
 
-
   ngOnInit(){
     this.getAllPacients();
   }
-
- 
-  
-
 }
