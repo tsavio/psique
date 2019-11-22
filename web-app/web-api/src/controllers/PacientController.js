@@ -1,19 +1,27 @@
+const table = require('../config/firebaseKey');
 
 class PacientController {
- 
+
   /*
   * [GET] Get all pacients from firebase
   *
   * 
   */
   async getAll(req, res) {
-    let ref = req.firebase.ref("/Paciente");
+    try {
+      let ref = await req.firebase.ref(`/${table.PATIENT}`).once("value");
+      const data = ref.val();
 
-    const response = await ref.once("value");
-    const data = response.val();
+      let object = [];
+      if (data)
+        Object.keys(data).forEach(key => object.push({ ...data[key], id: key }));
 
-    const jsonData = Object.keys(data).map(key => data[key]);
-    return res.json({ jsonData, _total: jsonData.length });
+      return res.json({ object, _total: object.length });
+    } catch (error) {
+
+      console.log(`Error #PatientController.getAll : `, error);
+      return res.status(500).json(error);
+    }
   }
 
   /*
@@ -21,7 +29,7 @@ class PacientController {
   *
   * 
   */
-  async getById(req, res){
+  async getById(req, res) {
     let { id } = req.params;
 
     let ref = req.firebase.ref("/Paciente");
@@ -30,8 +38,8 @@ class PacientController {
     const isExist = Object.keys(returns).filter(key => key === id);
     response = returns[isExist];
 
-    if(!response){
-      return res.status(400).json({status:'failed', message:'We cat\' find this pacient id.'})
+    if (!response) {
+      return res.status(400).json({ status: 'failed', message: 'We cat\' find this pacient id.' })
     }
 
     return res.json(response);

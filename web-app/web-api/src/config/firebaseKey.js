@@ -1,6 +1,6 @@
 const keys = {
-    DOCTOR: 'doctor',
-    PATIENT: 'patient'
+    DOCTOR: 'Doctor',
+    PATIENT: 'Patient'
 };
 
 module.exports = keys;

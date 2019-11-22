@@ -19,7 +19,7 @@ export class PacienteComponent implements OnInit {
 
   settings = {
     columns: {
-      nome: {
+      name: {
         title: 'Nome',
         type: 'custom',
         renderComponent: PacienteNameComponent,                

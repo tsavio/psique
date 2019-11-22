@@ -12,6 +12,6 @@ export class PacientService {
 
   private API = environment.API;
   getAll(){
-    return this.http.get(`${this.API}/pacient`).pipe(take(1));
+    return this.http.get(`${this.API}/patient`).pipe(take(1));
   }
 }

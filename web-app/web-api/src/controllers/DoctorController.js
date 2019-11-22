@@ -11,17 +11,17 @@ class DoctorController {
     async getAll(req, res) {
 
         try {
-            
+
             let ref = await req.firebase.ref(`/${table.DOCTOR}`).once("value");
             const data = ref.val();
-    
+
             let object = [];
-            if(data)
+            if (data)
                 Object.keys(data).forEach(key => object.push({ ...data[key], id: key }));
-    
+
             return res.json({ object, _total: object.length });
         } catch (error) {
-            
+
             console.log(`Error #DoctorController.getAll : `, error);
             return res.status(500).json(error);
         }
@@ -89,19 +89,19 @@ class DoctorController {
     *
     *
     */
-   async destroy(req, res) {
-    
-    const { id } = req.params;
-    try {
-        
-        await req.firebase.ref(`/${table.DOCTOR}/${id}`).remove();
-        
-        return res.json({ status: 'success' });
-    } catch (error) {
-        console.log('Error #DoctorController.destroy : ', error);
-        return res.status(500).json(error);
+    async destroy(req, res) {
+
+        const { id } = req.params;
+        try {
+
+            await req.firebase.ref(`/${table.DOCTOR}/${id}`).remove();
+
+            return res.json({ status: 'success' });
+        } catch (error) {
+            console.log('Error #DoctorController.destroy : ', error);
+            return res.status(500).json(error);
+        }
     }
-}
 
 }
 
