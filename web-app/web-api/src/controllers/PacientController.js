@@ -1,43 +1,42 @@
-const firebase = require('firebase-admin');
-var serviceAccount = require("../config/serviceAccountKey.json");
-
-firebase.initializeApp({
-  credential: firebase.credential.cert(serviceAccount),
-  databaseURL: "https://psique-241319.firebaseio.com"
-});
 
 class PacientController {
  
-  async getAllPatient(req, res) {
-    let resp = null;
+  /*
+  * [GET] Get all pacients from firebase
+  *
+  * 
+  */
+  async getAll(req, res) {
+    let ref = req.firebase.ref("/Paciente");
 
-    var db = firebase.database();
-    var ref = db.ref("/Paciente");
+    const response = await ref.once("value");
+    const data = response.val();
 
-    await ref.once("value")
-      .then(snapshot => {
-        resp = snapshot.val();
-      });
-
-    let data = [];
-    Object.keys(resp).map(key => data.push(resp[key]));
-    return res.send({ data, _total: data.length });
+    const jsonData = Object.keys(data).map(key => data[key]);
+    return res.json({ jsonData, _total: jsonData.length });
   }
 
-  async getAllDoctor(req, res) {
-    let resp = null;
+  /*
+  * [GET] Get patient by param :ID
+  *
+  * 
+  */
+  async getById(req, res){
+    let { id } = req.params;
 
-    var db = firebase.database();
-    var ref = db.ref("/Medico");
+    let ref = req.firebase.ref("/Paciente");
+    let response = await ref.once("value");
+    const returns = response.val();
+    const isExist = Object.keys(returns).filter(key => key === id);
+    response = returns[isExist];
 
-    await ref.once("value")
-      .then(snapshot => {
-        resp = snapshot.val();
-      });
+    if(!response){
+      return res.status(400).json({status:'failed', message:'We cat\' find this pacient id.'})
+    }
 
-    let data = [];
-    Object.keys(resp).map(key => data.push(resp[key]));
-    return res.send({ data, _total: data.length });
+    return res.json(response);
   }
+
 }
+
 module.exports = PacientController;
