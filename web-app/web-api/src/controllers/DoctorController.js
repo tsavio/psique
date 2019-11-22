@@ -85,12 +85,11 @@ class DoctorController {
         return res.json({ status: 'success', url: update });
     }
 
-     /* [DELETE] Delete doctor in firebase
+    /* [DELETE] Delete doctor in firebase
     *
     *
     */
    async destroy(req, res) {
-
     
     const { id } = req.params;
     try {
