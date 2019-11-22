@@ -1,4 +1,4 @@
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { take } from 'rxjs/operators';
@@ -6,7 +6,7 @@ import { take } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class PacientService {
+export class PatientService {
 
   constructor(private http:HttpClient) { }
 
