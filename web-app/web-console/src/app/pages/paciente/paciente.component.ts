@@ -35,7 +35,7 @@ export class PacienteComponent implements OnInit {
   };
 
   getAllPacients(){
-    this.pacientService.getAll().subscribe((response:any) => this.pacientes = response.data);
+    this.pacientService.getAll().subscribe((response:any) => this.pacientes = response);
   }
 
   ngOnInit(){

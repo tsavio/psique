@@ -4,6 +4,7 @@
       "0726ee71-42aa-47fe-b87c-a8016510q96t" : {
         "URL" : "https://hangouts.google.com/hangouts/_/raaystieqjdojcqw26iapnwjvye",
         "date" : "22/11/2019",
+        "deleted": "false",
         "doctorID" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
         "hour" : "18:00:00",
         "patientID" : "0726ee71-42aa-47fe-b87c-a8016510d25a"
@@ -16,6 +17,7 @@
         "password": "1234567",
         "cpf" : "112.456.074.21",
         "crp" : "98632/PE",
+        "deleted": "false",
         "email" : "thyago.scn@gmail.com",
         "name" : "Thyago Savio",
         "phone" : "(81)9875-6423"
@@ -26,14 +28,48 @@
         "password": "1234567",
         "cpf" : "456.112.074-12",
         "crp" : "89654/PE",
+        "deleted": "false",
         "email" : "tsairaf.bil@gmail.com",
         "name" : "Severino Farias",
         "phone" : "(81)9875-6423"
       }
     },
+    "AvailabilityTime" : {
+      "0726ee71-42aa-47fe-b87c-a8016510d98b" : {
+        "doctorID" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
+        "date" : "22/11/2019",
+        "hour" : "18:00",
+        "deleted": "true"
+      },
+      "0726ee71-42aa-47fe-b87c-a8016510q11q" : {
+        "doctorID" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
+        "date" : "21/11/2019",
+        "hour" : "11:40",
+        "deleted": "false"
+      },
+      "0726ee71-42aa-47fe-b87c-a8016510d44c" : {
+        "doctorID" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
+        "date" : "21/11/2019",
+        "hour" : "09:30",
+        "deleted": "false"
+      },
+      "0726ee71-42aa-47fe-b87c-a8016510d97z" : {
+        "doctorID" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
+        "date" : "23/11/2019",
+        "hour" : "14:20",
+        "deleted": "false"
+      },
+      "0726ee71-42aa-47fe-b87c-a8016510d97v" : {
+        "doctorID" : "0726ee71-42aa-47fe-b87c-a8016510d27w",
+        "date" : "22/11/2019",
+        "hour" : "12:30",
+        "deleted": "false"
+      }
+    },
     "Patient" : {
       "0726ee71-42aa-47fe-b87c-a8016510d25a" : {
         "cpf" : "050.716.754-63",
+        "deleted": "false",
         "login": "gulloris",
         "password": "1234567",
         "email" : "gulloris@gmail.com",
@@ -42,6 +78,7 @@
       },
       "0726ee71-42aa-47fe-b87c-a8016510d37q" : {
         "cpf" : "131.714.715-00",
+        "deleted": "false",
         "login": "arthur",
         "password": "1234567",
         "email" : "arthur.2@gmail.com",
@@ -50,6 +87,7 @@
       },
       "0726ee71-42aa-47fe-b87c-a8016510d99p" : {
         "cpf" : "121.756.064-21",
+        "deleted": "false",
         "login": "pedrãoA",
         "password": "1234567",
         "email" : "pd.ferreira@gmail.com",

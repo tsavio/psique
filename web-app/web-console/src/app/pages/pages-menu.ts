@@ -8,7 +8,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'Paciente',
+    title: 'Pacientes',
     icon: 'person-outline',
     link: '/pages/paciente'
   },
