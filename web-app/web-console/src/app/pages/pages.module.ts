@@ -11,7 +11,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { PacienteModule } from './paciente/paciente.module';
 import { ConsultasComponent } from './consultas/consultas.component';
-import { NbCardModule, NbDatepickerModule, NbButtonModule } from '@nebular/theme';
+import { NbCardModule, NbDatepickerModule, NbButtonModule, NbSelectModule } from '@nebular/theme';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 @NgModule({
@@ -27,6 +27,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     NbCardModule, 
     NbDatepickerModule, 
     NbButtonModule,
+    NbSelectModule,
     NgxMaterialTimepickerModule
   ],
   declarations: [

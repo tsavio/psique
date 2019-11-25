@@ -35,22 +35,17 @@ class DoctorController {
     async getById(req, res) {
 
         let { id } = req.params;
-
         try {
-
             const response = await req.firebase.ref(`/${table.DOCTOR}/${id}`).once('value');
 
             if (!response.val()) {
                 return res.status(400).json({ status: 'failed', message: 'We cant\'t find this patient id.' })
             }
-
             return res.json(response.val());
         } catch (error) {
             console.log(`Error #getById : `, error);
             return res.status(500).json(error);
-
         }
-
     }
 
     /* [POST] Insert patient in firebase
@@ -60,14 +55,17 @@ class DoctorController {
     async store(req, res) {
 
         const data = req.body;
-
         const $doctor = new Doctor(data);
+        try {
+            let doctorRef = req.firebase.ref("/doctor");
 
-        let doctorRef = req.firebase.ref("/doctor");
+            const insert = await doctorRef.push($doctor).key;
 
-        const insert = await doctorRef.push($doctor).key;
-
-        return res.json({ status: 'success', id: insert });
+            return res.json({ status: 'success', id: insert });
+        } catch (error) {
+            console.log(`Error #store : `, error);
+            return res.status(500).json(error);
+        }
     }
 
     /* [POST] Update doctor in firebase
@@ -78,11 +76,15 @@ class DoctorController {
 
         const { id } = req.params;
         const data = req.body;
+        try {
+            let doctorRef = await req.firebase.ref(`/${table.DOCTOR}/${id}`);
+            const update = await doctorRef.update(data);
 
-        let doctorRef = await req.firebase.ref(`/${table.DOCTOR}/${id}`);
-        const update = await doctorRef.update(data);
-
-        return res.json({ status: 'success', url: update });
+            return res.json({ status: 'success', url: update });
+        } catch (error) {
+            console.log(`Error #update : `, error);
+            return res.status(500).json(error);
+        }
     }
 
     /* [DELETE] Delete doctor in firebase
@@ -93,7 +95,6 @@ class DoctorController {
 
         const { id } = req.params;
         try {
-
             await req.firebase.ref(`/${table.DOCTOR}/${id}`).remove();
 
             return res.json({ status: 'success' });
@@ -102,7 +103,6 @@ class DoctorController {
             return res.status(500).json(error);
         }
     }
-
 }
 
 module.exports = DoctorController;

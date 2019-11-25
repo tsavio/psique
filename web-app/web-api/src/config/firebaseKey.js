@@ -1,6 +1,8 @@
 const keys = {
     DOCTOR: 'Doctor',
-    PATIENT: 'Patient'
+    PATIENT: 'Patient',
+    CONSULTATION:'Consultation',
+    AVALIBALITYTIME:'AvailabilityTime',
 };
 
 module.exports = keys;

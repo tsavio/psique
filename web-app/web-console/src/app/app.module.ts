@@ -22,6 +22,7 @@ import {
   NbWindowModule,
   NbCardModule,
   NbButtonModule,
+  NbSelectModule,
 } from '@nebular/theme';
 
 @NgModule({
@@ -33,6 +34,7 @@ import {
     AppRoutingModule,
     NbCardModule,
     NbButtonModule,
+    NbSelectModule,
     NgxMaterialTimepickerModule,
 
     ThemeModule.forRoot(),

@@ -13,7 +13,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/paciente'
   },
   {
-    title: 'Consultas',
+    title: 'Disponiblidade de Horários',
     icon: 'clock-outline',
     link: '/pages/consultas'
   },
@@ -21,12 +21,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Configuração',
     icon: 'settings-2-outline',
     link: '/pages/configuracao'
-  },
-  {
-    title: 'Login',
-    icon:'person-add-outline',
-    link: '/auth/login',
   }
+  // {
+  //   title: 'Login',
+  //   icon:'person-add-outline',
+  //   link: '/auth/login',
+  // }
 
   // {
   //   title: 'IoT Dashboard',
