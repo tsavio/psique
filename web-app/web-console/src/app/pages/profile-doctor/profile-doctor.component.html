@@ -1,10 +1,53 @@
+<div class="col-lg-12">
 <nb-card>
-  <nb-card-header>Pacientes</nb-card-header>
+  <nb-card-header>Dados do Perfil</nb-card-header>
   <nb-card-body>
 
-      <ng2-smart-table *ngIf="doctor;else loadinDoctor" [settings]="settings" [source]="doctor" ></ng2-smart-table>
-      <ng-template #loadinDoctor class="col-12">
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>Nome</td>
+          <td> {{ doctor.name }}</td>
+        </tr>
+        <tr>
+          <td>Telefone</td>
+          <td>{{ doctor.phone }}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{ doctor.email }}</td>
+        </tr>
+        <tr>
+          <td>CRP</td>
+          <td>{{ doctor.crp }}</td>
+        </tr>
+        <tr>
+          <td>CPF</td>
+          <td>{{ doctor.cpf }}</td>
+        </tr>
+        <tr>
+          <td>Login</td>
+          <td>{{ doctor.login }}</td>
+        </tr>
+      
+      </tbody>
+    </table>
+      <ng-template #loadingDoctor class="col-12">
           Loading Perfil...
       </ng-template>
   </nb-card-body>
 </nb-card>
+</div>
+
+<div class="col-lg-12">
+  <nb-card>
+    <nb-card-header>Horários diponibilizados</nb-card-header>
+    <nb-card-body>
+      <ng2-smart-table *ngIf="aTime;else loadingAvailability" [settings]="settings" [source]="aTime">
+      </ng2-smart-table>
+      <ng-template #loadingPacient class="col-12">
+        Loading pacients...
+      </ng-template>
+    </nb-card-body>
+  </nb-card>
+</div>

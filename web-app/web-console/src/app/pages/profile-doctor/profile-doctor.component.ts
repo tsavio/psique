@@ -10,44 +10,41 @@ import { DoctorService } from '../../services/doctor.service';
   providers:[DoctorService]
 })
 export class ProfileDoctorComponent implements OnInit {
-
-  constructor(private dialogService: NbDialogService, private doctorService:DoctorService) { }
-
-  ngOnInit() {
-  }
-
-  doctor: any = null;
   
+  constructor(private dialogService: NbDialogService, private doctorService:DoctorService) { }
+  
+  ngOnInit() {
+    this.getAllATime();
+  }
+  
+  
+  aTime: any = null;
+  doctor = JSON.parse(sessionStorage.getItem('user'));
+
+  getAllATime() {
+    this.doctorService.getAllATime().subscribe((response: any) => this.aTime = response.object);
+  }
+ 
   settings = {
     columns: {
       name: {
         title: 'Nome',
-        type: 'custom',
-                    
       },
-      phone: {
-        title: 'Telefone',
+      date: {
+        title: 'Data',
       },
-      email: {
-        title: 'E-mail',
-      },
-      crp: {
-        title: 'CRP',
-      },
-
-      cpf: {
-        title: 'CPF',
-      },
-
-      login: {
-        title: 'Login'
+      hour: {
+        title: 'Hora',
       }
-    }, 
+    },
     actions: false
   };
-
-  getDoctor(id){
-    this.doctorService.getById(id).subscribe((response:any) => this.doctor = response.object);
-  }
-
+  
+  
+  
+  
+  
+  
+  
 }
+ 
