@@ -36,7 +36,6 @@ import {
     NbButtonModule,
     NbSelectModule,
     NgxMaterialTimepickerModule,
-
     ThemeModule.forRoot(),
 
     NbSidebarModule.forRoot(),

@@ -10,26 +10,43 @@ import { Key } from 'selenium-webdriver';
 })
 export class ConsultasComponent implements OnInit {
 
-  constructor(private doctorService:DoctorService,protected dateService: NbDateService<Date>) {
-    this.min = this.dateService.addDay(this.dateService.today(), -5);
-    this.max = this.dateService.addDay(this.dateService.today(), 5);
-  }
-  
   min: Date;
   max: Date;
-
-  statuses: NbComponentStatus[] = [ 'success'];
-  shapes: NbComponentShape[] = [ 'rectangle' ];
-  sizes: NbComponentSize[] = [ 'tiny' ];
-
-  doctors : any = null;
-
-  getAllDoctors(){
-    this.doctorService.getAll().subscribe((response:any) => this.doctors = response.object);
+  
+  constructor(private doctorService: DoctorService, protected dateService: NbDateService<Date>) {
+    this.min = this.dateService.addDay(this.dateService.today(), 0);
+    this.max = this.dateService.addDay(this.dateService.today(), 5);
   }
 
-  ngOnInit(){
-    this.getAllDoctors();
+  statuses: NbComponentStatus[] = ['success'];
+  shapes: NbComponentShape[] = ['rectangle'];
+  sizes: NbComponentSize[] = ['tiny'];
+
+  aTime: any = null;
+
+  settings = {
+    columns: {
+      name: {
+        title: 'Nome',
+      },
+      date: {
+        title: 'Data',
+      },
+      hour: {
+        title: 'Hora',
+      }
+    },
+    actions: false
+  };
+
+  doctors: any = null;
+
+  getAllATime() {
+    this.doctorService.getAllATime().subscribe((response: any) => this.aTime = response.object);
+  }
+
+  ngOnInit() {
+    this.getAllATime();
   }
 
 }
