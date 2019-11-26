@@ -7,9 +7,12 @@ export class UserService extends UserData {
 
   private time: Date = new Date;
 
+  userSession = JSON.parse(sessionStorage.getItem('user'));
+  
   private users = {
-    nick: { name: 'user.name', picture: '' },
+    nick: { name: this.userSession.name, picture: '' },
   };
+    
   private types = {
     mobile: 'mobile',
     home: 'home',

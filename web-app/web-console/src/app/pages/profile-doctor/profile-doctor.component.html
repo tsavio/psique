@@ -1,5 +1,5 @@
 <div class="col-lg-12">
-<nb-card>
+<nb-card status="info">
   <nb-card-header>Dados do Perfil</nb-card-header>
   <nb-card-body>
 
@@ -40,7 +40,7 @@
 </div>
 
 <div class="col-lg-12">
-  <nb-card>
+  <nb-card status="info">
     <nb-card-header>Horários diponibilizados</nb-card-header>
     <nb-card-body>
       <ng2-smart-table *ngIf="aTime;else loadingAvailability" [settings]="settings" [source]="aTime">

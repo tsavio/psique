@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
-    <nb-card>
+    <nb-card status="info">
       <nb-card-header>Escolha a data e a hora de disponibilidade de consulta</nb-card-header>
       <nb-card-body style="display: flex; justify-content: flex-start;">
         <input nbInput placeholder="Data" [nbDatepicker]="formpicker" style="width: 100%; 
@@ -24,7 +24,7 @@
     </nb-card>
   </div>
   <div class="col-lg-12">
-    <nb-card>
+    <nb-card status="info">
       <nb-card-header>Horários diponibilizados</nb-card-header>
       <nb-card-body>
         <ng2-smart-table *ngIf="aTimes;else loadingAvailability" [settings]="settings" [source]="aTimes">

@@ -1,5 +1,5 @@
 <div class="col-lg-12">
-<nb-card>
+<nb-card status="info">
   <nb-card-header>Perfil paciente</nb-card-header>
   <nb-card-body>
     <table class="table table-striped" width="100%">
@@ -32,12 +32,12 @@
   <nb-card-footer>
     <div class="btn-row">
 
-      <button nbButton status="danger">
-        <nb-icon icon="close-outline" (click)="close()"></nb-icon>
+      <button nbButton status="danger" (click)="close()">
+        <nb-icon icon="close-outline"></nb-icon>
       </button>
 
-      <button nbButton status="success">
-        <nb-icon icon="phone-call-outline" (click)="openCall()"></nb-icon>
+      <button nbButton status="success" (click)="openCall()">
+        <nb-icon icon="phone-call-outline"></nb-icon>
       </button>
 
     </div>

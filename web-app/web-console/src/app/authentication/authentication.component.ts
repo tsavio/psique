@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { RequestResult } from '../models/RequestResult';
@@ -38,7 +38,6 @@ export class AuthenticationComponent implements OnInit {
         this.setupError.message = res.getResponse().error.message;
         return;
       }
-    
       sessionStorage.setItem('user', JSON.stringify(res.getResponse()));
       this.router.navigate(['/pages/dashboard']);
     });

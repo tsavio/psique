@@ -13,6 +13,8 @@ export class ConsultasComponent implements OnInit {
   min: Date;
   max: Date;
 
+  userSession = JSON.parse(sessionStorage.getItem('user'));
+
   constructor(private doctorService: DoctorService, protected dateService: NbDateService<Date>) {
     this.min = this.dateService.addDay(this.dateService.today(), 0);
     this.max = this.dateService.addDay(this.dateService.today(), 5);
