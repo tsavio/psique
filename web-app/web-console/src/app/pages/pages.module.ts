@@ -1,6 +1,6 @@
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NgModule } from '@angular/core';
-import { NbMenuModule } from '@nebular/theme';
+import { NbMenuModule, NbIconModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -29,7 +29,8 @@ import { ProfileDoctorComponent } from './profile-doctor/profile-doctor.componen
     NbDatepickerModule, 
     NbButtonModule,
     NbSelectModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    NbIconModule
   ],
   declarations: [
     PagesComponent,
