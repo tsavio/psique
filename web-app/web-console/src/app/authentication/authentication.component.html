@@ -1,0 +1,28 @@
+<div class="container">
+<nb-card>
+  <nb-card-header>
+    Login
+  </nb-card-header>
+  <nb-card-body>
+      <nb-alert status="warning" *ngIf="setupError.error">
+        {{setupError.message}}
+        </nb-alert>
+        <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="login"> Login</label>
+      <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="authenticate.login" id="login">
+    </div>
+<div class="form-group">
+    <label for="password"> Senha</label>
+    <input type="password"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="authenticate.password" id="password">
+  </div>
+  <div class="submit-area">
+    <button class="btn btn-success" (click)="login()" [disabled]="authenticate.login.length < 5 || authenticate.password.length < 6">ENTRAR</button>
+  </div>
+</form>
+  </nb-card-body>
+  <nb-card-footer>
+    Não possui conta? Crie uma!
+  </nb-card-footer>
+</nb-card>
+</div>

@@ -10,10 +10,11 @@ class Doctor {
     // crp;
 
     constructor(data) {
+        this.login = data.login;
         this.name = data.name;
         this.cpf = data.cpf;
         this.email = data.email;
-        this.passworrd = data.password;
+        this.password = data.password;
         this.specialty = data.specialty;
 
         this.phone = data.phone;

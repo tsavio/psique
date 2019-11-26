@@ -14,7 +14,7 @@ class AuthenticateController {
             if (data)
                 Object.keys(data).forEach(key => object.push({ ...data[key], id: key }));
 
-            // console.log(object);
+                console.log(object);
             const filtered = object.filter(obj => obj.login == login && obj.password == password);
 
             if (filtered.length < 1) {
