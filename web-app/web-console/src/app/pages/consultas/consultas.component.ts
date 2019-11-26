@@ -12,18 +12,21 @@ export class ConsultasComponent implements OnInit {
 
   min: Date;
   max: Date;
-  
+
   constructor(private doctorService: DoctorService, protected dateService: NbDateService<Date>) {
     this.min = this.dateService.addDay(this.dateService.today(), 0);
     this.max = this.dateService.addDay(this.dateService.today(), 5);
   }
 
+  formpicker: "";
+  picker: "";
+
   statuses: NbComponentStatus[] = ['success'];
   shapes: NbComponentShape[] = ['rectangle'];
   sizes: NbComponentSize[] = ['tiny'];
 
-  aTime: any = null;
-
+  aTime = {};
+  aTimes: any = null;
   settings = {
     columns: {
       name: {
@@ -39,10 +42,12 @@ export class ConsultasComponent implements OnInit {
     actions: false
   };
 
-  doctors: any = null;
-
   getAllATime() {
-    this.doctorService.getAllATime().subscribe((response: any) => this.aTime = response.object);
+    this.doctorService.getAllATime().subscribe((response: any) => this.aTimes = response.object);
+  }
+
+  saveDate(){
+    this.doctorService.store(this.aTime).subscribe((response:any) => this.getAllATime());
   }
 
   ngOnInit() {

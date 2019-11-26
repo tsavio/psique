@@ -7,7 +7,7 @@
                padding: .4375rem 1rem;
                border-radius: .25rem;
                font-weight: 600;">
-        <nb-datepicker #formpicker [min]="min" [max]="max" format="dd.MM.yyyy"></nb-datepicker>
+        <nb-datepicker #formpicker [min]="min" [max]="max" format="dd/MM/yyyy"></nb-datepicker>
       </nb-card-body>
       <nb-card-body style="display: flex; justify-content: flex-start;">
         <input nbInput placeholder="Hora" [ngxTimepicker]="picker" style="width:100%;
@@ -17,7 +17,7 @@
         <ngx-material-timepicker #picker></ngx-material-timepicker>
       </nb-card-body>
       <nb-card-footer style="text-align: right;">
-        <button *ngFor="let status of statuses" nbButton [status]="status" class="col-3">
+        <button *ngFor="let status of statuses" nbButton (click)="saveDate()" [status]="status" class="col-3">
           Salvar Data
         </button>
       </nb-card-footer>
@@ -27,10 +27,10 @@
     <nb-card>
       <nb-card-header>Horários diponibilizados</nb-card-header>
       <nb-card-body>
-        <ng2-smart-table *ngIf="aTime;else loadingAvailability" [settings]="settings" [source]="aTime">
+        <ng2-smart-table *ngIf="aTimes;else loadingAvailability" [settings]="settings" [source]="aTimes">
         </ng2-smart-table>
         <ng-template #loadingPacient class="col-12">
-          Loading pacients...
+          Carregando Horários disponivéis...
         </ng-template>
       </nb-card-body>
     </nb-card>

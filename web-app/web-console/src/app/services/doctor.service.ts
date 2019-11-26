@@ -30,5 +30,8 @@ export class DoctorService {
     getAllATime() {
         return this.http.get(`${this.API}/availability`).pipe(take(1));
     }
+    storeATime(data){
+        return this.http.post(`${this.API}/availability`, data).pipe(take(1));
+    }
 
 }
