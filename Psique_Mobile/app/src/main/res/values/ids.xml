@@ -7,4 +7,5 @@
     <item name="Sobre" type="id" />
     <item name="Paciente" type="id" />
     <item name="novomedico" type="id" />
+    <item name="Medico" type="id" />
 </resources>

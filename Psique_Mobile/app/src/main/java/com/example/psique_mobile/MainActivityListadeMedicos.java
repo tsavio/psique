@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,9 +13,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class MainActivityListadeMedicos extends AppCompatActivity {
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseMedico;
 
 
     @Override
@@ -27,7 +35,9 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
         androidx.appcompat.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0e9cf3")));
 
-        final ListView lista = findViewById(R.id.Lista_medicos);
+        inicializaFirebase();
+
+        final ListView lista = findViewById(R.id.list_doctor);
         final ArrayList<Medico> medicos = adcionarMedicos();
         final ArrayAdapter adapter = new MedicosAdapter(this, medicos);
         lista.setAdapter(adapter);
@@ -47,6 +57,14 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void inicializaFirebase() {
+
+        FirebaseApp.initializeApp(MainActivityListadeMedicos.this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.setPersistenceEnabled(true);
+        databaseMedico = firebaseDatabase.getReference();
     }
 
     @Override
@@ -77,14 +95,13 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
                 Intent intent2 = new Intent(MainActivityListadeMedicos.this, CadastroPaciente.class);
                 startActivity(intent2);
                 break;
+            case R.id.Medico:
+                Intent intent3 = new Intent (MainActivityListadeMedicos.this, CadastroMedico.class);
+                startActivity(intent3);
+                break;
 
             default:
         }
-
-
-
-
-
 
         return super.onOptionsItemSelected(item);
     }

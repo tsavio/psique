@@ -3,8 +3,6 @@ package com.example.psique_mobile;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +12,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -58,6 +59,7 @@ public class CadastroPaciente extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 pessoaSelecionada = (Pessoa)parent.getItemAtPosition(position);
+
                 edNome.setText(pessoaSelecionada.getNome());
                 edEmail.setText(pessoaSelecionada.getEmail());
                 edCpf.setText(pessoaSelecionada.getCpf());
@@ -113,6 +115,7 @@ public class CadastroPaciente extends AppCompatActivity {
             pessoa.setEmail(edEmail.getText().toString());
             pessoa.setCpf(edCpf.getText().toString());
             pessoa.setTelefone(edTelefone.getText().toString());
+
             databasePessoa.child("Pessoas").child(pessoa.getId()).setValue(pessoa);
             Toast.makeText(this, "Paciente Adcionado", Toast.LENGTH_LONG).show();
             ClearTxt();

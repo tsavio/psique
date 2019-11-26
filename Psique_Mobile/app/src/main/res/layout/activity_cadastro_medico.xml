@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CadastroMedico">
 
     <EditText
@@ -58,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edCpf" />
 
     <EditText
-        android:id="@+id/edCrm"
+        android:id="@+id/edCrp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
@@ -70,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edTelefone" />
 
     <EditText
-        android:id="@+id/edProfissao"
+        android:id="@+id/edSpecialty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
@@ -79,7 +80,9 @@
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edCrm" />
+        app:layout_constraintTop_toBottomOf="@+id/edCrp" />
+
+
     <ListView
         android:id="@+id/list_dados_medico"
         android:layout_width="402dp"
@@ -89,6 +92,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edProfissao"/>
+        app:layout_constraintTop_toBottomOf="@+id/edSpecialty"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

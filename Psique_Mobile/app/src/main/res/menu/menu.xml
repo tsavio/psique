@@ -9,13 +9,14 @@
         android:id="@id/Blog"
         android:title="Blog">
     </item>
-    <item
-        android:id="@id/Sobre"
-        android:title="Sobre Psique">
-    </item>
 
     <item
         android:id="@id/Paciente"
         android:title="Paciente">
+    </item>
+
+    <item
+        android:id="@id/Medico"
+        android:title="Medico">
     </item>
 </menu>

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.psique_mobile">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_psique"
@@ -9,11 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CadastroMedico"></activity>
+        <activity android:name=".VideoChamada"></activity>
+        <activity android:name=".ListDoctor" />
         <activity
-            android:name=".TelaPrincipal"
-            android:label="@string/title_activity_tela_principal"
+            android:name=".MenuHamburguer"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CadastroMedico" />
         <activity android:name=".LoginPrincipal" />
         <activity android:name=".ResetSenha" />
         <activity android:name=".PerfilLogin" />
@@ -34,8 +38,5 @@
         <activity android:name=".MainActivityVideoChamada" />
         <activity android:name=".CadastroPaciente" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>
