@@ -53,14 +53,11 @@ class DoctorController {
     *
     */
     async store(req, res) {
-
         const data = req.body;
         const $doctor = new Doctor(data);
         try {
-            let doctorRef = req.firebase.ref("/doctor");
-
+            let doctorRef = req.firebase.ref(`/${table.DOCTOR}`);
             const insert = await doctorRef.push($doctor).key;
-
             return res.json({ status: 'success', id: insert });
         } catch (error) {
             console.log(`Error #store : `, error);
