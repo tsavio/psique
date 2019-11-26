@@ -141,7 +141,7 @@ export class ECommerceVisitorsAnalyticsChartComponent implements AfterViewInit, 
           opacity: 0,
         },
         emphasis: {
-          color: '#ffffff',
+          color: '#a0e6f5',
             borderColor: eTheme.itemBorderColor,
             borderWidth: 2,
             opacity: 1,

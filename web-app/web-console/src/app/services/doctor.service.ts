@@ -27,4 +27,8 @@ export class DoctorService {
     destroy(id) {
         return this.http.put(`${this.API}/doctor`, id).pipe(take(1));
     }
+    getAllATime() {
+        return this.http.get(`${this.API}/availability`).pipe(take(1));
+    }
+
 }
