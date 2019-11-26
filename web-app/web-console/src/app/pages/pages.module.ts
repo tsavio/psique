@@ -13,6 +13,7 @@ import { PacienteModule } from './paciente/paciente.module';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { NbCardModule, NbDatepickerModule, NbButtonModule, NbSelectModule } from '@nebular/theme';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { ProfileDoctorComponent } from './profile-doctor/profile-doctor.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     PagesComponent,
     ConfiguracaoComponent,
     ConsultasComponent,
+    ProfileDoctorComponent,
   ],
 })
 export class PagesModule {

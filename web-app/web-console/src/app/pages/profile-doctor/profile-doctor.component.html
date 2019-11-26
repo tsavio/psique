@@ -1,0 +1,10 @@
+<nb-card>
+  <nb-card-header>Pacientes</nb-card-header>
+  <nb-card-body>
+
+      <ng2-smart-table *ngIf="doctor;else loadinDoctor" [settings]="settings" [source]="doctor" ></ng2-smart-table>
+      <ng-template #loadinDoctor class="col-12">
+          Loading Perfil...
+      </ng-template>
+  </nb-card-body>
+</nb-card>

@@ -8,6 +8,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { ConsultasComponent } from './consultas/consultas.component';
+import { ProfileDoctorComponent } from './profile-doctor/profile-doctor.component';
 
 const routes: Routes = [{
   path: '',
@@ -22,8 +23,8 @@ const routes: Routes = [{
       component: PacienteComponent,
     },
     {
-      path: 'configuracao',
-      component: ConfiguracaoComponent,
+      path: 'profile-doctor',
+      component: ProfileDoctorComponent,
     },
     {
       path: 'consultas',

@@ -9,7 +9,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Pacientes',
-    icon: 'person-outline',
+    icon: 'people-outline',
     link: '/pages/paciente'
   },
   {
@@ -18,9 +18,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/consultas'
   },
   {
-    title: 'Configuração',
-    icon: 'settings-2-outline',
-    link: '/pages/configuracao'
+    title: 'Perfil',
+    icon: 'person-outline',
+    link: '/pages/profile-doctor'
   }
   // {
   //   title: 'Login',
