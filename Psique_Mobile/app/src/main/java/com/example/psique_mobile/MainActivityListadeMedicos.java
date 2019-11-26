@@ -100,6 +100,11 @@ public class MainActivityListadeMedicos extends AppCompatActivity {
                 startActivity(intent3);
                 break;
 
+            case R.id.Consultas:
+                Intent intConsulta = new Intent(MainActivityListadeMedicos.this, ActivityConsultas.class);
+                startActivity(intConsulta);
+                break;
+
             default:
         }
 

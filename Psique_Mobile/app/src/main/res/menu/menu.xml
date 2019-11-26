@@ -9,6 +9,10 @@
         android:id="@id/Blog"
         android:title="Blog">
     </item>
+    <item
+        android:id="@id/Sobre"
+        android:title="Sobre Psique">
+    </item>
 
     <item
         android:id="@id/Paciente"
@@ -16,7 +20,8 @@
     </item>
 
     <item
-        android:id="@id/Medico"
-        android:title="Medico">
+        android:id="@id/Consultas"
+        android:title="Consultas">
     </item>
+
 </menu>

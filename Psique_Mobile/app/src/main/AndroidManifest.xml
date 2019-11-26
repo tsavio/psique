@@ -37,6 +37,7 @@
         </activity>
         <activity android:name=".MainActivityVideoChamada" />
         <activity android:name=".CadastroPaciente" />
+        <activity android:name=".ActivityConsultas"/>
     </application>
 
 </manifest>

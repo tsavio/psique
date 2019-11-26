@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0e9cf3"
+    android:orientation="vertical">
+
+
+    <ListView
+        android:id="@+id/lvConsulta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/nameDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Doutor"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title" />
+
+        <TextView
+            android:id="@+id/idProfissao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profissão"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/idDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data da Consulta"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/idHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hora da Consulta"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+    </ListView>
+
+</LinearLayout>
