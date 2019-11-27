@@ -18,9 +18,11 @@ export class ConsultationComponent implements OnInit {
     consultations: any = null;
     patients: any = null;
     aTimes: any = null;
-
+    user;
+    consultation = {};
     patient;
     aTime;
+    atimeid;
 
     statuses: NbComponentStatus[] = ['success'];
 
@@ -51,12 +53,21 @@ export class ConsultationComponent implements OnInit {
         this.consultationService.getAll().subscribe((response: any) => this.consultations = response.object);
     }
 
-    saveConsultation(){
-        console.log(this.patient)
-        console.log(this.aTime)
+    saveConsultation() {
+        this.consultation = {
+            hour: this.aTime.hour,
+            date: this.aTime.date,
+            patientId: this.patient.id,
+            patientName: this.patient.name,
+            doctorId: this.user.id,
+            doctorName: this.user.name
+        };
+        this.consultationService.storeConsultation(this.consultation).subscribe((response: any) => this.getAll());
+        this.consultationService.updateATime(this.aTime.id).subscribe((response: any) => this.getAllATime());
     }
 
     ngOnInit() {
+        this.user = JSON.parse(sessionStorage.getItem('user'));
         this.getAll();
         this.getAllPacients();
         this.getAllATime();

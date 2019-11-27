@@ -26,11 +26,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: 'Perfil',
     icon: 'person-outline',
     link: '/pages/profile-doctor'
-  },
-  {
-    title: 'Logout',
-    icon:'close-outline',
-    link: '/auth/login',
-  }
-  
+  },  
 ];

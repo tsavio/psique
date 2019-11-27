@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
-
+import { Router } from '@angular/router';
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
-import { map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil,filter } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -38,17 +38,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ {  } ];
+  userMenu = [{ title: 'Logout' }];
 
   constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private themeService: NbThemeService,
-              private userService: UserData,
-              private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+    private menuService: NbMenuService,
+    private themeService: NbThemeService,
+    private userService: UserData,
+    private router: Router,
+    private layoutService: LayoutService,
+    private breakpointService: NbMediaBreakpointsService) {
   }
 
   ngOnInit() {
+
+    this.menuService.onItemClick().subscribe(title => this.logOut());
+
+
     this.currentTheme = this.themeService.currentTheme;
 
     this.userService.getUsers()
@@ -69,6 +74,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+  }
+
+  logOut() {
+    sessionStorage.clear();
+    this.router.navigate(['/auth/login']);
   }
 
   ngOnDestroy() {

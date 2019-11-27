@@ -15,5 +15,15 @@ export class ConsultationService {
     getAll() {
         return this.http.get(`${this.API}/consultation`).pipe(take(1));
     }
+    storeConsultation(data) {
+        return this.http.post(`${this.API}/consultation`, data, {
+            headers: {
+                userId: JSON.parse(sessionStorage.getItem('user')).id
+            }
+        }).pipe(take(1));
+    }
 
+    updateATime(id: any) {
+        return this.http.post(`${this.API}/availability/setUsing`, {id}).pipe(take(1));
+    }
 }

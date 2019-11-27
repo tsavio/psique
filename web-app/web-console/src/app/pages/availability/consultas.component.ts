@@ -17,8 +17,7 @@ export class ConsultasComponent implements OnInit {
   min: Date;
   max: Date;
 
-  userSession = JSON.parse(sessionStorage.getItem('user'));
-
+  
   constructor(private doctorService: DoctorService, protected dateService: NbDateService<Date>) {
     this.min = this.dateService.addDay(this.dateService.today(), 0);
     this.max = this.dateService.addDay(this.dateService.today(), 5);
@@ -26,7 +25,7 @@ export class ConsultasComponent implements OnInit {
 
   ngModelDate = moment().toDate();;
   ngModelTime;
-
+  user;
   dateValue;
   pickerValue;
 
@@ -60,13 +59,12 @@ export class ConsultasComponent implements OnInit {
       date: moment(this.ngModelDate).format('DD/MM/YYYY'),
       userId: this.user.id,
     };
-    this.doctorService.store(this.aTime).subscribe((response:any) => this.getAllATime());
+    this.doctorService.storeATime(this.aTime).subscribe((response:any) => this.getAllATime());
   }
 
   timeSetListen(event){
     this.ngModelTime = event;
   }
-  user;
 
   ngOnInit() {
     this.user = JSON.parse(sessionStorage.getItem('user'));

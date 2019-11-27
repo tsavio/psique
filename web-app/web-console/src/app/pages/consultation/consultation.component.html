@@ -7,14 +7,14 @@
                padding: .4375rem 1rem;
                border-radius: .25rem;
                font-weight: 600;">
-                    <nb-option *ngFor="let p of patients" [value]="p.name">{{ p.name }}</nb-option>
+                    <nb-option *ngFor="let p of patients" [value]="p">{{ p.name }}</nb-option>
                 </nb-select>
 
                 <nb-select placeholder="Selecione um horário Disponível" [(selected)]="aTime" class="aTimes" style="width: 100%; 
                 padding: .4375rem 1rem;
                 border-radius: .25rem;
                 font-weight: 600;">
-                    <nb-option *ngFor="let a of aTimes" [value]="a.date + ' - ' +a.hour">{{a.date}} - {{ a.hour }}</nb-option>
+                    <nb-option *ngFor="let a of aTimes" [value]="a">{{a.date}} - {{ a.hour }}</nb-option>
                 </nb-select>
             </nb-card-body>
 

@@ -1,4 +1,5 @@
 const table = require('../config/firebaseKey');
+const Consultation = require('../model/consultation.modal');
 
 class ConsultationController {
 
@@ -23,6 +24,30 @@ class ConsultationController {
       return res.status(500).json(error);
     }
   }
+
+   /*
+  * [POST] Store AvailabilityTimeController
+  *
+  * 
+  */
+ async store(req, res){
+  try {
+    
+    const data = req.body;
+    const consultation = new Consultation(data);
+    let ref = await req.firebase.ref(`/${table.CONSULTATION}`);
+    const id = await ref.push(consultation).key;
+    return res.status(200).json({
+      status: 'success',
+      id,
+    });
+  } catch (error) {
+
+    console.log(`Error #AvailabilityTimeController.store : `, error);
+    return res.status(500).json(error);
+  }
+}
+
 }
 
 module.exports = ConsultationController;

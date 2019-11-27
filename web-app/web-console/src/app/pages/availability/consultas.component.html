@@ -7,7 +7,7 @@
         padding: .4375rem 1rem;
         border-radius: .25rem;
         font-weight: 600;">
-        <nb-datepicker #ngmodel></nb-datepicker>
+        <nb-datepicker #ngmodel [min]="min" [max]="max"></nb-datepicker>
 
         <input nbInput placeholder="Hora" [ngxTimepicker]="picker" style="width:100%;
                 padding: .4375rem 1rem;
@@ -15,7 +15,6 @@
                 font-weight: 600;">
         <ngx-material-timepicker (timeSet)="timeSetListen($event)" #picker></ngx-material-timepicker>
       </nb-card-body>
-
 
       <nb-card-footer style="text-align: right;">
         <button *ngFor="let status of statuses" nbButton (click)="saveDate()" [status]="status" class="col-3">
