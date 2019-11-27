@@ -1,7 +1,9 @@
+import { NbDialogService } from '@nebular/theme';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { RequestResult } from '../models/RequestResult';
+import { CreateUserModalComponent } from './create-user-modal/create-user-modal.component';
 
 @Component({
   selector: 'ngx-authentication',
@@ -10,7 +12,7 @@ import { RequestResult } from '../models/RequestResult';
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private dialogService: NbDialogService) { }
     
   authenticate : object = {
     login: "",
@@ -40,6 +42,12 @@ export class AuthenticationComponent implements OnInit {
       }
       sessionStorage.setItem('user', JSON.stringify(res.getResponse()));
       this.router.navigate(['/pages/dashboard']);
+    });
+  }
+
+  openCreateUserModal(){
+    this.dialogService.open(CreateUserModalComponent,{
+      hasScroll: true
     });
   }
 }

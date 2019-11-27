@@ -1,7 +1,9 @@
+import { RequestResult } from './../models/RequestResult';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { take } from 'rxjs/operators';
+import { take, map, catchError } from 'rxjs/operators';
+import { of as observableOf} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +21,7 @@ export class DoctorService {
         return this.http.get(`${this.API}/doctor/${id}`).pipe(take(1));
     }
     store(data) {
-        return this.http.post(`${this.API}/doctor`, data).pipe(take(1));
+        return this.http.post(`${this.API}/auth/register`, data).pipe(take(1), map(res => new RequestResult(true, res)), catchError(res => observableOf(new RequestResult(false, res))));
     }
     update(id) {
         return this.http.post(`${this.API}/doctor`, id).pipe(take(1));
