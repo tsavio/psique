@@ -8,4 +8,5 @@
     <item name="Paciente" type="id" />
     <item name="novomedico" type="id" />
     <item name="Medico" type="id" />
+    <item name="Agendamento" type="id" />
 </resources>

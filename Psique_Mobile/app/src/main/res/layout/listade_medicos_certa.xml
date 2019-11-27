@@ -26,13 +26,13 @@
             android:text="Dr. Henrique Figueiredo" />
 
         <TextView
-            android:id="@+id/txtCRP"
+            android:id="@+id/txtDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Psicólogo / Psiquiatra" />
 
         <TextView
-            android:id="@+id/txtPhone"
+            android:id="@+id/txtHour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Recife - PE" />

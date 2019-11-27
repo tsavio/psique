@@ -11,7 +11,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -25,6 +29,7 @@ public class VideoChamada extends AppCompatActivity {
     RatingBar ratingBar;
     TextView txtNome, txtProfissao,txtTelefone;
     String teste = null;
+    Button button_agendamento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +45,15 @@ public class VideoChamada extends AppCompatActivity {
         txtProfissao = (TextView)findViewById (R.id.txtProfissao);
         txtTelefone = (TextView)findViewById (R.id.txtTelefone);
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        button_agendamento = (Button)findViewById(R.id.button_agendamento);
 
-        teste=getIntent().getStringExtra("Name");
-        txtNome.setText("DR:"+ teste);
-        teste=getIntent().getStringExtra("Phone");
-        txtTelefone.setText("Phone:"+ teste);
-        teste=getIntent().getStringExtra("Specialty");
-        txtProfissao.setText("Especialidade:" + teste);
+
+//        teste=getIntent().getStringExtra("Name");
+//        txtNome.setText("DR:"+ teste);
+//        teste=getIntent().getStringExtra("Phone");
+//        txtTelefone.setText("Phone:"+ teste);
+//        teste=getIntent().getStringExtra("Specialty");
+//        txtProfissao.setText("Especialidade:" + teste);
 
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -61,11 +68,21 @@ public class VideoChamada extends AppCompatActivity {
             }
         });
 
+        button_agendamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(VideoChamada.this,ListAgendamento.class);
+                startActivity(intent);
+            }
+        });
 
 
 
     }
+
+
+
 
     private void tirarFoto() {
 
@@ -99,5 +116,39 @@ public class VideoChamada extends AppCompatActivity {
         builder.setCancelable(false);
         builder.setView(layout);
         builder.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.perfil){
+            Intent intent = new Intent(VideoChamada.this, MainActivityPerfilPaciente.class);
+            startActivity(intent);
+        }
+        if (id == R.id.Blog){
+            String url = "https://www.psicologiaviva.com.br/blog/superar-a-depressao/";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        }
+        if (id == R.id.Sobre){
+            //sobre
+        }
+        if (id == R.id.Agendamento){
+            Intent intent2 = new Intent(VideoChamada.this, ListAgendamento.class);
+                startActivity(intent2);
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 }
