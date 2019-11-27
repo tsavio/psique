@@ -8,6 +8,7 @@ import {
   NbButtonModule,
   NbIconModule,
   NbLayoutModule,
+  NbToastrModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
@@ -30,7 +31,8 @@ import { AuthBgComponent } from './auth-bg/auth-bg.component';
     NbDialogModule.forRoot(),
     NbInputModule,
     NbButtonModule,
-    NbIconModule
+    NbIconModule,
+    NbToastrModule.forRoot()
   ],
   declarations: [
     AuthBgComponent,

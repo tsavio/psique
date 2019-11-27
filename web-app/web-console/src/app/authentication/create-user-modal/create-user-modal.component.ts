@@ -1,7 +1,7 @@
 import { messages } from './../../pages/extra-components/chat/messages';
 import { RequestResult } from './../../models/RequestResult';
 import { DoctorService } from './../../services/doctor.service';
-import { NbDialogService, NbDialogRef } from '@nebular/theme';
+import { NbDialogService, NbDialogRef, NbThemeService, NbToastrService } from '@nebular/theme';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateUserModalComponent implements OnInit {
 
-  constructor(dialogService: NbDialogService, protected ref: NbDialogRef<CreateUserModalComponent>, private doctorService: DoctorService) { }
+  constructor(dialogService: NbDialogService, 
+            protected ref: NbDialogRef<CreateUserModalComponent>, 
+            private doctorService: DoctorService,
+            private theme: NbThemeService,
+            private toastService: NbToastrService) { }
 
   user: object = {
         login: "",
@@ -41,6 +45,10 @@ export class CreateUserModalComponent implements OnInit {
       
       return;
     }
+    this.toastService.success(
+      'Usuario Criado con Sucesso',
+      'Criação de Usuario'
+    );
     this.close();
 
     console.log("xd")});
