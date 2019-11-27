@@ -1,5 +1,5 @@
 
-const Doctor = require('../model/doctor');
+const Doctor = require('../model/doctor.model');
 const table = require('../config/firebaseKey');
 
 class DoctorController {

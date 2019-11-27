@@ -25,7 +25,11 @@ export class AuthenticationComponent implements OnInit {
   }
 
   ngOnInit() {
-    sessionStorage.clear();
+    if(sessionStorage.getItem('user')){
+      this.router.navigate(['/pages/dashboard']);
+    }else{
+      sessionStorage.clear();
+    }
   }
 
   login(){

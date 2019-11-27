@@ -3,16 +3,20 @@
     <nb-card status="info">
       <nb-card-header>Escolha a data e a hora de disponibilidade de consulta</nb-card-header>
       <nb-card-body style="display: flex; justify-content: flex-start;">
-        <input nbInput placeholder="Data" [nbDatepicker]="formpicker">
-        <nb-datepicker #formpicker [min]="min" [max]="max" format="dd/MM/yyyy"></nb-datepicker>
-      </nb-card-body>
-      <nb-card-body style="display: flex; justify-content: flex-start;">
+        <input nbInput placeholder="Form Picker" [nbDatepicker]="ngmodel" [(ngModel)]="ngModelDate" style="width: 100%; 
+        padding: .4375rem 1rem;
+        border-radius: .25rem;
+        font-weight: 600;">
+        <nb-datepicker #ngmodel></nb-datepicker>
+
         <input nbInput placeholder="Hora" [ngxTimepicker]="picker" style="width:100%;
                 padding: .4375rem 1rem;
                 border-radius: .25rem;
                 font-weight: 600;">
-        <ngx-material-timepicker #picker></ngx-material-timepicker>
+        <ngx-material-timepicker (timeSet)="timeSetListen($event)" #picker></ngx-material-timepicker>
       </nb-card-body>
+
+
       <nb-card-footer style="text-align: right;">
         <button *ngFor="let status of statuses" nbButton (click)="saveDate()" [status]="status" class="col-3">
           Salvar Data

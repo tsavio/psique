@@ -16,9 +16,10 @@
     <label for="password"> Senha</label>
     <input type="password"  class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="authenticate.password" id="password">
   </div>
+  
   <div class="submit-area">
-    <button class="btn btn-success" (click)="login()" [disabled]="authenticate.login.length < 5 || authenticate.password.length < 6">ENTRAR</button>
-    <button class="btn btn-success" (click)="openCreateUserModal()">Sing in</button>
+    <button class="btn btn-success" type="submit" (click)="login()" [disabled]="authenticate.login.length < 5 || authenticate.password.length < 6">ENTRAR</button>
+    <button class="btn btn-success" type="button" (click)="openCreateUserModal()">Sing in</button>
   </div>
 </form>
   </nb-card-body>

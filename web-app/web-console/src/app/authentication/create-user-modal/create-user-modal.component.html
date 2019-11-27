@@ -1,70 +1,67 @@
+<nb-card style="width:50vw;margin-top:10px;">
+  <nb-card-header>Cadastro</nb-card-header>
+  <nb-card-body>
+    <nb-alert status="warning" *ngIf="error">
+      {{ error }}
+    </nb-alert>
+    <form (ngSubmit)="createUser()">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input id="name" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.name"
+          placeholder="Nome">
+        <!-- <input type="email" nbInput fullWidth id="exampleInputEmail1" placeholder="Email"> -->
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" nbInput fullWidth [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="user.password" placeholder="Password">
+        <!-- <input type="password" nbInput fullWidth id="exampleInputPassword1" placeholder="Password"> -->
+      </div>
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input id="login" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.login"
+          placeholder="Login">
+      </div>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input id="cpf" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.cpf"
+          placeholder="CPF">
+      </div>
+      <div class="form-group">
+        <label for="crp">CRP</label>
+        <input id="crp" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.crp"
+          placeholder="CRP">
+      </div>
+      <div class="form-group">
+        <label for="phone">Telefone</label>
+        <input id="phone" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.phone"
+          placeholder="Telefone">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email"
+          placeholder="Email" id="email">
+      </div>
 
- 
-    <nb-card>
-      <nb-card-header>Cadastro</nb-card-header>
-      <nb-card-body>
-          <nb-alert status="warning" *ngIf="error">
-              {{ error }}
-          </nb-alert>
-        <form (ngSubmit)="createUser()">
-          <div class="form-group">
-            <label for="name">Nome</label>
-            <input id="name" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.name"
-              placeholder="Nome">
-            <!-- <input type="email" nbInput fullWidth id="exampleInputEmail1" placeholder="Email"> -->
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" nbInput fullWidth [ngModelOptions]="{standalone: true}"
-              [(ngModel)]="user.password" placeholder="Password">
-            <!-- <input type="password" nbInput fullWidth id="exampleInputPassword1" placeholder="Password"> -->
-          </div>
-          <div class="form-group">
-            <label for="login">Login</label>
-            <input id="login" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}"
-              [(ngModel)]="user.login" placeholder="Login">
-          </div>
-          <div class="form-group">
-            <label for="cpf">CPF</label>
-            <input id="cpf" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.cpf"
-              placeholder="CPF">
-          </div>
-          <div class="form-group">
-            <label for="crp">CRP</label>
-            <input id="crp" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.crp"
-              placeholder="CRP">
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefone</label>
-            <input id="phone" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}"
-              [(ngModel)]="user.phone" placeholder="Telefone">
-          </div>
-          <div class="form-group">
-            <label for="email" class="label">Email</label>
-            <input type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email"
-              placeholder="Email" id="email">
-          </div>
+      <div class="form-group">
+        <label for="specialty">Especialidade</label>
+        <input type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.specialty"
+          placeholder="Especialidade" id="specialty">
+      </div>
 
-          <div class="form-group">
-            <label for="specialty">Especialidade</label>
-            <input type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.specialty"
-              placeholder="Especialidade" id="specialty">
-          </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <div class="btn-row">
 
-        </form>
-      </nb-card-body>
-      <nb-card-footer>
-        <div class="btn-row">
+      <button nbButton status="danger" (click)="close()">Cancel
+        <nb-icon icon="close-outline"></nb-icon>
+      </button>
 
-          <button nbButton status="danger" (click)="close()">Cancel
-            <nb-icon icon="close-outline"></nb-icon>
-          </button>
+      <button nbButton status="success" (click)="createUser()"> Submit
+        <nb-icon icon="checkmark-outline"></nb-icon>
+      </button>
+    </div>
 
-          <button nbButton status="success" (click)="createUser()"> Submit
-            <nb-icon icon="checkmark-outline"></nb-icon>
-          </button>
-        </div>
-        
-      </nb-card-footer>
-    </nb-card>
- 
+  </nb-card-footer>
+</nb-card>

@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { NbDateService, NbComponentStatus, NbComponentShape, NbComponentSize } from '@nebular/theme';
 import { DoctorService } from '../../services/doctor.service';
 import { Key } from 'selenium-webdriver';
-import { FormControl } from '@angular/forms';
 import * as moment from 'moment';
+
+import { FormControl } from '@angular/forms';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'ngx-consultas',
@@ -22,8 +24,8 @@ export class ConsultasComponent implements OnInit {
     this.max = this.dateService.addDay(this.dateService.today(), 5);
   }
 
-  formControl = new FormControl(moment());
-  ngModelDate = moment();
+  ngModelDate = moment().toDate();;
+  ngModelTime;
 
   dateValue;
   pickerValue;
@@ -31,14 +33,11 @@ export class ConsultasComponent implements OnInit {
   statuses: NbComponentStatus[] = ['success'];
   shapes: NbComponentShape[] = ['rectangle'];
   sizes: NbComponentSize[] = ['tiny'];
-
+  // timeSetListen: EventEmitter = new EventEmitter();
   aTime = {};
   aTimes: any = null;
   settings = {
     columns: {
-      name: {
-        title: 'Nome',
-      },
       date: {
         title: 'Data',
       },
@@ -50,16 +49,27 @@ export class ConsultasComponent implements OnInit {
   };
 
   getAllATime() {
-    this.doctorService.getAllATime().subscribe((response: any) => this.aTimes = response.object);
+    this.doctorService.getAllATime().subscribe((response: any) => 
+      this.aTimes = response.object
+    );
   }
 
   saveDate(){
-    console.log(this.ngModelDate)
-    console.log(this.pickerValue)
-    // this.doctorService.store(this.aTime).subscribe((response:any) => this.getAllATime());
+    this.aTime = {
+      hour: this.ngModelTime,
+      date: moment(this.ngModelDate).format('DD/MM/YYYY'),
+      userId: this.user.id,
+    };
+    this.doctorService.store(this.aTime).subscribe((response:any) => this.getAllATime());
   }
 
+  timeSetListen(event){
+    this.ngModelTime = event;
+  }
+  user;
+
   ngOnInit() {
+    this.user = JSON.parse(sessionStorage.getItem('user'));
     this.getAllATime();
   }
 

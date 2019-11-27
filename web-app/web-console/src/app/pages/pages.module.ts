@@ -15,6 +15,8 @@ import { ConsultationComponent } from './consultation/consultation.component';
 import { NbCardModule, NbDatepickerModule, NbButtonModule, NbSelectModule } from '@nebular/theme';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { ProfileDoctorComponent } from './profile-doctor/profile-doctor.component';
+import { FormsModule } from './forms/forms.module';
+import { ConsultasModule } from './availability/consultas.module';
 
 @NgModule({
   imports: [
@@ -25,19 +27,19 @@ import { ProfileDoctorComponent } from './profile-doctor/profile-doctor.componen
     ECommerceModule,
     MiscellaneousModule,
     Ng2SmartTableModule,
+    FormsModule,
     PacienteModule,
     NbInputModule,
     NbCardModule, 
     NbDatepickerModule, 
     NbButtonModule,
     NbSelectModule,
-    NgxMaterialTimepickerModule,
-    NbIconModule
+    NbIconModule,
+    ConsultasModule
   ],
   declarations: [
     PagesComponent,
     ConfiguracaoComponent,
-    ConsultasComponent,
     ConsultationComponent,
     ProfileDoctorComponent,
   ],
