@@ -27,7 +27,6 @@ import { ChartModule } from 'angular2-chartjs';
     NbMenuModule,
     DashboardModule,
     ECommerceModule,
-    ChartjsModule,
     ChartModule,
     MiscellaneousModule,
     Ng2SmartTableModule,

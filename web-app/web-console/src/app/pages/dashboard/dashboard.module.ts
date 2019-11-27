@@ -1,3 +1,4 @@
+import { WeeklySummaryChartsComponent } from './weekly-summary-charts/weekly-summary-charts.component';
 import { ChartModule } from 'angular2-chartjs';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DashboardPieComponent } from './dashboard-pie/dashboard-pie.component';
@@ -73,7 +74,8 @@ import { ChartsModule } from '../charts/charts.module';
     TrafficComponent,
     TrafficChartComponent,
     EchartsPieComponent,
-    DashboardPieComponent
+    DashboardPieComponent,
+    WeeklySummaryChartsComponent
   ],
 })
 export class DashboardModule { }
