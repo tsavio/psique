@@ -25,11 +25,7 @@ export class DoctorService {
         return this.http.get(`${this.API}/doctor/${id}`).pipe(take(1));
     }
     store(data) {
-        return this.http.post(`${this.API}/auth/register`, data, {
-            headers: {
-                userId: JSON.parse(sessionStorage.getItem('user')).id
-            }
-        }).pipe(take(1), map(res => new RequestResult(true, res)), catchError(res => observableOf(new RequestResult(false, res))));
+        return this.http.post(`${this.API}/auth/register`, data).pipe(take(1), map(res => new RequestResult(true, res)), catchError(res => observableOf(new RequestResult(false, res))));
     }
     update(id) {
         return this.http.post(`${this.API}/doctor`, id).pipe(take(1));

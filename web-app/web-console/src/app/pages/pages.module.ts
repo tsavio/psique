@@ -1,3 +1,4 @@
+import { ChartsModule } from './charts/charts.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NgModule } from '@angular/core';
 import { NbMenuModule, NbIconModule, NbInputModule } from '@nebular/theme';
@@ -35,7 +36,8 @@ import { ConsultasModule } from './availability/consultas.module';
     NbButtonModule,
     NbSelectModule,
     NbIconModule,
-    ConsultasModule
+    ConsultasModule,
+    DashboardModule
   ],
   declarations: [
     PagesComponent,
