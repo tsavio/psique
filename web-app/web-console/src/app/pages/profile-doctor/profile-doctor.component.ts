@@ -27,9 +27,6 @@ export class ProfileDoctorComponent implements OnInit {
  
   settings = {
     columns: {
-      name: {
-        title: 'Nome',
-      },
       date: {
         title: 'Data',
       },

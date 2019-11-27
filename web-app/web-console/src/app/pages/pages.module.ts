@@ -1,3 +1,4 @@
+import { ChartjsModule } from '@ctrl/ngx-chartjs/';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { NgModule } from '@angular/core';
 import { NbMenuModule, NbIconModule, NbInputModule } from '@nebular/theme';
@@ -17,6 +18,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { ProfileDoctorComponent } from './profile-doctor/profile-doctor.component';
 import { FormsModule } from './forms/forms.module';
 import { ConsultasModule } from './availability/consultas.module';
+import { ChartModule } from 'angular2-chartjs';
 
 @NgModule({
   imports: [
@@ -25,6 +27,8 @@ import { ConsultasModule } from './availability/consultas.module';
     NbMenuModule,
     DashboardModule,
     ECommerceModule,
+    ChartjsModule,
+    ChartModule,
     MiscellaneousModule,
     Ng2SmartTableModule,
     FormsModule,
