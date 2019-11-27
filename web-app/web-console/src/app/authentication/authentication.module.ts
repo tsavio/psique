@@ -15,6 +15,7 @@ import { AuthenticationComponent } from './authentication.component';
 import { NbAuthModule } from '@nebular/auth';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { CreateUserModalComponent } from './create-user-modal/create-user-modal.component';
+import { AuthBgComponent } from './auth-bg/auth-bg.component';
 
 @NgModule({
   imports: [
@@ -30,8 +31,10 @@ import { CreateUserModalComponent } from './create-user-modal/create-user-modal.
     NbIconModule
   ],
   declarations: [
+    AuthBgComponent,
       AuthenticationComponent,
       CreateUserModalComponent,
+      AuthBgComponent,
   ],
   entryComponents: [CreateUserModalComponent, AuthenticationComponent]
 })

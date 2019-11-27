@@ -2,11 +2,12 @@ import {  RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NbAuthComponent } from '@nebular/auth';
 import { AuthenticationComponent } from './authentication.component';
+import { AuthBgComponent } from './auth-bg/auth-bg.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: NbAuthComponent,
+    component: AuthBgComponent,
     children:[{
         path: 'login',
         component: AuthenticationComponent
