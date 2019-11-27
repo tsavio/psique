@@ -3,10 +3,7 @@
     <nb-card status="info">
       <nb-card-header>Escolha a data e a hora de disponibilidade de consulta</nb-card-header>
       <nb-card-body style="display: flex; justify-content: flex-start;">
-        <input nbInput placeholder="Data" [nbDatepicker]="formpicker" style="width: 100%; 
-               padding: .4375rem 1rem;
-               border-radius: .25rem;
-               font-weight: 600;">
+        <input nbInput placeholder="Data" [nbDatepicker]="formpicker">
         <nb-datepicker #formpicker [min]="min" [max]="max" format="dd/MM/yyyy"></nb-datepicker>
       </nb-card-body>
       <nb-card-body style="display: flex; justify-content: flex-start;">

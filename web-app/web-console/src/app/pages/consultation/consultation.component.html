@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card status="info">
+            <nb-card-header>Marcar consulta</nb-card-header>
+            <nb-card-body>
+                <nb-select placeholder="Selecione um paciente" [(selected)]="patient" class="patients" style="width: 100%; 
+               padding: .4375rem 1rem;
+               border-radius: .25rem;
+               font-weight: 600;">
+                    <nb-option *ngFor="let p of patients" [value]="p.name">{{ p.name }}</nb-option>
+                </nb-select>
+
+                <nb-select placeholder="Selecione um horário Disponível" [(selected)]="aTime" class="aTimes" style="width: 100%; 
+                padding: .4375rem 1rem;
+                border-radius: .25rem;
+                font-weight: 600;">
+                    <nb-option *ngFor="let a of aTimes" [value]="a.date + ' - ' +a.hour">{{a.date}} - {{ a.hour }}</nb-option>
+                </nb-select>
+            </nb-card-body>
+
+            <nb-card-footer style="text-align: right;">
+                <button *ngFor="let status of statuses" nbButton (click)="saveConsultation()" [status]="status"
+                    [disabled]="patient == null || aTime == null">
+                    Adicionar consulta
+                </button>
+            </nb-card-footer>
+        </nb-card>
+    </div>
+    <div class="col-lg-12">
+        <nb-card status="info">
+            <nb-card-header>Consultas</nb-card-header>
+            <nb-card-body>
+                <ng2-smart-table *ngIf="consultations;else loadingConsultations" [settings]="settings"
+                    [source]="consultations">
+                </ng2-smart-table>
+                <ng-template #loadingConsultations class="col-12">
+                    Carregando consultas...
+                </ng-template>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

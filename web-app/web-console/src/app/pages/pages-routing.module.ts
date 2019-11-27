@@ -5,8 +5,8 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
-import { ConfiguracaoComponent } from './configuracao/configuracao.component';
-import { ConsultasComponent } from './consultas/consultas.component';
+import { ConsultationComponent } from './consultation/consultation.component';
+import { ConsultasComponent } from './availability/consultas.component';
 import { ProfileDoctorComponent } from './profile-doctor/profile-doctor.component';
 
 const routes: Routes = [{
@@ -20,6 +20,10 @@ const routes: Routes = [{
     {
       path: 'paciente',
       component: PacienteComponent,
+    },
+    {
+      path: 'consultation',
+      component: ConsultationComponent,
     },
     {
       path: 'profile-doctor',

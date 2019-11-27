@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NbDateService, NbComponentStatus, NbComponentShape, NbComponentSize } from '@nebular/theme';
 import { DoctorService } from '../../services/doctor.service';
 import { Key } from 'selenium-webdriver';
+import { FormControl } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'ngx-consultas',
@@ -20,8 +22,11 @@ export class ConsultasComponent implements OnInit {
     this.max = this.dateService.addDay(this.dateService.today(), 5);
   }
 
-  formpicker: "";
-  picker: "";
+  formControl = new FormControl(moment());
+  ngModelDate = moment();
+
+  dateValue;
+  pickerValue;
 
   statuses: NbComponentStatus[] = ['success'];
   shapes: NbComponentShape[] = ['rectangle'];
@@ -49,7 +54,9 @@ export class ConsultasComponent implements OnInit {
   }
 
   saveDate(){
-    this.doctorService.store(this.aTime).subscribe((response:any) => this.getAllATime());
+    console.log(this.ngModelDate)
+    console.log(this.pickerValue)
+    // this.doctorService.store(this.aTime).subscribe((response:any) => this.getAllATime());
   }
 
   ngOnInit() {
