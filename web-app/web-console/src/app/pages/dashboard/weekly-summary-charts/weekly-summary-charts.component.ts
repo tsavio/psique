@@ -27,7 +27,7 @@ export class WeeklySummaryChartsComponent implements AfterViewInit, OnDestroy {
         },
         legend: {
           left: 'left',
-          data: ['Atendimento', 'Receita', 'Pacientes Atendidos'],
+          data: ['Atendimentos', 'Receita', 'Pacientes Únicos Atendidos'],
           textStyle: {
             color: echarts.textColor,
           },
@@ -79,19 +79,19 @@ export class WeeklySummaryChartsComponent implements AfterViewInit, OnDestroy {
         },
         series: [
           {
-            name: 'Atendimento',
+            name: 'Atendimentos',
             type: 'line',
-            data: [1, 3, 9, 27, 81, 247, 741],
+            data: [1, 3, 1, 6, 2, 7, 1],
           },
           {
             name: 'Receita',
             type: 'line',
-            data: [1, 2, 4, 8, 16, 32, 64],
+            data: [60, 240, 300, 660, 780, 1200, 1260],
           },
           {
-            name: 'Pacientes Atendidos',
+            name: 'Pacientes Únicos Atendidos',
             type: 'line',
-            data: [1 / 2, 1 / 4, 1 / 8, 1 / 16, 1 / 32, 1 / 64, 1 / 128],
+            data: [1, 3, 1, 4, 2, 5, 1],
           },
         ],
       };
