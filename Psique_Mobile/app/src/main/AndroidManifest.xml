@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.ListAgendamento"></activity>
         <activity android:name=".VideoChamada"></activity>
         <activity android:name=".ListDoctor" />
         <activity

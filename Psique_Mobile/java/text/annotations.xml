@@ -1,0 +1,5 @@
+<root>
+    <item name='java.text.DateFormat'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

@@ -1,10 +1,11 @@
 package com.example.psique_mobile;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
-
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+
+import com.example.psique_mobile.ui.ListAgendamento;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getBaseContext(),  ListDoctor.class));
+                startActivity(new Intent(getBaseContext(), MainActivityListadeMedicos.class));
                 finish();
             }
         },2000);

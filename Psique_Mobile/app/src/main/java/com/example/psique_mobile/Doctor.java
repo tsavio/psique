@@ -13,7 +13,6 @@ public class    Doctor {
         public String toString(){return name + "\n" + crp + "\n" + phone + "\n" + specialty;}
 
 
-
     public String getId() {
         return id;
     }
