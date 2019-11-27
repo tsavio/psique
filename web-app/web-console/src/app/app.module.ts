@@ -1,3 +1,4 @@
+import { ChartjsModule } from '@ctrl/ngx-chartjs';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -35,6 +36,7 @@ import {
     NbCardModule,
     NbButtonModule,
     NbSelectModule,
+    ChartjsModule,
     NgxMaterialTimepickerModule,
     ThemeModule.forRoot(),
 

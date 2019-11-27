@@ -51,7 +51,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.menuService.onItemClick().subscribe(title => this.logOut());
+    this.menuService.onItemClick()
+    .pipe(
+      filter(({ tag }) => tag === 'my-context-menu'),
+      map(({ item: { title } }) => title),
+   ).subscribe(title => {
+     if (title == 'Logout') {
+       this.logOut();
+     }
+ }
+);
 
 
     this.currentTheme = this.themeService.currentTheme;

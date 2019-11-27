@@ -32,7 +32,7 @@ export class ConsultasComponent implements OnInit {
   statuses: NbComponentStatus[] = ['success'];
   shapes: NbComponentShape[] = ['rectangle'];
   sizes: NbComponentSize[] = ['tiny'];
-  // timeSetListen: EventEmitter = new EventEmitter();
+
   aTime = {};
   aTimes: any = null;
   settings = {
@@ -55,11 +55,13 @@ export class ConsultasComponent implements OnInit {
 
   saveDate(){
     this.aTime = {
-      hour: this.ngModelTime,
+      hour: moment(this.ngModelTime, ["h:mm A"]).format("HH:mm"),
       date: moment(this.ngModelDate).format('DD/MM/YYYY'),
       userId: this.user.id,
+      userName: this.user.name
     };
     this.doctorService.storeATime(this.aTime).subscribe((response:any) => this.getAllATime());
+    
   }
 
   timeSetListen(event){
