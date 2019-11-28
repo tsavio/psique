@@ -57,12 +57,11 @@ public class ListAgendamento extends AppCompatActivity {
         btn_agendamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent intent = new Intent(getApplicationContext(),VideoChamada.class);
+                Intent intent = new Intent(getApplicationContext(),ListDoctor.class);
+                Toast.makeText(ListAgendamento.this,"Agendamento realizado com Sucesso",Toast.LENGTH_LONG).show();
                 startActivity(intent);
                 finish();
             }
-
-
         });
 
 
