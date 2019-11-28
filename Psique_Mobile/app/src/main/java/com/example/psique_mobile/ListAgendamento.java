@@ -58,7 +58,7 @@ public class ListAgendamento extends AppCompatActivity {
             @Override
             public void onClick(android.view.View v) {
                 Intent intent = new Intent(getApplicationContext(),ListDoctor.class);
-                Toast.makeText(ListAgendamento.this,"Agendamento realizado com Sucesso",Toast.LENGTH_LONG).show();
+                Toast.makeText(ListAgendamento.this,"Agendamento Realizado com Sucesso",Toast.LENGTH_LONG).show();
                 startActivity(intent);
                 finish();
             }
