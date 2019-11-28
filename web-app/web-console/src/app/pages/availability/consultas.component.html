@@ -17,7 +17,8 @@
       </nb-card-body>
 
       <nb-card-footer style="text-align: right;">
-        <button *ngFor="let status of statuses" nbButton (click)="saveDate()" [status]="status" class="col-3">
+        <button *ngFor="let status of statuses" nbButton (click)="saveDate()" [status]="status"
+          [disabled]="ngModelDate == null || ngModelTime == null">
           Salvar Data
         </button>
       </nb-card-footer>
@@ -29,7 +30,7 @@
       <nb-card-body>
         <ng2-smart-table *ngIf="aTimes;else loadingAvailability" [settings]="settings" [source]="aTimes">
         </ng2-smart-table>
-        <ng-template #loadingPacient class="col-12">
+        <ng-template #loadingAvailability class="col-12">
           Carregando Horários disponivéis...
         </ng-template>
       </nb-card-body>

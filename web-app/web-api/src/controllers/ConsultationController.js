@@ -9,13 +9,24 @@ class ConsultationController {
   * 
   */
  async getAll(req, res) {
+
+  const { userid: userId } = req.headers;
+    if (!userId) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Header userId is required.'
+      })
+    }
     try {
       let ref = await req.firebase.ref(`/${table.CONSULTATION}`).once("value");
       const data = ref.val();
 
       let object = [];
       if (data)
-        Object.keys(data).forEach(key => object.push({ ...data[key], id: key }));
+        Object.keys(data).forEach(key => {
+          if (data[key].doctorId == userId) 
+          object.push({ ...data[key], id: key })
+      });
 
       return res.json({ object, _total: object.length });
     } catch (error) {

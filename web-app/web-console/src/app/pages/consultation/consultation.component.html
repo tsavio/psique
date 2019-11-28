@@ -21,7 +21,7 @@
             <nb-card-footer style="text-align: right;">
                 <button *ngFor="let status of statuses" nbButton (click)="saveConsultation()" [status]="status"
                     [disabled]="patient == null || aTime == null">
-                    Adicionar consulta
+                    Salvar consulta
                 </button>
             </nb-card-footer>
         </nb-card>

@@ -16,7 +16,6 @@ export class ConsultasComponent implements OnInit {
 
   min: Date;
   max: Date;
-
   
   constructor(private doctorService: DoctorService, protected dateService: NbDateService<Date>) {
     this.min = this.dateService.addDay(this.dateService.today(), 0);
@@ -61,7 +60,6 @@ export class ConsultasComponent implements OnInit {
       userName: this.user.name
     };
     this.doctorService.storeATime(this.aTime).subscribe((response:any) => this.getAllATime());
-    
   }
 
   timeSetListen(event){

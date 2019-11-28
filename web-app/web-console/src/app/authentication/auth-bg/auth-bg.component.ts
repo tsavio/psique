@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   <nb-layout>
       <nb-layout-column>
         <nb-card>
-          <nb-card-body>
+          <nb-card-body style="margin:auto;margin-bottom: 14%; margin-top: 13%;">
             <nb-auth-block>
               <router-outlet></router-outlet>
             </nb-auth-block>
