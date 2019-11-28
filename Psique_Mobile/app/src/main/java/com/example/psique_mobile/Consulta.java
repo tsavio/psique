@@ -1,23 +1,36 @@
 package com.example.psique_mobile;
 
+import android.provider.ContactsContract;
+
 import java.util.Date;
 
 public class Consulta {
 
 
     private String consultationID;
-    private Medico doctorID;
-    private String data;
+    private Doctor doctorID;
+    private String doctorName;
+    private String date;
     private String hour;
-    private PerfilLogin patientID;
+    private Pessoa patientID;
+    private String anamnese;
 
 
-    public Consulta(String consultationID, String data, Medico doctorID, String hour, PerfilLogin patientID) {
+    @Override
+    public String toString(){return doctorName +  "\n" + date + " - "+ hour;}
+
+    public Consulta(){
+
+    }
+
+    public Consulta(String consultationID, String date, Doctor doctorID, String doctorName, String hour, Pessoa patientID, String anamnese) {
         this.consultationID = consultationID;
-        this.data = data;
+        this.date = date;
+        this.doctorName = doctorName;
         this.doctorID = doctorID;
         this.hour = hour;
         this.patientID = patientID;
+        this.anamnese = anamnese;
     }
 
     public String getConsultationID() {
@@ -28,19 +41,27 @@ public class Consulta {
         this.consultationID = consultationID;
     }
 
-    public String getData() {
-        return data;
+    public String getDate() {
+        return date;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setData(String date) {
+        this.date = date;
     }
 
-    public Medico getDoctorID() {
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public Doctor getDoctorID() {
         return doctorID;
     }
 
-    public void setDoctorID(Medico doctorID) {
+    public void setDoctorID(Doctor doctorID) {
         this.doctorID = doctorID;
     }
 
@@ -52,11 +73,24 @@ public class Consulta {
         this.hour = hour;
     }
 
-    public PerfilLogin getPatientID() {
+    public Pessoa getPatientID() {
         return patientID;
     }
 
-    public void setPatientID(PerfilLogin patientID) {
+    public void setPatientID(Pessoa patientID) {
         this.patientID = patientID;
     }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getAnamnese() {
+        return anamnese;
+    }
+
+    public void setAnamnese(String anamnese) {
+        this.anamnese = anamnese;
+    }
+
 }

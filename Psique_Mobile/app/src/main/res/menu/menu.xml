@@ -25,6 +25,12 @@
         app:showAsAction="never"
         android:orderInCategory="100">
     </item>
+    <item
+        android:id="@id/Consultas"
+        android:title="Consultas"
+        app:showAsAction="never"
+        android:orderInCategory="100">
+    </item>
 
 
 </menu>

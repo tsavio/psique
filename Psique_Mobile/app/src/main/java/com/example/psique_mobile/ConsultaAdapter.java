@@ -29,17 +29,19 @@ public class ConsultaAdapter extends ArrayAdapter<Consulta> {
         View rowView = inflater.inflate(R.layout.activity_consultas, parent, false);
 
         TextView nomeMedico = (TextView) rowView.findViewById(R.id.nameDoctor);
-        TextView registroMedico = (TextView) rowView.findViewById(R.id.idProfissao);
-        TextView dataConsulta = (TextView) rowView.findViewById(R.id.idDate);
-        TextView horaConsulta = (TextView) rowView.findViewById(R.id.idHour);
+        TextView relatorioMedico = (TextView) rowView.findViewById(R.id.anaAvalie);
+        //TextView registroMedico = (TextView) rowView.findViewById(R.id.idProfissao);
+//        TextView dataConsulta = (TextView) rowView.findViewById(R.id.idDate);
+//        TextView horaConsulta = (TextView) rowView.findViewById(R.id.idHour);
 
 
-        ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
+        //ImageView imagem = (ImageView) rowView.findViewById(R.id.imagem);
 
-        nomeMedico.setText(elementos.get(position).getDoctorID().getNome());
-        registroMedico.setText(elementos.get(position).getDoctorID().getProfissao());
-        dataConsulta.setText(elementos.get(position).getData());
-        horaConsulta.setText(elementos.get(position).getHour());
+        nomeMedico.setText(elementos.get(position).getDoctorName());
+        relatorioMedico.setText(elementos.get(position).getAnamnese());
+        //registroMedico.setText(elementos.get(position).getDoctorID().getSpecialty());
+//        dataConsulta.setText(elementos.get(position).getData());
+//        horaConsulta.setText(elementos.get(position).getHour());
         //imagem.setImageResource(elementos.get(position).getImagem());
 
         return rowView;
