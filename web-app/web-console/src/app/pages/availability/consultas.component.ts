@@ -58,7 +58,7 @@ export class ConsultasComponent implements OnInit {
       hour: moment(this.ngModelTime, ["h:mm A"]).format("HH:mm"),
       date: moment(this.ngModelDate).format('DD/MM/YYYY'),
       userId: this.user.id,
-      userName: this.user.name
+      doctorName: this.user.name,
     };
     this.doctorService.storeATime(this.aTime).subscribe((response:any) => this.getAllATime());
     this.toastService.success(
