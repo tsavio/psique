@@ -54,10 +54,11 @@ public class ListDoctor extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ListDoctor.this, VideoChamada.class);
+                String name = null;
 
-//                intent.putExtra("Name", String.valueOf(position));
-//                intent.putExtra("Phone",String.valueOf(position));
-//                intent.putExtra("Specialty",String.valueOf(position));
+                intent.putExtra("Name",listDoctor.get(position).getName());
+                intent.putExtra("Phone",listDoctor.get(position).getPhone());
+                intent.putExtra("Specialty",listDoctor.get(position).getSpecialty());
 
                 startActivity(intent);
 
@@ -127,10 +128,14 @@ public class ListDoctor extends AppCompatActivity {
         if (id == R.id.Sobre){
             //sobre
         }
-//        if (id == R.id.Paciente){
-//            Intent intent2 = new Intent(ListDoctor.this, CadastroPaciente.class);
-//                startActivity(intent2);
-//        }
+        if (id == R.id.Agendamento){
+            Intent intent2 = new Intent(ListDoctor.this, ListAgendamento.class);
+                startActivity(intent2);
+        }
+        if (id == R.id.Consultas){
+            Intent intentconsulta = new Intent(ListDoctor.this,ActivityConsultas.class);
+            startActivity(intentconsulta);
+        }
 
 
 

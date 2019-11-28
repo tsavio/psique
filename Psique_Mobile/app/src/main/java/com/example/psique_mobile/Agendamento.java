@@ -4,12 +4,14 @@ package com.example.psique_mobile;
 public class  Agendamento {
 
     private String id;
-    private String name;
+    private String doctorName;
     private String date;
     private String hour;
 
+
+
     @Override
-    public String toString(){return name + "\n" + date + "\n" + hour;}
+    public String toString(){return doctorName + "\n" + "Data: " + date + " "+ "Hora: " + hour;}
 
     public String getId() {
         return id;
@@ -19,14 +21,14 @@ public class  Agendamento {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+
+    public String getDoctorName() {
+        return doctorName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
     }
-
     public String getDate() {
         return date;
     }
@@ -47,7 +49,7 @@ public class  Agendamento {
         this.hour = hour;
         this.id = id;
         this.date = date;
-        this.name = name;
+        this.doctorName = doctorName;
 
     }
 

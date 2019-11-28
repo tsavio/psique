@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +20,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,7 +89,7 @@ public class ActivityConsultas extends AppCompatActivity {
     private void inicializaFirebase() {
         FirebaseApp.initializeApp(ActivityConsultas.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+        //firebaseDatabase.setPersistenceEnabled(true);
         databaseConsulta = firebaseDatabase.getReference();
     }
 

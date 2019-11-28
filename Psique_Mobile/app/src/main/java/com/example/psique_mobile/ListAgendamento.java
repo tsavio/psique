@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -57,7 +58,7 @@ public class ListAgendamento extends AppCompatActivity {
         btn_agendamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
-                Intent intent = new Intent(getApplicationContext(),ListDoctor.class);
+                Intent intent = new Intent(getApplicationContext(),VideoChamada.class);
                 Toast.makeText(ListAgendamento.this,"Agendamento Realizado com Sucesso",Toast.LENGTH_LONG).show();
                 startActivity(intent);
                 finish();
@@ -78,8 +79,9 @@ public class ListAgendamento extends AppCompatActivity {
                     listAgendamento.add(agendamento);
                 }
                 arrayAdapterAgendamento = new ArrayAdapter<Agendamento>(ListAgendamento.this,
-                        android.R.layout.simple_list_item_1, listAgendamento);
+                        android.R.layout.simple_list_item_checked, listAgendamento);
                 list_agendamento.setAdapter(arrayAdapterAgendamento);
+                list_agendamento.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
 
             }
 
