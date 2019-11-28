@@ -1,11 +1,14 @@
 package com.example.psique_mobile;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +48,22 @@ public class ListAgendamento extends AppCompatActivity {
         inicializaComponentes();
         inicializaFirebase();
         eventoDatabase();
+        eventoClick();
+
+    }
+
+    private void eventoClick(){
+
+        btn_agendamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                Intent intent = new Intent(getApplicationContext(),VideoChamada.class);
+                startActivity(intent);
+                finish();
+            }
+
+
+        });
 
 
     }
@@ -76,7 +95,7 @@ public class ListAgendamento extends AppCompatActivity {
     private void inicializaFirebase() {
         FirebaseApp.initializeApp(ListAgendamento.this);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+        //firebaseDatabase.setPersistenceEnabled(true);
         databaseAvailabilityTime = firebaseDatabase.getReference();
     }
 

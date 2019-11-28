@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),LoginPrincipal.class);
                 startActivity(intent);
                 finish();
-            }
+        }
         });
         btnregistro.setOnClickListener(new View.OnClickListener() {
             @Override

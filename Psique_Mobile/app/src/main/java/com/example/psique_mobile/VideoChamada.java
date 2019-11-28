@@ -47,7 +47,6 @@ public class VideoChamada extends AppCompatActivity {
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         button_agendamento = (Button)findViewById(R.id.button_agendamento);
 
-
 //        teste=getIntent().getStringExtra("Name");
 //        txtNome.setText("DR:"+ teste);
 //        teste=getIntent().getStringExtra("Phone");
