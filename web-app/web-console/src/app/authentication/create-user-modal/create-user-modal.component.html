@@ -15,7 +15,6 @@
         <label for="password">Password</label>
         <input id="password" type="password" nbInput fullWidth [ngModelOptions]="{standalone: true}"
           [(ngModel)]="user.password" placeholder="Password">
-        <!-- <input type="password" nbInput fullWidth id="exampleInputPassword1" placeholder="Password"> -->
       </div>
       <div>
         <label for="login">Login</label>
@@ -39,7 +38,7 @@
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email"
+        <input type="text" nbInput fullWidth pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email"
           placeholder="Email" id="email">
       </div>
 
@@ -54,11 +53,11 @@
   <nb-card-footer>
     <div class="btn-row">
 
-      <button nbButton status="danger" (click)="close()">Cancel
+      <button nbButton status="danger" (click)="close()"> Cancelar
         <nb-icon icon="close-outline"></nb-icon>
       </button>
 
-      <button nbButton status="success" (click)="createUser()"> Submit
+      <button nbButton status="success" (click)="createUser()"> Salvar
         <nb-icon icon="checkmark-outline"></nb-icon>
       </button>
     </div>

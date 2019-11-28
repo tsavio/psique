@@ -30,7 +30,7 @@
       <nb-card-body>
         <ng2-smart-table *ngIf="aTimes;else loadingAvailability" [settings]="settings" [source]="aTimes">
         </ng2-smart-table>
-        <ng-template #loadingPacient class="col-12">
+        <ng-template #loadingAvailability class="col-12">
           Carregando Horários disponivéis...
         </ng-template>
       </nb-card-body>
