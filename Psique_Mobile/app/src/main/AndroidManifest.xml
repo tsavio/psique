@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_psique"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VideoChamada"></activity>
+        <activity android:name=".ListAgendamento"></activity>
+        <activity android:name=".VideoChamada" />
         <activity android:name=".ListDoctor" />
         <activity
             android:name=".MenuHamburguer"
@@ -24,7 +25,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivityPerfilPaciente" />
-        <activity android:name=".MainActivityListadeMedicos" />
+
+
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
@@ -35,7 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivityVideoChamada" />
+
         <activity android:name=".CadastroPaciente" />
         <activity android:name=".ActivityConsultas"/>
     </application>

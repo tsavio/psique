@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@id/perfil"
-        android:title="Meu Perfil">
+        android:title="Meu Perfil"
+        app:showAsAction="never"
+        android:orderInCategory="100">
     </item>
     <item
         android:id="@id/Blog"
-        android:title="Blog">
+        android:title="Blog"
+        app:showAsAction="never"
+        android:orderInCategory="100">
     </item>
     <item
         android:id="@id/Sobre"
-        android:title="Sobre Psique">
+        android:title="Sobre"
+        app:showAsAction="never"
+        android:orderInCategory="100">
+    </item>
+    <item
+        android:id="@id/Agendamento"
+        android:title="Agendamento"
+        app:showAsAction="never"
+        android:orderInCategory="100">
     </item>
 
-    <item
-        android:id="@id/Paciente"
-        android:title="Paciente">
-    </item>
-
-    <item
-        android:id="@id/Consultas"
-        android:title="Consultas">
-    </item>
 
 </menu>

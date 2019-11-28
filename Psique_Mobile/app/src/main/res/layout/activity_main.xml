@@ -14,13 +14,13 @@
         android:layout_width="175dp"
         android:layout_height="39dp"
         android:layout_marginStart="118dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="118dp"
-        android:layout_marginBottom="84dp"
         android:text="@string/button_name"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:text="@string/button_name" />
 
     <ImageView
@@ -85,12 +85,25 @@
         android:layout_width="398dp"
         android:layout_height="144dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="53dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/button_camera"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"></LinearLayout>
+
+    <Button
+        android:id="@+id/AgendarConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="55dp"
+        android:text="Agendar Consulta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

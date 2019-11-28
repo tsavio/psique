@@ -10,8 +10,7 @@ public class    Doctor {
     private String specialty;
 
     @Override
-        public String toString(){return name + "\n" + crp + "\n" + phone + "\n" + specialty;}
-
+        public String toString(){return  name + "\n" +  crp + "\n" +  phone + "\n"  + specialty;}
 
 
     public String getId() {

@@ -3,7 +3,11 @@ package com.example.psique_mobile;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -50,11 +54,13 @@ public class ListDoctor extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(ListDoctor.this, VideoChamada.class);
-                intent.putExtra("Name",String.valueOf(position));
-                intent.putExtra("Phone",String.valueOf(position));
-                intent.putExtra("Specialty",String.valueOf(position));
+
+//                intent.putExtra("Name", String.valueOf(position));
+//                intent.putExtra("Phone",String.valueOf(position));
+//                intent.putExtra("Specialty",String.valueOf(position));
 
                 startActivity(intent);
+
             }
         });
     }
@@ -97,44 +103,39 @@ public class ListDoctor extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu, menu);
-//        return super.onCreateOptionsMenu(menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.perfil:
-//                Intent intent = new Intent(ListDoctor.this, MainActivityPerfilPaciente.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.Blog:
-//                String url = "https://www.psicologiaviva.com.br/blog/superar-a-depressao/";
-//                Intent i = new Intent(Intent.ACTION_VIEW);
-//                i.setData(Uri.parse(url));
-//                startActivity(i);
-//
-//                break;
-//            case R.id.Sobre:
-//                //Sobre
-//                break;
-//            case R.id.Paciente:
-//                Intent intent2 = new Intent(ListDoctor.this, CadastroPaciente.class);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.perfil){
+            Intent intent = new Intent(ListDoctor.this, MainActivityPerfilPaciente.class);
+                startActivity(intent);
+        }
+        if (id == R.id.Blog){
+            String url = "https://www.psicologiaviva.com.br/blog/superar-a-depressao/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+        }
+        if (id == R.id.Sobre){
+            //sobre
+        }
+//        if (id == R.id.Paciente){
+//            Intent intent2 = new Intent(ListDoctor.this, CadastroPaciente.class);
 //                startActivity(intent2);
-//                break;
-//            case R.id.Medico:
-//                Intent intent3 = new Intent (ListDoctor.this, CadastroMedico.class);
-//                startActivity(intent3);
-//                break;
-//
-//            default:
 //        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
+
+
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
 

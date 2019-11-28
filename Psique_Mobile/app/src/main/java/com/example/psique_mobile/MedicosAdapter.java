@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MedicosAdapter extends ArrayAdapter<Medico> {
+public class    MedicosAdapter extends ArrayAdapter<Medico> {
     private final Context context;
     private final ArrayList<Medico> elementos;
 
@@ -28,8 +28,8 @@ public class MedicosAdapter extends ArrayAdapter<Medico> {
         View rowView = inflater.inflate(R.layout.listade_medicos_certa,parent, false);
 
         TextView nome = rowView.findViewById(R.id.txtNameDoctor);
-        TextView endereco = rowView.findViewById(R.id.txtPhone);
-        TextView profissao = rowView.findViewById(R.id.txtCRP);
+        TextView endereco = rowView.findViewById(R.id.txtHour);
+        TextView profissao = rowView.findViewById(R.id.txtDate);
         ImageView imagem = rowView.findViewById(R.id.imagemDoctor);
 
         nome.setText(elementos.get(position).getNome());
