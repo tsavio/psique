@@ -9,16 +9,15 @@
         <label for="name">Nome</label>
         <input id="name" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.name"
           placeholder="Nome">
-        <!-- <input type="email" nbInput fullWidth id="exampleInputEmail1" placeholder="Email"> -->
       </div>
       <div>
         <label for="password">Password</label>
-        <input id="password" type="password" nbInput fullWidth [ngModelOptions]="{standalone: true}"
+        <input id="password" type="password" nbInput fullWidth maxlength="8" [ngModelOptions]="{standalone: true}"
           [(ngModel)]="user.password" placeholder="Password">
       </div>
       <div>
         <label for="login">Login</label>
-        <input id="login" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.login"
+        <input id="login" type="text" nbInput fullWidth maxlength="10" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.login"
           placeholder="Login">
       </div>
       <div>
@@ -33,12 +32,13 @@
       </div>
       <div>
         <label for="phone">Telefone</label>
-        <input id="phone" type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.phone"
+        <input id="phone" type="text" nbInput minlength="8" maxlength="10" 
+          fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.phone"
           placeholder="Telefone">
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="text" nbInput fullWidth pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email"
+        <input type="text" nbInput fullWidth [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email"
           placeholder="Email" id="email">
       </div>
 
@@ -57,7 +57,9 @@
         <nb-icon icon="close-outline"></nb-icon>
       </button>
 
-      <button nbButton status="success" (click)="createUser()"> Salvar
+      <button nbButton status="success" (click)="createUser()"
+      [disabled]="user.login == '' || user.password == '' || user.cpf == '' || user.email == '' ||
+      user.name == '' || user.phone == '' || user.crp == '' || user.specialty == ''"> Salvar
         <nb-icon icon="checkmark-outline"></nb-icon>
       </button>
     </div>

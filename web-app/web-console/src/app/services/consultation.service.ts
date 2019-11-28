@@ -13,7 +13,11 @@ export class ConsultationService {
     private API = environment.API;
 
     getAll() {
-        return this.http.get(`${this.API}/consultation`).pipe(take(1));
+        return this.http.get(`${this.API}/consultation`, {
+            headers: {
+                userId: JSON.parse(sessionStorage.getItem('user')).id
+            }
+        }).pipe(take(1));
     }
     storeConsultation(data) {
         return this.http.post(`${this.API}/consultation`, data, {
