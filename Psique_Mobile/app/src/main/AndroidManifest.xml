@@ -15,9 +15,9 @@
         <activity android:name=".ListAgendamento"></activity>
         <activity android:name=".VideoChamada" />
         <activity android:name=".ListDoctor" />
-        <activity
-            android:name=".MenuHamburguer"
-            android:theme="@style/AppTheme.NoActionBar" />
+<!--        <activity-->
+<!--            android:name=".MenuHamburguer"-->
+<!--            android:theme="@style/AppTheme.NoActionBar" />-->
         <activity android:name=".CadastroMedico" />
         <activity android:name=".LoginPrincipal" />
         <activity android:name=".ResetSenha" />
@@ -39,6 +39,9 @@
         </activity>
 
         <activity android:name=".CadastroPaciente" />
+        <activity android:name=".ActivityConsultas"/>
+        <activity android:name=".Consulta"/>
+        <activity android:name=".ActivityConsultaMedica"/>
     </application>
 
 </manifest>
