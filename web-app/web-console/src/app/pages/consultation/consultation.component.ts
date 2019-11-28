@@ -1,6 +1,6 @@
 import { PatientService } from './../../services/patient.service';
 import { Component, OnInit } from '@angular/core';
-import { NbDateService, NbComponentStatus, NbComponentShape, NbComponentSize } from '@nebular/theme';
+import { NbDateService, NbComponentStatus, NbToastrService, NbComponentSize } from '@nebular/theme';
 import { ConsultationService } from '../../services/consultation.service';
 import { DoctorService } from '../../services/doctor.service';
 import { Key } from 'selenium-webdriver';
@@ -13,7 +13,10 @@ import { Key } from 'selenium-webdriver';
 
 export class ConsultationComponent implements OnInit {
 
-    constructor(private doctorService: DoctorService, private consultationService: ConsultationService, private patientService: PatientService) { }
+    constructor(private doctorService: DoctorService, 
+        private consultationService: ConsultationService, 
+        private toastService: NbToastrService,
+        private patientService: PatientService) { }
 
     consultations: any = null;
     patients: any = null;
@@ -33,6 +36,7 @@ export class ConsultationComponent implements OnInit {
             },
             date: {
                 title: 'Data',
+                sortDirection: 'asc'
             },
             hour: {
                 title: 'Hora',
@@ -64,6 +68,10 @@ export class ConsultationComponent implements OnInit {
         };
         this.consultationService.storeConsultation(this.consultation).subscribe((response: any) => this.getAll());
         this.consultationService.updateATime(this.aTime.id).subscribe((response: any) => this.getAllATime());
+        this.toastService.success(
+            'Consulta marcada com o paciente: ' + this.patient.name,
+            'Marcação de consulta'
+          );
     }
 
     ngOnInit() {

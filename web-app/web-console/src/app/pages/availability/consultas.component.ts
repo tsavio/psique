@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NbDateService, NbComponentStatus, NbComponentShape, NbComponentSize } from '@nebular/theme';
+import { NbDateService, NbComponentStatus, NbComponentShape, NbComponentSize, NbToastrService } from '@nebular/theme';
 import { DoctorService } from '../../services/doctor.service';
 import { Key } from 'selenium-webdriver';
 import * as moment from 'moment';
@@ -17,7 +17,7 @@ export class ConsultasComponent implements OnInit {
   min: Date;
   max: Date;
   
-  constructor(private doctorService: DoctorService, protected dateService: NbDateService<Date>) {
+  constructor(private doctorService: DoctorService, private toastService: NbToastrService, protected dateService: NbDateService<Date>) {
     this.min = this.dateService.addDay(this.dateService.today(), 0);
     this.max = this.dateService.addDay(this.dateService.today(), 5);
   }
@@ -38,6 +38,7 @@ export class ConsultasComponent implements OnInit {
     columns: {
       date: {
         title: 'Data',
+        sortDirection: 'asc'
       },
       hour: {
         title: 'Hora',
@@ -60,6 +61,10 @@ export class ConsultasComponent implements OnInit {
       userName: this.user.name
     };
     this.doctorService.storeATime(this.aTime).subscribe((response:any) => this.getAllATime());
+    this.toastService.success(
+      'Horário disponibilizado com sucesso',
+      'Criação de disponibilidade de horário'
+    );
   }
 
   timeSetListen(event){

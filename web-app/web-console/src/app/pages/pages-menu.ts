@@ -18,8 +18,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/consultas'
   },
   {
-    title: 'Consultas',
-    icon: 'clipboard-outline',
+    title: 'Agenda',
+    icon: 'book-outline',
     link: '/pages/consultation'
   },
   {
